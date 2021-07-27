@@ -1,0 +1,13 @@
+@function implode($list, $separator: '') {
+    $result: '';
+
+    @for $index from 1 through length($list) {
+        $result: #{ $result + nth($list, $index) };
+
+        @if $index < length($list) {
+            $result: #{ $result + $separator };
+        }
+    }
+
+    @return $result;
+}

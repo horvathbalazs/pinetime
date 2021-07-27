@@ -1,0 +1,53 @@
+$breakpoints: ();
+
+@import 'breakpoints';
+
+$colors: (
+    'gainsboro': #DDD,
+    'gorse': #DCFD35,
+    'nero': #1C1C1C,
+
+    'facebook':  #1877F2,
+    'instagram': #D7005A,
+);
+
+@import 'colors';
+
+$variables: (
+    'transition': 0.25s,
+);
+
+@import
+    'variables',
+    'functions',
+    'fonts',
+    'reset';
+
+@include html;
+
+$elements: (
+    'body' 'div' 'footer' 'header' 'main' 'section'
+    'button' 'form' 'label' 'input'
+    'a' 'h1' 'h2' 'p'
+);
+
+@include reset;
+
+@include body {
+    color: color('nero');
+}
+
+::selection {
+    background-color: rgba(color('gorse'), 0.99);
+    color: color('nero');
+}
+
+img::selection {
+    background-color: rgba(color('gorse'), 0.5);
+}
+
+@include main;
+
+@import
+    'partials/newsletter',
+    'partials/symbols';

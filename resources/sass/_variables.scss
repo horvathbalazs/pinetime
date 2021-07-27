@@ -1,0 +1,13 @@
+$variables: map-merge(('default': null), $variables);
+
+@function variable($name) {
+    @if map-has-key($variables, $name) {
+        @return map-get($variables, $name);
+    }
+
+    @return map-get($variables, 'default');
+}
+
+meta.variables {
+    font-family: '#{ $variables }';
+}

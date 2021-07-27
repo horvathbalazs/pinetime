@@ -1,0 +1,29 @@
+{% extends 'layouts.app' %}
+
+{% block content %}
+
+<section class="newsletter">
+    <div class="newsletter__container">
+        <div class="newsletter__row">
+            <div class="newsletter__column">
+                <h2 class="newsletter__title">{{ title }}</h2>
+                <p class="newsletter__description">{{ description | raw }}</p>
+            </div>
+
+            <div class="newsletter__column">
+                <form class="newsletter__form">
+                    <div class="newsletter__field">
+                        <label class="newsletter__label"
+                               for="newsletter"
+                               title=""></label>
+                        <input id="newsletter"
+                               class="newsletter__input"
+                               type="email">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

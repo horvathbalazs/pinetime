@@ -1,0 +1,285 @@
+@mixin html {
+    html {
+        box-sizing: border-box;
+        font: normal 400 100%/1.5 sans-serif;
+        height: 100%;
+        -ms-overflow-style: scrollbar;
+        tab-size: 4;
+        -webkit-tap-highlight-color: color('transparent');
+        text-size-adjust: 100%;
+
+        @content;
+    }
+}
+
+@mixin reset {
+    #{ implode($elements, ',') } {
+        &, &::before, &::after {
+            background: none 50% 50%/cover no-repeat color('transparent');
+            border: 0 none color('transparent');
+            box-sizing: inherit;
+            color: inherit;
+            cursor: inherit;
+            font: inherit;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            margin: 0;
+            outline: 0 none color('transparent');
+            -webkit-overflow-scrolling: touch;
+            padding: 0;
+            position: relative;
+            text-decoration: none;
+            transform-origin: 50% 50%;
+            vertical-align: baseline;
+        }
+    }
+
+    @if index($elements, 'a') {
+        a {
+            cursor: pointer;
+            text-decoration-skip: objects;
+            touch-action: manipulation;
+        }
+    }
+
+    @if index($elements, 'address') {
+        address {
+            display: block;
+        }
+    }
+
+    @if index($elements, 'article') {
+        article {
+            display: block;
+        }
+    }
+
+    @if index($elements, 'button') {
+        button {
+            appearance: none;
+            border-radius: 0;
+            cursor: pointer;
+            display: block;
+            overflow: visible;
+            text-transform: none;
+            touch-action: manipulation;
+        }
+    }
+
+    @if index($elements, 'em') {
+        em {
+            font-style: italic;
+        }
+    }
+
+    @if index($elements, 'figure') {
+        figure {
+            display: block;
+        }
+    }
+
+    @if index($elements, 'footer') {
+        footer {
+            display: block;
+        }
+    }
+
+    @if index($elements, 'h1') {
+        h1 {
+            page-break-after: avoid;
+            page-break-inside: avoid;
+        }
+    }
+
+    @if index($elements, 'h2') {
+        h2 {
+            page-break-after: avoid;
+            page-break-inside: avoid;
+        }
+    }
+
+    @if index($elements, 'h3') {
+        h3 {
+            page-break-after: avoid;
+            page-break-inside: avoid;
+        }
+    }
+
+    @if index($elements, 'h4') {
+        h4 {
+            page-break-after: avoid;
+            page-break-inside: avoid;
+        }
+    }
+
+    @if index($elements, 'h5') {
+        h5 {
+            page-break-after: avoid;
+            page-break-inside: avoid;
+        }
+    }
+
+    @if index($elements, 'h6') {
+        h6 {
+            page-break-after: avoid;
+            page-break-inside: avoid;
+        }
+    }
+
+    @if index($elements, 'header') {
+        header {
+            display: block;
+        }
+    }
+
+    [hidden] {
+        display: none;
+    }
+
+    @if index($elements, 'hr') {
+        hr {
+            height: 0rem;
+            overflow: visible;
+            width: 100%;
+        }
+    }
+
+    @if index($elements, 'iframe') {
+        iframe {
+            display: block;
+            height: auto;
+            max-width: 100%;
+            page-break-inside: avoid;
+            width: 100%
+        }
+    }
+
+    @if index($elements, 'img') {
+        img {
+            display: block;
+            height: auto;
+            -ms-interpolation-mode: bicubic;
+            max-width: 100%;
+            page-break-inside: avoid;
+            width: 100%;
+        }
+    }
+
+    @if index($elements, 'li') {
+        li {
+            display: block;
+        }
+    }
+
+    @if index($elements, 'main') {
+        main {
+            display: block;
+        }
+    }
+
+    @if index($elements, 'ol') {
+        ol {
+            list-style: none;
+        }
+    }
+
+    @if index($elements, 'section') {
+        section {
+            display: block;
+        }
+    }
+
+    @if index($elements, 'small') {
+        small {
+            font-size: smaller;
+        }
+    }
+
+    @if index($elements, 'strong') {
+        strong {
+            font-weight: 700;
+        }
+    }
+
+    @if index($elements, 'svg') {
+        svg {
+            display: block;
+            height: auto;
+            max-width: 100%;
+            overflow: hidden;
+            page-break-inside: avoid;
+            width: 100%;
+        }
+    }
+
+    @if index($elements, 'table') {
+        table {
+            border-collapse: collapse;
+            border-spacing: 0rem;
+        }
+    }
+
+    @if index($elements, 'td') {
+        td {
+            vertical-align: top;
+        }
+    }
+
+    @if index($elements, 'th') {
+        th {
+            vertical-align: top;
+        }
+    }
+
+    @if index($elements, 'time') {
+        time {
+            display: block;
+        }
+    }
+
+    @if index($elements, 'title') {
+        title {
+            display: none;
+        }
+    }
+
+    @if index($elements, 'ul') {
+        ul {
+            list-style: none;
+        }
+    }
+}
+
+@mixin body {
+    .body {
+        background-color: color('white');
+        color: color('black');
+        cursor: default;
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+        overflow-x: hidden;
+
+        @content;
+
+        &::before {
+            display: none;
+
+            @each $device in ('phone', 'tablet', 'laptop', 'desktop') {
+                @include breakpoint($device) {
+                    & {
+                        content: $device;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@mixin main {
+    .main {
+        flex-grow: 1;
+
+        @content;
+    }
+}
