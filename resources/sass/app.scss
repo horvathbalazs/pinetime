@@ -26,9 +26,11 @@ $variables: (
 @include html;
 
 $elements: (
-    'body' 'div' 'footer' 'header' 'main' 'section'
+    'body' 'div' 'img' 'li' 'ul'
+    'footer' 'header' 'main' 'nav' 'section'
     'button' 'form' 'label' 'input'
     'a' 'h1' 'h2' 'p'
+    'svg' 'path' 'symbol'
 );
 
 @include reset;
@@ -49,5 +51,9 @@ img::selection {
 @include main;
 
 @import
+    'partials/accordion',
+    'partials/footer',
+    'partials/logo',
+    'partials/navigation',
     'partials/newsletter',
     'partials/symbols';

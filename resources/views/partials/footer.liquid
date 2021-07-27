@@ -1,8 +1,9 @@
-{% extends 'layouts.app' %}
-
-{% block content %}
-
-<footer>
+<footer class="footer">
+    <div class="footer__container">
+        {%
+            include 'partials.navigation' with
+            modifier: 'footer',
+            navigation: footer.navigation
+        %}
+    </div>
 </footer>
-
-{% endblock %}

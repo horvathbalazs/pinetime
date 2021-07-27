@@ -1,0 +1,13 @@
+.accordion {
+    .accordion__container {
+        padding-right: 1.25rem;
+    }
+}
+
+@include breakpoint('laptop') {
+    .accordion {
+        .accordion__container {
+            padding-right: 6.25rem;
+        }
+    }
+}

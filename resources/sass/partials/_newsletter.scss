@@ -1,3 +1,60 @@
 .newsletter {
     background-color: color('gorse');
+    padding: 3.125rem 0;
+
+    .newsletter__container {
+        margin: 0 auto;
+        max-width: 90rem;
+        padding: 0 1.25rem;
+        width: 100%;
+    }
+
+    .newsletter__row {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: -0.625rem;
+    }
+
+    .newsletter__column {
+        padding: 0.625rem;
+        width: 100%;
+    }
+
+    .newsletter__title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        line-height: 2.375rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .newsletter__subtitle {
+        font-size: 1.375rem;
+        line-height: 1.6875rem;
+    }
+}
+
+@include breakpoint('laptop') {
+    .newsletter {
+        padding: 5rem 2.5rem;
+
+        .newsletter__container {
+            padding: 0 5rem;
+        }
+
+        .newsletter__row {
+            margin: -2.5rem;
+        }
+
+        .newsletter__column {
+            padding: 2.5rem;
+            width: 50%;
+        }
+
+        .newsletter__title {
+            line-height: 3.125rem;
+            margin-bottom: 0.3125rem;
+        }
+    }
 }

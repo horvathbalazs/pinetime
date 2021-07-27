@@ -1,0 +1,10 @@
+{% extends 'layouts.app' %}
+
+{% block main %}
+{% case template %}
+    {% when 'footer' %}
+    {% include 'partials.footer' %}
+    {% when 'newsletter' %}
+    {% include 'partials.newsletter' %}
+{% endcase %}
+{% endblock %}

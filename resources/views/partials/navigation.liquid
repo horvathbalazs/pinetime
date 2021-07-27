@@ -1,0 +1,17 @@
+{% case modifier %}
+    {% when 'footer' %}
+    <nav class="navigation navigation--footer">
+        {% for list in navigation %}
+        <ul class="navigation__list">
+            {% for item in list %}
+            <li class="navigation__item">
+                <a class="navigation__link"
+                   href="{{ item.url | escape }}"
+                   target="{{ item.target | escape }}"
+                   title="{{ item.title | escape }}">{{ item.title }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endfor %}
+    </nav>
+{% endcase %}

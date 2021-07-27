@@ -1,13 +1,9 @@
-{% extends 'layouts.app' %}
-
-{% block content %}
-
 <section class="newsletter">
     <div class="newsletter__container">
         <div class="newsletter__row">
             <div class="newsletter__column">
-                <h2 class="newsletter__title">{{ title }}</h2>
-                <p class="newsletter__description">{{ description | raw }}</p>
+                <h2 class="newsletter__title">{{ newsletter.title }}</h2>
+                <p class="newsletter__description">{{ newsletter.description | raw }}</p>
             </div>
 
             <div class="newsletter__column">
@@ -15,15 +11,20 @@
                     <div class="newsletter__field">
                         <label class="newsletter__label"
                                for="newsletter"
-                               title=""></label>
+                               title="{{ newsletter.email.title | escape }}">{{ newsletter.email.title }}</label>
                         <input id="newsletter"
                                class="newsletter__input"
+                               autocomplete="email"
+                               placeholder="{{ newsletter.email.placeholder | escape }}"
+                               title="{{ newsletter.email.title | escape }}"
                                type="email">
                     </div>
+
+                    <button class=""
+                            title=""
+                            type="submit"></button>
                 </form>
             </div>
         </div>
     </div>
 </section>
-
-{% endblock %}

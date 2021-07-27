@@ -1,0 +1,21 @@
+.footer {
+    background-color: color('gainsboro');
+    padding: 3.125rem 0;
+
+    .footer__container {
+        margin: 0 auto;
+        max-width: 90rem;
+        padding: 0 1.25rem;
+        width: 100%;
+    }
+}
+
+@include breakpoint('laptop') {
+    .footer {
+        padding: 3.125rem 0 3.75rem;
+
+        .footer__container {
+            padding: 0 50rem 0 10rem;
+        }
+    }
+}
