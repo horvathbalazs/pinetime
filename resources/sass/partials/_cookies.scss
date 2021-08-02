@@ -1,0 +1,25 @@
+.cookies {
+    background-color: color('nero');
+    height: 3.75rem;
+
+    .cookies__container {
+    }
+
+    .cookies__message {
+        @include headline;
+
+        color: color('white');
+        font-size: 0.75rem;
+        font-weight: 400;
+        margin-right: 1.25rem;
+    }
+
+    .cookies__close {
+    }
+
+    .cookies__icon {
+        color: color('white');
+        height: 1rem;
+        width: 1rem;
+    }
+}

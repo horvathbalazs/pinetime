@@ -30,7 +30,7 @@ module.exports = {
         ],
         modules: [
             modules,
-            path.resolve(root, 'resources/sass'),
+            path.resolve(root, 'resources/js'),
         ]
     }
 }

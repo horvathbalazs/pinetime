@@ -14,6 +14,14 @@ class PartialController extends Controller
         return view('partials', ['template' => 'accordion']);
     }
 
+    public function cookies()
+    {
+        return view('partials', [
+            'cookies'  => $this->cookies,
+            'template' => 'cookies',
+        ]);
+    }
+
     public function details()
     {
         return view('partials', [

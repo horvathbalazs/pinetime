@@ -50,10 +50,13 @@ img::selection {
     background-color: rgba(color('gorse'), 0.5);
 }
 
+@import 'slick-carousel/slick/slick';
+
 @include main;
 
 @import
     'partials/accordion',
+    'partials/cookies',
     'partials/details',
     'partials/footer',
     'partials/hero',

@@ -4,6 +4,11 @@ namespace App\Http\Traits;
 
 trait PartialTrait
 {
+    private $cookies = [
+        'message' => 'We use cookies to improve this website and customize ' .
+                     'ads.',
+    ];
+
     private $details = [
         'cards' => [
             [
@@ -138,6 +143,38 @@ trait PartialTrait
                     'height' => 640,
                     'title'  => '',
                     'url'    => '//lorempixel.com/640/640?t=696004399',
+                    'width'  => 640,
+                ],
+            ],
+            [
+                'thumbnail' => [
+                    'height' => 640,
+                    'title'  => '',
+                    'url'    => '//lorempixel.com/640/640?t=624870811',
+                    'width'  => 640,
+                ],
+            ],
+            [
+                'thumbnail' => [
+                    'height' => 640,
+                    'title'  => '',
+                    'url'    => '//lorempixel.com/640/640?t=468172304',
+                    'width'  => 640,
+                ],
+            ],
+            [
+                'thumbnail' => [
+                    'height' => 640,
+                    'title'  => '',
+                    'url'    => '//lorempixel.com/640/640?t=782938967',
+                    'width'  => 640,
+                ],
+            ],
+            [
+                'thumbnail' => [
+                    'height' => 640,
+                    'title'  => '',
+                    'url'    => '//lorempixel.com/640/640?t=626250645',
                     'width'  => 640,
                 ],
             ],

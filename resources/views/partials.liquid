@@ -2,6 +2,8 @@
 
 {% block main %}
 {% case template %}
+    {% when 'cookies' %}
+    {% include 'partials.cookies' %}
     {% when 'details' %}
     {% include 'partials.details' %}
     {% when 'footer' %}

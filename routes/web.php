@@ -12,6 +12,9 @@ Route::group([
     'as'     => 'partials.',
     'prefix' => 'partials',
 ], function (): void {
+    Route::get('cookies', 'PartialController@cookies')
+        ->name('cookies');
+
     Route::get('details', 'PartialController@details')
         ->name('details');
 
