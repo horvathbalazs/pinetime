@@ -1,0 +1,35 @@
+<section class="hero">
+    <div class="hero__container">
+        <div class="hero__row">
+            <div class="hero__column">
+            </div>
+            <div class="hero__column">
+                <h1 class="hero__title">{{ hero.title }}</h1>
+                <span class="hero__price">{{ hero.price.currency }} <strong>{{ hero.price.amount }}</strong></span>
+                <a class="hero__"
+                   href=""
+                   title=""
+                   target="_self"></a>
+                {% if hero.sizes %}
+                <div class="hero__sizes">
+                    {% for size in hero.sizes %}
+                    <button class="hero__size"
+                            title="{{ size.name | escape}}"
+                            type="button">{{ size.abbreviation }}</button>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                {% if hero.colors %}
+                <div class="hero__colors">
+                    {% for color in hero.colors %}
+                    <button class="hero__color"
+                            title="{{ color.name | escape}}"
+                            type="button">{{ color.name }}</button>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                <button></button>
+            </div>
+        </div>
+    </div>
+</section>

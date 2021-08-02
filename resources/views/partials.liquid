@@ -2,9 +2,17 @@
 
 {% block main %}
 {% case template %}
+    {% when 'details' %}
+    {% include 'partials.details' %}
     {% when 'footer' %}
     {% include 'partials.footer' %}
+    {% when 'hero' %}
+    {% include 'partials.hero' %}
+    {% when 'instagram' %}
+    {% include 'partials.instagram' %}
     {% when 'newsletter' %}
     {% include 'partials.newsletter' %}
+    {% when 'recommendation' %}
+    {% include 'partials.recommendation' %}
 {% endcase %}
 {% endblock %}

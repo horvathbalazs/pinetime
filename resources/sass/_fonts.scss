@@ -1,0 +1,39 @@
+@font-face {
+    font-display: swap;
+    font-family: 'Good Headline Pro';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/good-headline-pro-regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Good Headline Pro';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/good-headline-pro-medium.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Nikolai';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/nikolai-regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Nikolai';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/nikolai-bold.woff2') format('woff2');
+}
+
+@mixin headline {
+    font-family: 'Good Headline Pro', sans-serif;
+}
+
+@mixin nikolai {
+    font-family: 'Nikolai', serif;
+}

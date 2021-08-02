@@ -1,0 +1,26 @@
+{% assign thumbnail = recommendation.thumbnail %}
+<section class="recommendation">
+    <div class="recommendation__container">
+        <blockquote class="">
+            <svg class="recommendation__icon">
+                <use href="#symbol-quote"/>
+            </svg>
+            <p class="recommendation__quote">{{ recommendation.quote }}</p>
+            <span class="">
+                <a class="recommendation__name"
+                   href=""
+                   target="_self"
+                   title="{{ recommendation.name | escape }}">{{ recommendation.name }}</a>
+            </span>
+        </blockquote>
+        <div class="recommendation__thumbnail">
+            <figure class="recommendation__figure">
+                <img class="recommendation__image"
+                     height="{{ thumbnail.height | escape }}"
+                     src="{{ thumbnail.url }}"
+                     title=""
+                     width="{{ thumbnail.width | escape }}">
+            </figure>
+        </div>
+    </div>
+</section>

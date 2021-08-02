@@ -54,6 +54,16 @@
         }
     }
 
+    @if index($elements, 'blockquote') {
+        blockquote {
+            quotes: none;
+
+            &:before, &:after {
+                content: none;
+            }
+        }
+    }
+
     @if index($elements, 'button') {
         button {
             appearance: none;
@@ -138,7 +148,7 @@
 
     @if index($elements, 'hr') {
         hr {
-            height: 0rem;
+            height: 0;
             overflow: visible;
             width: 100%;
         }
@@ -215,7 +225,7 @@
     @if index($elements, 'table') {
         table {
             border-collapse: collapse;
-            border-spacing: 0rem;
+            border-spacing: 0;
         }
     }
 

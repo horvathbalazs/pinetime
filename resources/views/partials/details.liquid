@@ -1,0 +1,12 @@
+<section class="details">
+    <div class="details__container">
+        <div class="details__cards">
+            {% for card in details.cards %}
+            <article class="details__card">
+                <h3 class="details__title">{{ card.title }}</h3>
+                <p class="details__description">{{ card.description }}</p>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>

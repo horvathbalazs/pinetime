@@ -1,0 +1,72 @@
+.details {
+    padding: 2.5rem 0;
+
+    &:before {
+        background: color('smoke');
+        bottom: 0;
+        content: '';
+        display: block;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .details__container {
+        margin: 0 auto;
+        max-width: 90rem;
+        padding: 0 1.25rem;
+    }
+
+    .details__cards {
+        align-items: stretch;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: -0.625rem;
+    }
+
+    .details__card {
+        background-color: color('gainsboro');
+        margin: 0.625rem;
+        padding: 3.75rem 3.125rem;
+        width: 100%;
+    }
+
+    .details__title {
+        @include nikolai;
+
+        font-size: 2.5rem;
+        font-weight: 700;
+        line-height: 2.5rem;
+        margin-bottom: 2.5rem;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    .details__description {
+        @include headline;
+
+        font-size: 1.125rem;
+        line-height: 1.5rem;
+        text-align: center;
+    }
+}
+
+@include breakpoint('laptop') {
+    .details {
+        padding: 5rem 0;
+
+        &:before {
+            bottom: 50%;
+        }
+
+        .details__container {
+            padding: 0 6.25rem;
+        }
+
+        .details__card {
+            width: calc(33.33333% - 1.25rem);
+        }
+    }
+}

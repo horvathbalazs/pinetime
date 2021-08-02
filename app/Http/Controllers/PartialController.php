@@ -14,6 +14,14 @@ class PartialController extends Controller
         return view('partials', ['template' => 'accordion']);
     }
 
+    public function details()
+    {
+        return view('partials', [
+            'details'  => $this->details,
+            'template' => 'details',
+        ]);
+    }
+
     public function footer()
     {
         return view('partials', [
@@ -22,11 +30,35 @@ class PartialController extends Controller
         ]);
     }
 
+    public function hero()
+    {
+        return view('partials', [
+            'hero'     => $this->hero,
+            'template' => 'hero',
+        ]);
+    }
+
+    public function instagram()
+    {
+        return view('partials', [
+            'instagram' => $this->instagram,
+            'template'  => 'instagram',
+        ]);
+    }
+
     public function newsletter()
     {
         return view('partials', [
             'newsletter' => $this->newsletter,
             'template'   => 'newsletter',
+        ]);
+    }
+
+    public function recommendation()
+    {
+        return view('partials', [
+            'recommendation' => $this->recommendation,
+            'template'       => 'recommendation',
         ]);
     }
 }

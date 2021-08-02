@@ -1,0 +1,61 @@
+.recommendation {
+    background-color: color('smoke');
+    padding: 3.125rem 0;
+
+    .recommendation__container {
+        margin: 0 auto;
+        max-width: 90rem;
+        padding: 0 1.25rem;
+        width: 100%;
+    }
+
+    .recommendation__icon {
+        color: color('white');
+        height: 4rem;
+        margin-bottom: 0.3125rem;
+        width: 5.375rem;
+    }
+
+    .recommendation__quote {
+        @include nikolai;
+
+        font-size: 3.125rem;
+        font-weight: 700;
+    }
+
+    .recommendation__thumbnail {
+        bottom: 3.125rem;
+        overflow: hidden;
+        position: absolute;
+        right: 0;
+        width: 50%;
+        z-index: -1;
+
+        &:before {
+            content: '';
+            display: block;
+            padding-bottom: 100%;
+        }
+    }
+
+    .recommendation__figure {
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .recommendation__image {
+        height: 100%;
+        object-fit: cover;
+        object-position: 50% 50%;
+        width: 100%;
+    }
+}
+
+@include breakpoint('laptop') {
+    .recommendation {
+        padding: 6.25rem 0 3.75rem;
+    }
+}

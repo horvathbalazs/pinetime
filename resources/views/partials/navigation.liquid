@@ -6,7 +6,7 @@
             {% for item in list %}
             <li class="navigation__item">
                 <a class="navigation__link"
-                   href="{{ item.url | escape }}"
+                   href="{{ item.url }}"
                    target="{{ item.target | escape }}"
                    title="{{ item.title | escape }}">{{ item.title }}</a>
             </li>
