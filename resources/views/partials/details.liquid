@@ -4,6 +4,21 @@
             {% for card in details.cards %}
             <article class="details__card">
                 <h3 class="details__title">{{ card.title }}</h3>
+                <div class="details__ruler">
+                    {% for i in (1..10) %}
+                    <div class="details__marker"></div>
+                    {% endfor %}
+                    <div class="details__range details__range--{{ card.range }}">
+                        <svg class="details__icon">
+                            <use href="#symbol-range"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="details__labels">
+                    {% for label in card.labels %}
+                    <span class="details__label{% if label.active %} details__label--active{% endif %}">{{ label.name }}</span>
+                    {% endfor %}
+                </div>
                 <p class="details__description">{{ card.description }}</p>
             </article>
             {% endfor %}

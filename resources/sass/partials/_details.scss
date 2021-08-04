@@ -3,9 +3,9 @@
 
     &:before {
         background: color('smoke');
-        bottom: 0;
         content: '';
         display: block;
+        height: 100%;
         left: 0;
         position: absolute;
         right: 0;
@@ -15,7 +15,7 @@
     .details__container {
         margin: 0 auto;
         max-width: 90rem;
-        padding: 0 1.25rem;
+        padding: 0 1.5rem;
     }
 
     .details__cards {
@@ -23,50 +23,142 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        margin: -0.625rem;
+        margin: -0.5rem;
     }
 
     .details__card {
         background-color: color('gainsboro');
-        margin: 0.625rem;
-        padding: 3.75rem 3.125rem;
+        margin: 0.5rem;
+        padding: 3.75rem 2.5rem 3.125rem;
         width: 100%;
     }
 
     .details__title {
         @include nikolai;
 
-        font-size: 2.5rem;
+        font-size: 2.8125rem;
         font-weight: 700;
-        line-height: 2.5rem;
         margin-bottom: 2.5rem;
         text-align: center;
         white-space: nowrap;
+    }
+
+    .details__ruler,
+    .details__labels {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        margin: 0 auto;
+        max-width: 16.25rem;
+    }
+
+    .details__ruler {
+        align-items: stretch;
+        height: 0.5rem;
+        margin-bottom: 1rem;
+
+        &:before {
+            background-color: color('white');
+            content: '';
+            display: block;
+            height: 0.125rem;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+    .details__marker {
+        background-color: color('white');
+        min-width: 0.0625rem;
+        width: 0.0625rem;
+    }
+
+    .details__range,
+    .details__icon {
+        height: 0.625rem;
+        width: 5.625rem;
+    }
+
+    .details__range {
+        position: absolute;
+        top: 50%;
+
+        &.details__range--0 {
+            left: 0;
+            transform: translate(0, -50%);
+        }
+
+        &.details__range--1 {
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &.details__range--2 {
+            left: 100%;
+            transform: translate(-100%, -50%);
+        }
+    }
+
+    .details__labels {
+        align-items: center;
+        margin-bottom: 2.5rem;
+    }
+
+    .details__label {
+        @include headline;
+
+        color: color('grey');
+        display: block;
+        font-size: 0.75rem;
+        font-weight: 400;
+        text-align: center;
+        text-transform: uppercase;
+        white-space: nowrap;
+
+        &:first-child {
+            text-align: left;
+        }
+
+        &:last-child {
+            text-align: right;
+        }
+
+        &.details__label--active {
+            color: color('nero');
+            font-weight: 700;
+        }
     }
 
     .details__description {
         @include headline;
 
         font-size: 1.125rem;
-        line-height: 1.5rem;
+        font-weight: 400;
         text-align: center;
     }
 }
 
 @include breakpoint('laptop') {
     .details {
-        padding: 5rem 0;
+        padding: 4.375rem 0;
 
         &:before {
-            bottom: 50%;
+            height: 6.25rem;
         }
 
         .details__container {
             padding: 0 6.25rem;
         }
 
+        .details__cards {
+            margin: -0.75rem;
+        }
+
         .details__card {
-            width: calc(33.33333% - 1.25rem);
+            width: calc(33.33333% - 1.5rem);
         }
     }
 }

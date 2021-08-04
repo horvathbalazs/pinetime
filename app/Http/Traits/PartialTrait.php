@@ -4,6 +4,9 @@ namespace App\Http\Traits;
 
 trait PartialTrait
 {
+    private $collection = [
+    ];
+
     private $cookies = [
         'message' => 'We use cookies to improve this website and customize ' .
                      'ads.',
@@ -14,28 +17,61 @@ trait PartialTrait
             [
                 'description' => 'Made from 2-Layer fleece to keep you warm ' .
                                  'in the on the slopes and the streets',
-                'range'       => [
-                    'maximum' => 7,
-                    'minimum' => 4,
+                'labels'      => [
+                    [
+                        'active' => true,
+                        'name'   => 'Light',
+                    ],
+                    [
+                        'active' => false,
+                        'name'   => 'Mid',
+                    ],
+                    [
+                        'active' => false,
+                        'name'   => 'Heavy',
+                    ],
                 ],
+                'range'       => 0,
                 'title'       => 'Warmth',
             ],
             [
                 'description' => 'Made from 2-Layer fleece to keep you warm ' .
                                  'in the on the slopes and the streets',
-                'range'       => [
-                    'maximum' => 9,
-                    'minimum' => 6,
+                'labels'      => [
+                    [
+                        'active' => false,
+                        'name'   => 'None',
+                    ],
+                    [
+                        'active' => true,
+                        'name'   => 'Medium',
+                    ],
+                    [
+                        'active' => false,
+                        'name'   => 'High',
+                    ],
                 ],
+                'range'       => 1,
                 'title'       => 'Waterproofing',
             ],
             [
                 'description' => 'Longer than a regular crewneck to protect ' .
                                  'your back when riding.',
-                'range'       => [
-                    'maximum' => 4,
-                    'minimum' => 1,
+                'labels'      => [
+                    [
+                        'active' => false,
+                        'name'   => 'Slim',
+                    ],
+                    [
+                        'active' => false,
+                        'name'   => 'Regular',
+                    ],
+                    [
+                        'active' => true,
+                        'name'   => 'Loose',
+                    ],
                 ],
+                'range'       => 2,
                 'title'       => 'Loose Fit',
             ],
         ],

@@ -14,6 +14,14 @@ class PartialController extends Controller
         return view('partials', ['template' => 'accordion']);
     }
 
+    public function collection()
+    {
+        return view('partials', [
+            'collection' => $this->collection,
+            'template'   => 'collection',
+        ]);
+    }
+
     public function cookies()
     {
         return view('partials', [

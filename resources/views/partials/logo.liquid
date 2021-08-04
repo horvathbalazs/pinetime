@@ -1,5 +1,24 @@
 {% case modifier %}
+    {% when 'header' %}
+    <h2 class="logo logo--header">
+        <a class="logo__link"
+           href="{{ logo.url }}"
+           target="_self"
+           title="{{ logo.title }}">
+            <svg class="logo__icon">
+                <use href="#symbol-pinetime"/>
+            </svg>
+        </a>
+    </h2>
     {% when 'footer' %}
-    <svg>
-    </svg>
+    <h2 class="logo logo--footer">
+        <a class="logo__link"
+           href="{{ logo.url }}"
+           target="_self"
+           title="{{ logo.title }}">
+            <svg class="logo__icon">
+                <use href="#symbol-pinetime"/>
+            </svg>
+        </a>
+    </h2>
 {% endcase %}
