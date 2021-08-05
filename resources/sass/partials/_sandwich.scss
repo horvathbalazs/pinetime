@@ -1,0 +1,16 @@
+.sandwich {
+    .sandwich__icon {
+        height: 3.75rem;
+        width: 3.75rem;
+    }
+
+    .sandwich__path {
+        fill: none;
+        stroke: color('nero');
+        stroke-width: 1;
+
+        &.sandwich__path--hidden {
+            visibility: hidden;
+        }
+    }
+}

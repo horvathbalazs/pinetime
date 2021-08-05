@@ -4,6 +4,91 @@
 
         font-size: 3.125rem;
         font-weight: 700;
+        margin-bottom: 0.625rem;
+    }
+
+    .hero__price {
+        @include headline;
+
+        display: block;
+        font-size: 1.5rem;
+        margin-bottom: 1.25rem;
+        white-space: nowrap;
+    }
+
+    .hero__cart {
+        box-shadow: inset 0 0 0 0.0625rem color('nero');
+        padding: 0.0625rem 3.875rem 0.0625rem 1.3125rem;
+        margin-bottom: 1.25rem;
+        width: 100%;
+
+        &:after {
+            bottom: 0;
+            box-shadow: inset 0 0 0 0.0625rem color('nero');
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 2.625rem;
+        }
+
+        .hero__text {
+            @include headline;
+
+            align-items: center;
+            display: flex;
+            flex-wrap: nowrap;
+            height: 2.5rem;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-align: center;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .hero__icon {
+            height: 1.25rem;
+            position: absolute;
+            right: 1.3125rem;
+            top: 1.3125rem;
+            transform: translate(50%, -50%);
+            width: 1.25em;
+        }
+    }
+
+    .hero__sustainable {
+        align-items: center;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+
+        .hero__text {
+            @include headline;
+
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 0.625rem;
+            text-align: right;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+    }
+
+    .hero__details {
+        @include headline;
+
+        font-size: 0.75rem;
+        text-align: right;
+    }
+
+    /*
+    .hero__title {
+        @include nikolai;
+
+        font-size: 3.125rem;
+        font-weight: 700;
         margin-bottom: 1.25rem;
     }
 
@@ -59,4 +144,5 @@
             width: 1.75rem;
         }
     }
+    */
 }

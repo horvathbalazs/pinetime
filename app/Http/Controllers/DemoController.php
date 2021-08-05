@@ -12,9 +12,9 @@ class DemoController extends Controller
     public function index()
     {
         return view('demo', [
-            'details'    => $this->details,
-            'footer'     => $this->footer,
-            'newsletter' => $this->newsletter,
+            'details' => $this->details,
+            'header'  => $this->header,
+            'footer'  => $this->footer,
         ]);
     }
 }

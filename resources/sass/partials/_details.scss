@@ -13,9 +13,7 @@
     }
 
     .details__container {
-        margin: 0 auto;
-        max-width: 90rem;
-        padding: 0 1.5rem;
+        padding: 0 5.7971vw;
     }
 
     .details__cards {
@@ -23,12 +21,12 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        margin: -0.5rem;
+        margin: -0.5rem -4.83092vw;
     }
 
     .details__card {
         background-color: color('gainsboro');
-        margin: 0.5rem;
+        margin: 0.5rem 4.83092vw;
         padding: 3.75rem 2.5rem 3.125rem;
         width: 100%;
     }
@@ -150,15 +148,17 @@
         }
 
         .details__container {
-            padding: 0 6.25rem;
+            padding: 0 6.944444444444444vw;
         }
 
         .details__cards {
-            margin: -0.75rem;
+            margin: -0.75rem -1.666666666666667vw;
         }
 
         .details__card {
-            width: calc(33.33333% - 1.5rem);
+            margin: 0.75rem 1.666666666666667vw;
+            width: calc(33.333333333333333% - 3.333333333333333vw);
+            // width: 27.5vw;
         }
     }
 }

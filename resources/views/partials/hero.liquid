@@ -2,15 +2,37 @@
     <div class="hero__container">
         <div class="hero__row">
             <div class="hero__column">
+                {% comment %}
                 {%
                     include 'partials.slider' with
                     modifier: 'hero',
                     slider: hero.slider
                 %}
+                {% endcomment %}
             </div>
             <div class="hero__column">
                 <h1 class="hero__title">{{ hero.title }}</h1>
-                <span class="hero__price">{{ hero.price.currency }} <strong>{{ hero.price.amount }}</strong></span>
+                <div>
+                    <span class="hero__price">{{ hero.price.currency }} <strong>{{ hero.price.amount }}</strong></span>
+                    <button class="hero__cart"
+                            title="{{ hero.cart }}"
+                            type="button">
+                        <span class="hero__text">{{ hero.cart }}</span>
+                        <svg class="hero__icon">
+                            <use href="#symbol-plus"/>
+                        </svg>
+                    </button>
+                    {% if hero.sustainable.active %}
+                    <div class="hero__sustainable">
+                        <svg class="hero__icon">
+                            <use href="#symbol"/>
+                        </svg>
+                        <strong class="hero__text">{{ hero.sustainable.title }}</strong>
+                    </div>
+                    {% endif %}
+                    <p class="hero__details">{{ hero.details | raw }}</p>
+                </div>
+                {% comment %}
                 <a class="hero__"
                    href=""
                    title=""
@@ -34,6 +56,7 @@
                 </div>
                 {% endif %}
                 <button></button>
+                {% endcomment %}
             </div>
         </div>
     </div>

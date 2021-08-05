@@ -121,9 +121,12 @@ trait PartialTrait
         ],
     ];
 
+    private $header = [
+    ];
+
     private $hero = [
-        'cart'   => 'Add to Cart',
-        'colors' => [
+        'cart'        => 'Add to Cart',
+        'colors'      => [
             [
                 'active' => false,
                 'name'   => 'Yellow',
@@ -137,11 +140,14 @@ trait PartialTrait
                 'name'   => 'White',
             ],
         ],
-        'price'  => [
+        'details'     => '️Free shipping above 130 EUR<br>' .
+                     'Free returns for 15 days<br>' .
+                     'Delivery in 3-5 business days',
+        'price'       => [
             'amount'   => 139,
             'currency' => '€',
         ],
-        'sizes'  => [
+        'sizes'       => [
             [
                 'abbreviation' => 'XS',
                 'active'       => false,
@@ -173,12 +179,12 @@ trait PartialTrait
                 'name'         => 'Extra extra large',
             ],
         ],
-        'slider' => [
+        'slider'      => [
             [
                 'thumbnail' => [
                     'height' => 640,
                     'title'  => '',
-                    'url'    => '//lorempixel.com/640/640?t=696004399',
+                    'url'    => '//localhost/png/placeholder-1.png',
                     'width'  => 640,
                 ],
             ],
@@ -186,7 +192,7 @@ trait PartialTrait
                 'thumbnail' => [
                     'height' => 640,
                     'title'  => '',
-                    'url'    => '//lorempixel.com/640/640?t=624870811',
+                    'url'    => '//localhost/png/placeholder-4.png',
                     'width'  => 640,
                 ],
             ],
@@ -194,7 +200,7 @@ trait PartialTrait
                 'thumbnail' => [
                     'height' => 640,
                     'title'  => '',
-                    'url'    => '//lorempixel.com/640/640?t=468172304',
+                    'url'    => '//localhost/png/placeholder-2.png',
                     'width'  => 640,
                 ],
             ],
@@ -202,7 +208,7 @@ trait PartialTrait
                 'thumbnail' => [
                     'height' => 640,
                     'title'  => '',
-                    'url'    => '//lorempixel.com/640/640?t=782938967',
+                    'url'    => '//localhost/png/placeholder-5.png',
                     'width'  => 640,
                 ],
             ],
@@ -210,12 +216,16 @@ trait PartialTrait
                 'thumbnail' => [
                     'height' => 640,
                     'title'  => '',
-                    'url'    => '//lorempixel.com/640/640?t=626250645',
+                    'url'    => '//localhost/png/placeholder-3.png',
                     'width'  => 640,
                 ],
             ],
         ],
-        'title'  => 'HiRise Men Hoodie',
+        'sustainable' => [
+            'active' => true,
+            'title'  => 'Sustainable materials',
+        ],
+        'title'       => 'HiRise Men Hoodie',
     ];
 
     private $instagram = [
