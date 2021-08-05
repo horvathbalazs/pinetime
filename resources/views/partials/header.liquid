@@ -3,25 +3,10 @@
     <header class="header header--primary"
             data-header-primary>{{ header.test }}
         <div class="header__container">
-            <button class="sandwich"
-                    title=""
-                    type="button"
-                    data-sandwich>
-                <svg class="sandwich__icon">
-                    <path class="sandwich__path"
-                          d="m8,25.5h44m-44,9h44z"
-                          data-sandwich-path="main"/>
-                    <path class="sandwich__path sandwich__path--hidden"
-                          d="m8,25.5h44m-44,9h44z"
-                          data-sandwich-path="default"/>
-                    <path class="sandwich__path sandwich__path--hidden"
-                          d="m12,25.5h44m-52,9h44z"
-                          data-sandwich-path="hover"/>
-                    <path class="sandwich__path sandwich__path--hidden"
-                          d="m14.44365,14.44365l31.1127,31.1127m-31.1127,0l31.1127-31.1127z"
-                          data-sandwich-path="active"/>
-                </svg>
-            </button>
+            {%
+                include 'partials.sandwich' with
+                sandwich: header.sandwich
+            %}
             <div>
                 {%
                     include 'partials.logo' with
@@ -29,6 +14,13 @@
                     logo: header.logo
                 %}
             </div>
+            <button class="header__cart"
+                    title=""
+                    type="button">
+                <svg class="header__icon">
+                    <use href="#symbol-cart"/>
+                </svg>
+            </button>
         </div>
     </header>
     {% when 'secondary' %}
