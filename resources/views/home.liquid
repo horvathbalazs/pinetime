@@ -1,0 +1,15 @@
+{% extends 'layouts.app' %}
+
+{% block main %}
+<nav>
+    <ul>
+        {% for link in home.navigation %}
+        <li>
+            <a href="{{ link.url }}"
+               target="{{ link.target }}"
+               title="{{ link.title }}"><strong>{{ link.title }}:</strong> {{ link.url }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</nav>
+{% endblock %}

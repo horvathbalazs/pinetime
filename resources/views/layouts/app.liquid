@@ -3,10 +3,10 @@
     <head>
         <meta charset="utf-8">
         <meta content="initial-scale=1,width=device-width" name="viewport">
-        <title>Pinetime Clothing</title>
-        <link as="script" href="//localhost/js/app.js" rel="preload">
-        <link as="style" href="//localhost/css/app.css" rel="preload">
-        <link href="//localhost/css/app.css" rel="stylesheet">
+        <title>{{ global.app.name }}</title>
+        <link as="script" href="{{ global.app.url }}/js/app.js" rel="preload">
+        <link as="style" href="{{ global.app.url }}/css/app.css" rel="preload">
+        <link href="{{ global.app.url }}/css/app.css" rel="stylesheet">
     </head>
     <body class="body">
         {% include 'partials.symbols' %}
@@ -18,7 +18,7 @@
         </main>
         {% block footer %}
         {% endblock %}
-        <script src="//localhost/js/app.js">
+        <script src="{{ global.app.url }}/js/app.js">
         </script>
     </body>
 </html>
