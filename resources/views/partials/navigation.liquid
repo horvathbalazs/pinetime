@@ -1,4 +1,27 @@
 {% case modifier %}
+    {% when 'header-primary' %}
+    <div class="navigation navigation--header navigation--primary">
+        <nav>
+            <ul>
+                {% for link in navigation.primary %}
+                <li>
+                    <a></a>
+                </li>
+                {% endfor %}
+            </ul>
+        </nav>
+        <nav>
+            {% for list in navigation.secondary %}
+            <ul>
+                {% for link in list %}
+                <li>
+                    <a></a>
+                </li>
+                {% endfor %}
+            </ul>
+            {% endfor %}
+        </nav>
+    </div>
     {% when 'footer' %}
     <nav class="navigation navigation--footer">
         {% for list in navigation %}

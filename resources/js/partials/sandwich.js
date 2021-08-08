@@ -9,15 +9,15 @@ class Sandwich {
         this.state      = ['default']
         this.variables  = {}
 
-        this.references['sandwich'] = document.querySelector('[data-sandwich]')
+        this.references.sandwich = document.querySelector('[data-sandwich]')
         this.references = Array.from(document.querySelectorAll('[data-sandwich-path]'))
             .reduce((accumulator, element) => {
-                accumulator[element.getAttribute('data-sandwich-path')] = element
+                accumulator[element.dataset.sandwichPath] = element
                 return accumulator
             },
             this.references)
 
-        this.variables['navigation'] = variables.navigation
+        this.variables.navigation = variables.navigation
 
         this.references.sandwich.addEventListener('click', () => this.click())
         this.references.sandwich.addEventListener('mouseover', () => this.hover())

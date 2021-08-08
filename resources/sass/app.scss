@@ -17,6 +17,7 @@ $colors: (
 
 $variables: (
     'navigation': 0.25s,
+    'ripple': 1s,
     'transition': 0.25s,
 );
 
@@ -58,6 +59,7 @@ img::selection {
 @include main;
 
 @import
+    'mixins/ripple',
     'partials/accordion',
     'partials/cookies',
     'partials/details',
