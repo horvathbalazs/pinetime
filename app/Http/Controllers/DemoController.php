@@ -13,10 +13,12 @@ class DemoController extends Controller
     public function index()
     {
         return view('demo', [
-            'details' => static::details(),
-            'footer'  => static::footer(),
-            'global'  => static::global(),
-            'header'  => static::header(),
+            'details'    => static::details(),
+            'footer'     => static::footer(),
+            'global'     => static::global (),
+            'header'     => static::header(),
+            'instagram'  => static::instagram(),
+            'newsletter' => static::newsletter(),
         ]);
     }
 }
