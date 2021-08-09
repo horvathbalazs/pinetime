@@ -2,13 +2,11 @@
     <div class="hero__container">
         <div class="hero__row">
             <div class="hero__column">
-                {% comment %}
                 {%
                     include 'partials.slider' with
                     modifier: 'hero',
                     slider: hero.slider
                 %}
-                {% endcomment %}
             </div>
             <div class="hero__column">
                 <h1 class="hero__title">{{ hero.title }}</h1>

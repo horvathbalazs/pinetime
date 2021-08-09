@@ -1,9 +1,32 @@
-<section class="">
-    <div class="">
-        <figure class="">
-            <img class="">
-        </figure>
-    </div>
-    <div class="">
+{% assign link      = collection.link %}
+{% assign thumbnail = collection.thumbnail %}
+<section class="collection">
+    <div class="collection__container">
+        <div class="collection__">
+            <div class="collection__thumbnail">
+                <figure class="collection__figure">
+                    <img class="collection__image"
+                         alt="{{ thumbnail.title | escape }}"
+                         height="{{ thumbnail.height | escape }}"
+                         src="{{ thumbnail.url }}"
+                         title="{{ thumbnail.title | escape }}"
+                         width="{{ thumbnail.width | escape }}">
+                </figure>
+            </div>
+        <div>
+        <div class="collection__">
+            <article class="collection__card">
+                <span class=""></span>
+                <h2 class="collection__title">{{ collection.title }}</h2>
+                <p class="collection__description">{{ collection.description }}</p>
+                <a class="collection__link"
+                   href="{{ link.url }}"
+                   target="{{ link.target | escape }}"
+                   title="{{ link.title | escape }}"
+                   data-ripple>
+                    <span class="link__text">{{ link.title }}</span>
+                </a>
+            </article>
+        </div>
     </div>
 </section>

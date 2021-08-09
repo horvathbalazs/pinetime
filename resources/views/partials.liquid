@@ -2,6 +2,8 @@
 
 {% block main %}
 {% case template %}
+    {% when 'collection' %}
+    {% include 'partials.collection' %}
     {% when 'cookies' %}
     {% include 'partials.cookies' %}
     {% when 'details' %}

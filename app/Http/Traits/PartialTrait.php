@@ -6,14 +6,31 @@ trait PartialTrait
 {
     private static function collection(): array
     {
-        return [];
+        return [
+            'description' => 'Kodma are spirits in Japanese folklore what ' .
+                             'live inside the tree. There can be one in each ' .
+                             'tree. They say the form of these spirits can’t ' .
+                             'be seen but one can feel the existance',
+            'link'        => [
+                'target' => '_self',
+                'title'  => 'Explore Collection',
+                'url'    => 'https://example.com/',
+            ],
+            'thumbnail'   => [
+                'height' => 1080,
+                'title'  => 'Kodama Collection',
+                'url'    => url('png/placeholder-1.png'),
+                'width'  => 1920,
+            ],
+            'title'       => 'Kodama Collection',
+        ];
     }
 
     private static function cookies(): array
     {
         return [
-            'message' => 'We use cookies to improve this website and customize ' .
-                         'ads.',
+            'message' => 'We use cookies to improve this website and ' .
+                         'customize ads.',
         ];
     }
 
@@ -22,8 +39,9 @@ trait PartialTrait
         return [
             'cards' => [
                 [
-                    'description' => 'Made from 2-Layer fleece to keep you warm ' .
-                                     'in the on the slopes and the streets',
+                    'description' => 'Made from 2-Layer fleece to keep you ' .
+                                     'warm in the on the slopes and the ' .
+                                     'streets',
                     'labels'      => [
                         [
                             'active' => true,
@@ -42,8 +60,9 @@ trait PartialTrait
                     'title'       => 'Warmth',
                 ],
                 [
-                    'description' => 'Made from 2-Layer fleece to keep you warm ' .
-                                     'in the on the slopes and the streets',
+                    'description' => 'Made from 2-Layer fleece to keep you ' .
+                                     'warm in the on the slopes and the ' .
+                                     'streets',
                     'labels'      => [
                         [
                             'active' => false,
@@ -62,8 +81,8 @@ trait PartialTrait
                     'title'       => 'Waterproofing',
                 ],
                 [
-                    'description' => 'Longer than a regular crewneck to protect ' .
-                                     'your back when riding.',
+                    'description' => 'Longer than a regular crewneck to ' .
+                                     'protect your back when riding.',
                     'labels'      => [
                         [
                             'active' => false,
@@ -297,7 +316,8 @@ trait PartialTrait
     {
         return [
             'description' => '<strong>Get 15% off</strong> your first order ' .
-                             'and don\'t miss a new campaign or product release',
+                             'and don\'t miss a new campaign or product ' .
+                             'release',
             'email'       => [
                 'placeholder' => 'Your e-mail address',
                 'title'       => 'Your e-mail address',

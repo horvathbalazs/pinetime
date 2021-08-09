@@ -22,6 +22,16 @@ class HomeController extends Controller
                     ],
                     [
                         'target' => '_self',
+                        'title'  => 'Partials/Collection',
+                        'url'    => url('partials/collection'),
+                    ],
+                    [
+                        'target' => '_self',
+                        'title'  => 'Partials/Cookies',
+                        'url'    => url('partials/cookies'),
+                    ],
+                    [
+                        'target' => '_self',
                         'title'  => 'Partials/Details',
                         'url'    => url('partials/details'),
                     ],
@@ -29,6 +39,11 @@ class HomeController extends Controller
                         'target' => '_self',
                         'title'  => 'Partials/Footer',
                         'url'    => url('partials/footer'),
+                    ],
+                    [
+                        'target' => '_self',
+                        'title'  => 'Partials/Instagram',
+                        'url'    => url('partials/instagram'),
                     ],
                 ],
             ],

@@ -1,7 +1,7 @@
 {% extends 'layouts.app' %}
 
 {% block header %}
-{% include 'partials.header' with header %}
+{% include 'partials.cookies' with cookies %}
 {%
     include 'partials.header' with
     modifier: 'primary',
@@ -10,7 +10,9 @@
 {% endblock %}
 
 {% block main %}
+{% include 'partials.hero' with hero %}
 {% include 'partials.details' with details %}
+{% include 'partials.collection' with collection %}
 {% include 'partials.instagram' with instagram %}
 {% endblock %}
 
