@@ -1,4 +1,3 @@
-{% assign thumbnail = recommendation.thumbnail %}
 <section class="recommendation">
     <div class="recommendation__container">
         <blockquote class="">
@@ -16,10 +15,10 @@
         <div class="recommendation__thumbnail">
             <figure class="recommendation__figure">
                 <img class="recommendation__image"
-                     height="{{ thumbnail.height | escape }}"
-                     src="{{ thumbnail.url }}"
+                     height="{{ recommendation.thumbnail.height | escape }}"
+                     src="{{ recommendation.thumbnail.url }}"
                      title=""
-                     width="{{ thumbnail.width | escape }}">
+                     width="{{ recommendation.thumbnail.width | escape }}">
             </figure>
         </div>
     </div>

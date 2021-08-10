@@ -31,7 +31,7 @@
         width: 50%;
         z-index: -1;
 
-        &:before {
+        &::before {
             content: '';
             display: block;
             padding-bottom: 100%;

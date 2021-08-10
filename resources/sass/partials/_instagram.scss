@@ -39,7 +39,7 @@
             transform: scale(1.0625);
         }
 
-        &:before {
+        &::before {
             content: '';
             display: block;
             padding-bottom: 100%;

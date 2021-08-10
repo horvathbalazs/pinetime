@@ -58,7 +58,7 @@
         blockquote {
             quotes: none;
 
-            &:before, &:after {
+            &::before, &::after {
                 content: none;
             }
         }

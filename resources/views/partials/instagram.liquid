@@ -3,23 +3,21 @@
         <h2 class="instagram__title">{{ instagram.title | raw }}</h2>
         <div class="instagram__cards">
             {% for card in instagram.cards %}
-            {% assign thumbnail = card.thumbnail %}
-            {% assign username  = card.username %}
             <article class="instagram__card">
                 <div class="instagram__thumbnail">
                     <figure class="instagram__figure">
                         <img class="instagram__image"
-                             alt="{{ thumbnail.title | escape }}"
-                             height="{{ thumbnail.height | escape }}"
-                             src="{{ thumbnail.url }}"
-                             title="{{ thumbnail.title | escape }}"
-                             width="{{ thumbnail.width | escape }}">
+                             alt="{{ card.thumbnail.title | escape }}"
+                             height="{{ card.thumbnail.height | escape }}"
+                             src="{{ card.thumbnail.url }}"
+                             title="{{ card.thumbnail.title | escape }}"
+                             width="{{ card.thumbnail.width | escape }}">
                     </figure>
                 </div>
                 <h3 class="instagram__subtitle">
-                    <a href="{{ '//instagram.com/:username' | replace: ':username', username }}"
+                    <a href="{{ '//instagram.com/:card.username' | replace: ':card.username', card.username }}"
                        target="_blank"
-                       title="{{ username | escape }}">{{ '@:username' | replace: ':username', username }}</a>
+                       title="{{ card.username | escape }}">{{ '@:card.username' | replace: ':card.username', card.username }}</a>
                 </h3>
             </article>
             {% endfor %}

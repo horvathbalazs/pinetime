@@ -19,7 +19,7 @@
             overflow: hidden;
             transform: translate(0, 0);
 
-            &:before {
+            &::before {
                 content: '';
                 display: block;
                 padding-bottom: 100%;

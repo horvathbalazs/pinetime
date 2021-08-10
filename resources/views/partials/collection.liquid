@@ -1,32 +1,26 @@
-{% assign link      = collection.link %}
-{% assign thumbnail = collection.thumbnail %}
 <section class="collection">
     <div class="collection__container">
-        <div class="collection__">
-            <div class="collection__thumbnail">
-                <figure class="collection__figure">
-                    <img class="collection__image"
-                         alt="{{ thumbnail.title | escape }}"
-                         height="{{ thumbnail.height | escape }}"
-                         src="{{ thumbnail.url }}"
-                         title="{{ thumbnail.title | escape }}"
-                         width="{{ thumbnail.width | escape }}">
-                </figure>
-            </div>
-        <div>
-        <div class="collection__">
-            <article class="collection__card">
-                <span class=""></span>
-                <h2 class="collection__title">{{ collection.title }}</h2>
-                <p class="collection__description">{{ collection.description }}</p>
-                <a class="collection__link"
-                   href="{{ link.url }}"
-                   target="{{ link.target | escape }}"
-                   title="{{ link.title | escape }}"
-                   data-ripple>
-                    <span class="link__text">{{ link.title }}</span>
-                </a>
-            </article>
+        <div class="collection__thumbnail">
+            <figure class="collection__figure">
+                <img class="collection__image"
+                     alt="{{ collection.thumbnail.title | escape }}"
+                     height="{{ collection.thumbnail.height | escape }}"
+                     src="{{ collection.thumbnail.url }}"
+                     title="{{ collection.thumbnail.title | escape }}"
+                     width="{{ collection.thumbnail.width | escape }}">
+            </figure>
         </div>
+        <article class="collection__card">
+            <span class=""></span>
+            <h2 class="collection__title">{{ collection.title }}</h2>
+            <p class="collection__description">{{ collection.description }}</p>
+            <a class="collection__link"
+               href="{{ collection.link.url }}"
+               target="{{ collection.link.target | escape }}"
+               title="{{ collection.link.title | escape }}"
+               data-ripple>
+                <span class="collection__text">{{ collection.link.title }}</span>
+            </a>
+        </article>
     </div>
 </section>

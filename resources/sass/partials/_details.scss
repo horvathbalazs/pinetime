@@ -1,7 +1,7 @@
 .details {
     padding: 2.5rem 0;
 
-    &:before {
+    &::before {
         background: color('smoke');
         content: '';
         display: block;
@@ -19,6 +19,7 @@
     .details__cards {
         align-items: stretch;
         display: flex;
+        flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
         margin: -0.5rem -4.830917874396135vw;
@@ -44,6 +45,7 @@
     .details__ruler,
     .details__labels {
         display: flex;
+        flex-direction: row;
         flex-wrap: nowrap;
         justify-content: space-between;
         margin: 0 auto;
@@ -55,7 +57,7 @@
         height: 0.5rem;
         margin-bottom: 1rem;
 
-        &:before {
+        &::before {
             background-color: color('white');
             content: '';
             display: block;
@@ -143,7 +145,7 @@
     .details {
         padding: 4.375rem 0;
 
-        &:before {
+        &::before {
             height: 6.25rem;
         }
 
