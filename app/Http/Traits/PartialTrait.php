@@ -11,6 +11,7 @@ trait PartialTrait
                              'live inside the tree. There can be one in each ' .
                              'tree. They say the form of these spirits can’t ' .
                              'be seen but one can feel the existance',
+            'label'       => 'This item is part of the',
             'link'        => [
                 'target' => '_self',
                 'title'  => 'Explore Collection',

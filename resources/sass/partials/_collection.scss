@@ -1,6 +1,4 @@
 .collection {
-    background-color: color('gorse');
-
     .collection__container {
         align-items: stretch;
         display: flex;
@@ -13,6 +11,7 @@
         overflow: hidden;
         padding-bottom: 66.666666666666667%;
         transform: translate(0, 0);
+        z-index: 1;
     }
 
     .collection__figure {
@@ -30,10 +29,31 @@
         width: 100%;
     }
 
+    .collection__column {
+        background-color: color('gorse');
+        align-items: stretch;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+
     .collection__card {
         background-color: color('nero');
         margin: -1.25rem 0 5.625rem 5.797101449275362vw;
         padding: 1.875rem 5.797101449275362vw 2.5rem;
+        z-index: 2;
+    }
+
+    .collection__label {
+        @include headline;
+
+        color: color('white');
+        display: block;
+        font-size: 0.625rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        white-space: nowrap;
     }
 
     .collection__title {
@@ -82,21 +102,39 @@
 @include breakpoint('laptop') {
     .collection {
         .collection__container {
-            align-items: center;
             flex-direction: row;
-            justify-content: center;
+            justify-content: space-between;
         }
 
         .collection__thumbnail {
-            margin:  1.25rem -30.625vw 0 0;
-            min-width: 83.333333333333333vw;
+            margin:  1.25rem -20.138888888888889vw 0 0;
+            min-width: 86.805555555555556vw;
             padding-bottom: 56.25%;
-            width: 83.333333333333333vw;
+            width: 86.805555555555556vw;
+        }
+
+        .collection__column {
+            min-width: 33.333333333333333vw;
+            padding-right: 3.472222222222222vw;
+            width: 33.333333333333333vw;
         }
 
         .collection__card {
-            min-width: 30.555555555555556vw;
-            width: 30.555555555555556vw;
+            margin: 0;
+            padding: 2.5rem 2.777777777777778vw;
+        }
+
+        .collection__label {
+            margin-bottom: 0.5rem;
+        }
+
+        .collection__title {
+            font-size: 2.8125rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .collection__description {
+            margin-bottom: 2rem;
         }
     }
 }
