@@ -1,8 +1,8 @@
 $colors: map-merge((
-    'black': #000000,
-    'default': null,
+    'black':       #000,
+    'default':     null,
     'transparent': transparent,
-    'white': #FFFFFF,
+    'white':       #FFF,
 ), $colors);
 
 @function color($name) {

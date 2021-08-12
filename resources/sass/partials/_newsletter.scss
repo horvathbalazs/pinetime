@@ -3,35 +3,37 @@
     padding: 3.125rem 0;
 
     .newsletter__container {
-        margin: 0 auto;
-        max-width: 90rem;
-        padding: 0 1.25rem;
-        width: 100%;
+        padding: 0 5.797101449275362vw;
     }
 
     .newsletter__row {
         align-items: center;
         display: flex;
         justify-content: center;
+        flex-direction: row;
         flex-wrap: wrap;
-        margin: -0.625rem;
+        margin: -1.5625rem -2.415458937198068vw;
     }
 
     .newsletter__column {
-        padding: 0.625rem;
-        width: 100%;
+        min-width: calc(100% - 4.830917874396135vw);
+        padding: 1.5625rem 2.415458937198068vw;
+        width: calc(100% - 4.830917874396135vw);
     }
 
     .newsletter__title {
-        font-size: 2.5rem;
+        @include nikolai;
+
+        font-size: 2.8125rem;
         font-weight: 700;
-        line-height: 2.375rem;
-        margin-bottom: 2.5rem;
+        margin-bottom: 1.25rem;
     }
 
     .newsletter__subtitle {
+        @include headline;
+
         font-size: 1.375rem;
-        line-height: 1.6875rem;
+        font-weight: 400;
     }
 
     .newsletter__field {

@@ -17,7 +17,7 @@ class Sandwich {
             },
             this.references)
 
-        this.variables.navigation = variables.navigation
+        this.variables.sandwich = variables.sandwich
 
         this.references.sandwich.addEventListener('click', () => this.click())
         this.references.sandwich.addEventListener('mouseover', () => this.hover())
@@ -53,7 +53,7 @@ class Sandwich {
             morph = 'hover'
         }
 
-        TweenMax.to(this.references.main, this.variables.navigation, {
+        TweenMax.to(this.references.main, this.variables.sandwich, {
             ease: Sine.easeInOut,
             morphSVG: { shape: this.references[morph].getAttribute('d') }
         })

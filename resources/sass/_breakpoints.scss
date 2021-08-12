@@ -1,7 +1,7 @@
 $breakpoints: map-merge((
     'desktop': 90em,
-    'laptop': 64em,
-    'tablet': 40em,
+    'laptop':  64em,
+    'tablet':  40em,
 ), $breakpoints);
 
 @mixin breakpoint($device) {

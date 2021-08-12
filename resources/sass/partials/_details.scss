@@ -22,14 +22,15 @@
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-        margin: -0.5rem -4.830917874396135vw;
+        margin: -0.5rem -2.415458937198068vw;
     }
 
     .details__card {
         background-color: color('gainsboro');
-        margin: 0.5rem 4.830917874396135vw;
+        margin: 0.5rem 2.415458937198068vw;
+        min-width: calc(100% - 4.830917874396135vw);
         padding: 3.75rem 2.5rem 3.125rem;
-        width: 100%;
+        width: calc(100% - 4.830917874396135vw);
     }
 
     .details__title {
@@ -159,6 +160,7 @@
 
         .details__card {
             margin: 0.75rem 1.666666666666667vw;
+            min-width: calc(33.333333333333333% - 3.333333333333333vw);
             width: calc(33.333333333333333% - 3.333333333333333vw);
         }
     }

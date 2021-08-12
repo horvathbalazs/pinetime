@@ -16,8 +16,9 @@ $colors: (
 @import 'colors';
 
 $variables: (
-    'navigation': 0.25s,
-    'ripple': 1s,
+    'navigation': 0.5s,
+    'ripple':     1s,
+    'sandwich':   0.25s,
     'transition': 0.25s,
 );
 

@@ -11,8 +11,6 @@ export default class Ripple {
         this.elements = Array.from(document.querySelectorAll(selector))
         this.variables.ripple = variables.ripple
 
-        console.log(this.variables)
-
         this.elements.forEach(element => {
             const position = element.dataset.ripple
 
@@ -40,7 +38,7 @@ export default class Ripple {
 
                 TweenMax.to(ripple, this.variables.ripple, {
                     ease: Sine.easeInOut,
-                    onComplete: () => element.removeChild(ripple),
+                    onComplete: () => ripple.remove(),
                     opacity: 0,
                     scale: 40
                 })
