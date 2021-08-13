@@ -1,6 +1,6 @@
 import gsap from 'gsap'
-import { CSSPlugin, ScrollToPlugin, Sine, TweenMax } from 'gsap/all'
-import MorphSVGPlugin from 'vendor/morph'
+import { CSSPlugin, ScrollToPlugin } from 'gsap/all'
+import MorphSVGPlugin from 'vendor/morphsvg'
 
 const plugins = [CSSPlugin, MorphSVGPlugin, ScrollToPlugin]
 

@@ -1,11 +1,11 @@
 <section class="newsletter">
     <div class="newsletter__container">
         <div class="newsletter__row">
-            <div class="newsletter__column">
+            <div class="newsletter__column newsletter__column--description">
                 <h2 class="newsletter__title">{{ newsletter.title }}</h2>
                 <p class="newsletter__description">{{ newsletter.description | raw }}</p>
             </div>
-            <div class="newsletter__column">
+            <div class="newsletter__column newsletter__column--form">
                 <form class="newsletter__form"
                       method="post">
                     <div class="newsletter__field"

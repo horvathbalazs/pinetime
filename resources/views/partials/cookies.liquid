@@ -3,8 +3,9 @@
         <p class="cookies__message">{{ cookies.message }}</p>
         <button class="cookies__close"
                 title="{{ cookies.close | escape }}"
-                type="button">
-            <span>{{ cookies.close }}</span>
+                type="button"
+                data-ripple>
+            <span class="cookies__text">{{ cookies.close }}</span>
             <svg class="cookies__icon">
                 <use href="#symbol-times"/>
             </svg>

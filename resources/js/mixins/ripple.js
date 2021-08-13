@@ -12,19 +12,21 @@ export default class Ripple {
         this.variables.ripple = variables.ripple
 
         this.elements.forEach(element => {
-            const position = element.dataset.ripple
-
             element.addEventListener('click', event => {
+                if (!element.classList.contains('ripple')) {
+                    element.classList.add('ripple')
+                }
+
                 const ripple = document.createElement('span')
 
+                ripple.className = 'ripple_effect'
                 Object.assign(ripple.style, {
                     backgroundColor: window.getComputedStyle(element).color,
                     left: Converter.pxtorem(event.clientX - element.getBoundingClientRect().left),
                     top: Converter.pxtorem(event.clientY - element.getBoundingClientRect().top)
                 })
-                ripple.className = 'ripple'
 
-                switch (position) {
+                switch (element.dataset.ripple) {
                     default:
                     case '':
                     case 'before':

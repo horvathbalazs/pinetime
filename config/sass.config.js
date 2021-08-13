@@ -1,8 +1,10 @@
-const path = require('path'),
-    MCEP   = require('mini-css-extract-plugin'),
-    WFSOE  = require('webpack-fix-style-only-entries')
+const path         = require('path'),
+      globImporter = require('node-sass-glob-importer'),
+      MCEP         = require('mini-css-extract-plugin'),
+      WFSOE        = require('webpack-fix-style-only-entries')
 
-const root = path.resolve(__dirname, '..')
+const root = path.resolve(__dirname, '..'),
+      sass = path.resolve(root, 'resources/sass')
 
 module.exports = {
     entry: path.resolve(root, 'resources/sass/app.scss'),
@@ -20,14 +22,22 @@ module.exports = {
                         }
                     },
                     {
+                        loader: 'sass-loader',
+                        options: {
+                            sassOptions: {
+                                includePaths: [sass],
+                                importer: globImporter()
+                            }
+                        }
+                    },
+                    {
                         loader: 'postcss-loader',
                         options: {
                             postcssOptions: {
                                 config: path.resolve(root, 'config')
                             }
                         }
-                    },
-                    'sass-loader',
+                    }
                 ]
             }
         ]
@@ -50,7 +60,7 @@ module.exports = {
         ],
         modules: [
             path.resolve(root, 'node_modules'),
-            path.resolve(root, 'resources/sass'),
+            sass,
         ]
     }
 }

@@ -1,7 +1,7 @@
 const path = require('path')
 
-const root  = path.resolve(__dirname, '..')
-    modules = path.resolve(root, 'node_modules')
+const root    = path.resolve(__dirname, '..'),
+      modules = path.resolve(root, 'node_modules')
 
 module.exports = {
     entry: path.resolve(root, 'resources/js/app.js'),

@@ -30,6 +30,7 @@ trait PartialTrait
     private static function cookies(): array
     {
         return [
+            'close'   => 'Close',
             'message' => 'We use cookies to improve this website and ' .
                          'customize ads.',
         ];
