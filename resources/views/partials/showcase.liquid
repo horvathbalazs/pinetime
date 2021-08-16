@@ -1,0 +1,21 @@
+<section class="showcase">
+    <div class="showcase__container">
+        <div class="showcase__row">
+            <div class="showcase__column">
+                <h2 class="showcase__title">{{ showcase.title }}</h2>
+                {%
+                    include 'partials.slider' with
+                    modifier: 'showcase',
+                    slider: showcase.slider
+                %}
+            </div>
+            <div class="showcase__column">
+                {%
+                    include 'partials.features' with
+                    modifier: 'showcase',
+                    features: showcase.features
+                %}
+            </div>
+        </div>
+    </div>
+</section>

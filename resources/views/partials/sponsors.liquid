@@ -1,0 +1,16 @@
+<div class="sponsors">
+    <ul class="sponsors__list">
+        {% for sponsor in sponsors %}
+        <li class="sponsors__item">
+            <div class="sponsors__thumbnail">
+                <figure class="sponsors__figure">
+                    <img class="sponsors__image"
+                         alt="{{ sponsor.thumbnail.title | escape }}"
+                         src="{{ sponsor.thumbnail.url }}"
+                         title="{{ sponsor.thumbnail.title | escape }}">
+                </figure>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>

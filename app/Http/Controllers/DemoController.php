@@ -13,15 +13,17 @@ class DemoController extends Controller
     public function index()
     {
         return view('demo', [
-            'collection' => static::collection(),
-            'cookies'    => static::cookies(),
-            'details'    => static::details(),
-            'footer'     => static::footer(),
-            'global'     => static::global (),
-            'header'     => static::header(),
-            'hero'       => static::hero(),
-            'instagram'  => static::instagram(),
-            'newsletter' => static::newsletter(),
+            'collection'     => static::collection(),
+            'cookies'        => static::cookies(),
+            'details'        => static::details(),
+            'footer'         => static::footer(),
+            'global'         => static::global(),
+            'header'         => static::header(),
+            'hero'           => static::hero(),
+            'instagram'      => static::instagram(),
+            'newsletter'     => static::newsletter(),
+            'recommendation' => static::recommendation(),
+            'showcase'       => static::showcase(),
         ]);
     }
 }

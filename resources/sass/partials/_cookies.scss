@@ -13,7 +13,7 @@
         flex-direction: row;
         flex-wrap: nowrap;
         justify-content: space-between;
-        padding: 0 5.797101449275362vw;
+        padding: 0 #{ ($container-phone) };
     }
 
     .cookies__message {
@@ -21,8 +21,9 @@
 
         color: color('white');
         font-size: 0.75rem;
-        font-weight: 400;
-        margin-right: 4.830917874396135vw;
+        font-weight: 500;
+        line-height: 1.2em;
+        margin-right: #{ ($gutter-phone) }
     }
 
     .cookies__close {
@@ -38,9 +39,10 @@
             flex-direction: row;
             flex-wrap: nowrap;
             font-size: 0.75rem;
-            font-weight: 400;
+            font-weight: 500;
             height: 2.5rem;
             justify-content: center;
+            line-height: 1.2em;
             text-align: center;
             text-transform: uppercase;
             white-space: nowrap;
@@ -61,11 +63,11 @@
 @include breakpoint('laptop') {
     .cookies {
         .cookies__container {
-            padding: 0 6.944444444444444vw;
+            padding: 0 #{ ($container-laptop) };
         }
 
         .cookies__message {
-            margin-right: 1.666666666666667vw;
+            margin-right: #{ ($gutter-laptop) };
         }
     }
 }

@@ -1,41 +1,42 @@
 .recommendation {
     background-color: color('smoke');
-    padding: 3.125rem 0;
+    padding: 6.25rem 0 4.0625rem;
 
     .recommendation__container {
-        margin: 0 auto;
-        max-width: 90rem;
-        padding: 0 1.25rem;
-        width: 100%;
+        padding: 0 #{ ($container-phone) };
     }
 
-    .recommendation__icon {
-        color: color('white');
-        height: 4rem;
-        margin-bottom: 0.3125rem;
-        width: 5.375rem;
+    .recommendation__row {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: -0.625rem #{ (-0.5 * $gutter-phone) };
     }
 
-    .recommendation__quote {
-        @include nikolai;
+    .recommendation__column {
+        &.recommendation__column--thumbnail {
+            margin: 0.625rem #{ (-1 * $gutter-phone) } 0.625rem #{ (0.5 * $gutter-phone) };
+            min-width: calc(#{ (2 * $column-phone) });
+            width: calc(#{ (2 * $column-phone) });
+        }
 
-        font-size: 3.125rem;
-        font-weight: 700;
+        &.recommendation__column--quote {
+            margin: 0.625rem #{ (0.5 * $gutter-phone) } 0.625rem 0;
+            min-width: calc(#{ (2 * $column-phone) + (4 * $gutter-phone) });
+            width: calc(#{ (2 * $column-phone) + (4 * $gutter-phone) });
+        }
+
+        &.recommendation__column--description {
+            margin: 0.625rem #{ (0.5 * $gutter-phone) };
+            min-width: calc(#{ (4 * $column-phone) + (3 * $gutter-phone) });
+            width: calc(#{ (4 * $column-phone) + (3 * $gutter-phone) });
+        }
     }
 
     .recommendation__thumbnail {
-        bottom: 3.125rem;
-        overflow: hidden;
-        position: absolute;
-        right: 0;
-        width: 50%;
-        z-index: -1;
-
-        &::before {
-            content: '';
-            display: block;
-            padding-bottom: 100%;
-        }
+        padding-bottom: 100%;
     }
 
     .recommendation__figure {
@@ -52,10 +53,85 @@
         object-position: 50% 50%;
         width: 100%;
     }
+
+    .recommendation__quote {
+        @include nikolai;
+
+        color: color('nero');
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: 1.05em;
+
+        &.recommendation__quote--laptop {
+            display: none;
+        }
+
+        &::before {
+            content: '“';
+        }
+
+        &::after {
+            content: '”';
+        }
+
+        &::before,
+        &::after {
+            display: inline;
+        }
+    }
+
+    .recommendation__description {
+        @include headline;
+
+        color: color('nero');
+        font-size: 1.125rem;
+        font-weight: 300;
+        line-height: 1.3em;
+    }
 }
 
 @include breakpoint('laptop') {
     .recommendation {
-        padding: 6.25rem 0 3.75rem;
+        padding: 5.625rem 0 3.125rem;
+
+        .recommendation__container {
+            padding: 0 #{ ($container-laptop) };
+        }
+
+        .recommendation__row {
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: center;
+            margin: -0.75rem #{ (-0.5 * $gutter-laptop) };
+        }
+
+        .recommendation__column {
+            &.recommendation__column--thumbnail {
+                margin: 0.75rem #{ (0.5 * $gutter-laptop) } 0.75rem #{ ($column-laptop) + (1.5 * $gutter-laptop) };
+                min-width: calc(#{ (5 * $column-laptop) + (4 * $gutter-laptop) });
+                width: calc(#{ (5 * $column-laptop) + (4 * $gutter-laptop) });
+            }
+
+            &.recommendation__column--quote {
+                display: none;
+            }
+
+            &.recommendation__column--description {
+                margin: 0.75rem #{ (2 * $column-laptop) + (2.5 * $gutter-laptop) } 0.75rem #{ (0.5 * $gutter-laptop) };
+                min-width: calc(#{ (4 * $column-laptop) + (3 * $gutter-laptop) });
+                width: calc(#{ (4 * $column-laptop) + (3 * $gutter-laptop) });
+            }
+        }
+
+        .recommendation__quote {
+            font-size: 2.8125rem;
+            margin: 0 #{ ($column-laptop) + ($gutter-laptop) } 1.5rem #{ (-1 * $column-laptop) + ($gutter-laptop) };
+
+            &.recommendation__quote--laptop {
+                display: block;
+            }
+        }
     }
 }

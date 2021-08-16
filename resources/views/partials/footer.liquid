@@ -1,23 +1,29 @@
 <footer class="footer">
     <div class="footer__container">
-        <div class="">
-            {%
-                include 'partials.logo' with
-                modifier: 'footer',
-                logo: footer.logo
-            %}
-        </div>
         <div class="footer__row">
-            <div class="footer__column">
+            <div class="footer__column footer__column--socials">
+                TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST
+            </div>
+            <div class="footer__column footer__column--navigation">
                 {%
                     include 'partials.navigation' with
                     modifier: 'footer',
                     navigation: footer.navigation
                 %}
             </div>
-            <div class="footer__column">
+            <div class="footer__column footer__column--copyright">
+                {%
+                    include 'partials.copyright' with
+                    copyright: footer.copyright
+                %}
             </div>
-            <div class="footer__column">
+            <div class="footer__column" style="display: none">
+            </div>
+            <div class="footer__column footer__column--sponsors">
+                {%
+                    include 'partials.sponsors' with
+                    sponsors: footer.sponsors
+                %}
             </div>
         </div>
     </div>

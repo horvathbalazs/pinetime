@@ -1,0 +1,24 @@
+<footer class="footer">
+    <div class="footer__container">
+        <div class="">
+            {%
+                include 'partials.logo' with
+                modifier: 'footer',
+                logo: footer.logo
+            %}
+        </div>
+        <div class="footer__row">
+            <div class="footer__column">
+                {%
+                    include 'partials.navigation' with
+                    modifier: 'footer',
+                    navigation: footer.navigation
+                %}
+            </div>
+            <div class="footer__column">
+            </div>
+            <div class="footer__column">
+            </div>
+        </div>
+    </div>
+</footer>

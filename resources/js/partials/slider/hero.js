@@ -4,7 +4,10 @@ import { sprintf } from 'sprintf-js'
 
 class SliderHero {
     constructor() {
-        this.arrow = `
+        this.arrow    = ''
+        this.elements = []
+
+        this.arrow    = `
             <button class="slick-%1$s"
                     type="button">
                 <svg class="slick-icon">
@@ -12,8 +15,7 @@ class SliderHero {
                 </svg>
             </button>
         `
-
-        this.elements = document.querySelectorAll('[data-slider-hero]')
+        this.elements = Array.from(document.querySelectorAll('[data-slider="hero"]'))
 
         this.elements.forEach(element => {
             $(element).slick({

@@ -6,11 +6,25 @@
 
         .navigation__link {
             box-shadow: inset 0 -0.0625rem color('nero');
+            color: color('nero');
             display: block;
-            font-size: 1.5rem;
-            letter-spacing: 0.05em;
-            line-height: 3.1875rem;
-            padding-bottom: 0.0625rem;
+            padding: 0.0625rem 0.625rem;
+
+            .navigation__text {
+                @include headline;
+
+                align-items: center;
+                color: color('nero');
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                font-size: 1.5rem;
+                font-weight: 400;
+                height: 3.125rem;
+                justify-content: flex-start;
+                letter-spacing: 0.05em;
+                white-space: nowrap;
+            }
         }
     }
 }

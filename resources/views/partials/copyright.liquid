@@ -1,0 +1,12 @@
+<p class="copyright">
+    {% for text in footer.copyright %}
+    <span class="copyright__text">{{ text | raw }}</span>
+    {% if !forloop.last %}
+    <span class="copyright__separator">
+        <svg class="copyright__icon">
+            <use href="#symbol-circle"/>
+        </svg>
+    </span>
+    {% endif %}
+    {% endfor %}
+</p>

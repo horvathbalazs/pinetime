@@ -1,5 +1,5 @@
 .details {
-    padding: 2.5rem 0;
+    padding: 1rem 0 2.3125rem;
 
     &::before {
         background: color('smoke');
@@ -13,7 +13,7 @@
     }
 
     .details__container {
-        padding: 0 5.797101449275362vw;
+        padding: 0 #{ ($container-phone) };
     }
 
     .details__cards {
@@ -22,22 +22,24 @@
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-        margin: -0.5rem -2.415458937198068vw;
+        margin: -0.5rem #{ (-0.5 * $gutter-phone) };
     }
 
     .details__card {
         background-color: color('gainsboro');
-        margin: 0.5rem 2.415458937198068vw;
-        min-width: calc(100% - 4.830917874396135vw);
-        padding: 3.75rem 2.5rem 3.125rem;
-        width: calc(100% - 4.830917874396135vw);
+        margin: 0.5rem #{ (0.5 * $gutter-phone) };
+        min-width: calc(#{ (4 * $column-phone) + (3 * $gutter-phone) });
+        padding: 3.75rem 8.454106280193237vw 3.125rem;
+        width: calc(#{ (4 * $column-phone) + (3 * $gutter-phone) });
     }
 
     .details__title {
         @include nikolai;
 
+        color: color('nero');
         font-size: 2.8125rem;
-        font-weight: 700;
+        font-weight: 600;
+        line-height: 1.05em;
         margin-bottom: 2.5rem;
         text-align: center;
         white-space: nowrap;
@@ -50,7 +52,7 @@
         flex-wrap: nowrap;
         justify-content: space-between;
         margin: 0 auto;
-        max-width: 16.25rem;
+        max-width: 62.801932367149758vw;
     }
 
     .details__ruler {
@@ -77,12 +79,6 @@
         width: 0.0625rem;
     }
 
-    .details__range,
-    .details__icon {
-        height: 0.625rem;
-        width: 5.625rem;
-    }
-
     .details__range {
         position: absolute;
         top: 50%;
@@ -101,6 +97,13 @@
             left: 100%;
             transform: translate(-100%, -50%);
         }
+
+        .details__icon {
+            height: 0.625rem;
+            min-height: 0.625rem;
+            min-width: 5.625rem;
+            width: 5.625rem;
+        }
     }
 
     .details__labels {
@@ -115,6 +118,8 @@
         display: block;
         font-size: 0.75rem;
         font-weight: 400;
+        letter-spacing: 0.02em;
+        line-height: 1em;
         text-align: center;
         text-transform: uppercase;
         white-space: nowrap;
@@ -129,39 +134,51 @@
 
         &.details__label--active {
             color: color('nero');
-            font-weight: 700;
+            font-weight: 500;
         }
     }
 
     .details__description {
         @include headline;
 
+        color: color('nero');
         font-size: 1.125rem;
-        font-weight: 400;
+        font-weight: 300;
+        line-height: 1.3em;
         text-align: center;
     }
 }
 
 @include breakpoint('laptop') {
     .details {
-        padding: 4.375rem 0;
+        padding: 4.375rem 0 4.0625rem;
 
-        &::before {
-            height: 6.25rem;
+        &:before {
+            height: 6.5625rem;
         }
 
         .details__container {
-            padding: 0 6.944444444444444vw;
+            padding: 0 #{ ($container-laptop) };
         }
 
         .details__cards {
-            margin: -0.75rem -1.666666666666667vw;
+            margin: -0.75rem #{ (-0.5 * $gutter-laptop) };
         }
 
         .details__card {
-            margin: 0.75rem 1.666666666666667vw;
-            min-width: calc(33.333333333333333% - 3.333333333333333vw);
-            width: calc(33.333333333333333% - 3.333333333333333vw);
+            margin: 0.75rem #{ (0.5 * $gutter-laptop) };
+            min-width: calc(#{ (4 * $column-laptop) + (3 * $gutter-laptop) });
+            padding: 3.75rem 3.541666666666667vw 3.125rem;
+            width: calc(#{ (4 * $column-laptop) + (3 * $gutter-laptop) });
+        }
+
+        .details__description {
+            font-weight: 400;
+        }
+
+        .details__ruler,
+        .details__labels {
+            max-width: 18.055555555555556vw;
         }
     }
 }

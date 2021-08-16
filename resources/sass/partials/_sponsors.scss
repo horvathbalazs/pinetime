@@ -1,0 +1,45 @@
+.sponsors {
+    .sponsors__list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        margin: -0.625rem -2.415458937198068vw;
+    }
+
+    .sponsors__item {
+        flex-grow: 1;
+        margin: 0.625rem 2.415458937198068vw;
+    }
+
+    .sponsors__thumbnail {
+        padding-bottom: 66.666666666666667%;
+    }
+
+    .sponsors__figure {
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .sponsors__image {
+        height: 100%;
+        object-fit: contain;
+        object-position: 50% 50%;
+        width: 100%;
+    }
+}
+
+@include breakpoint('laptop') {
+    .sponsors {
+        .sponsors__list {
+            margin: -0.75rem -0.833333333333333vw;
+        }
+
+        .sponsors__item {
+            margin: 0.75rem 0.833333333333333vw;
+        }
+    }
+}

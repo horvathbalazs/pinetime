@@ -1,5 +1,44 @@
 .collection {
     .collection__container {
+    }
+
+    .collection__thumbnail {
+        padding-bottom: 66.666666666666667%;
+    }
+
+    .collection__figure {
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .collection__image {
+        height: 100%;
+        object-fit: cover;
+        object-position: 50% 50%;
+        width: 100%;
+    }
+
+    .collection__column {
+        background-color: color('gorse');
+    }
+
+    .collection__card {
+        background-color: color('nero');
+        margin: 0 0 0 0;
+    }
+}
+
+@include breakpoint('laptop') {
+    .collection {
+    }
+}
+
+/*
+.collection {
+    .collection__container {
         align-items: stretch;
         display: flex;
         flex-direction: column;
@@ -138,3 +177,4 @@
         }
     }
 }
+*/

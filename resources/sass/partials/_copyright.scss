@@ -1,0 +1,44 @@
+.copyright {
+    align-items: stretch;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+
+    .copyright__text {
+        @include headline;
+
+        color: color('grey');
+        display: block;
+        font-size: 0.8125rem;
+        font-weight: 400;
+        white-space: nowrap;
+    }
+
+    .copyright__separator {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        min-width: 1.25rem;
+        width: 1.25rem;
+    }
+
+    .copyright__icon {
+        color: color('white');
+        height: 0.25rem;
+        min-height: 0.25rem;
+        min-width: 0.25rem;
+        width: 0.25rem;
+    }
+
+    a {
+        color: color('grey');
+        transition: color variable('transition');
+
+        &:hover {
+            color: color('nero');
+        }
+    }
+}

@@ -45,6 +45,16 @@ class HomeController extends Controller
                         'title'  => 'Partials/Instagram',
                         'url'    => url('partials/instagram'),
                     ],
+                    [
+                        'target' => '_self',
+                        'title'  => 'Partials/Recommendation',
+                        'url'    => url('partials/recommendation'),
+                    ],
+                    [
+                        'target' => '_self',
+                        'title'  => 'Partials/Showcase',
+                        'url'    => url('partials/showcase'),
+                    ],
                 ],
             ],
         ]);

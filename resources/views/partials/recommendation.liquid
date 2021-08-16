@@ -1,25 +1,25 @@
 <section class="recommendation">
     <div class="recommendation__container">
-        <blockquote class="">
-            <svg class="recommendation__icon">
-                <use href="#symbol-quote"/>
-            </svg>
-            <p class="recommendation__quote">{{ recommendation.quote }}</p>
-            <span class="">
-                <a class="recommendation__name"
-                   href=""
-                   target="_self"
-                   title="{{ recommendation.name | escape }}">{{ recommendation.name }}</a>
-            </span>
-        </blockquote>
-        <div class="recommendation__thumbnail">
-            <figure class="recommendation__figure">
-                <img class="recommendation__image"
-                     height="{{ recommendation.thumbnail.height | escape }}"
-                     src="{{ recommendation.thumbnail.url }}"
-                     title=""
-                     width="{{ recommendation.thumbnail.width | escape }}">
-            </figure>
+        <div class="recommendation__row">
+            <div class="recommendation__column recommendation__column--thumbnail">
+                <div class="recommendation__thumbnail">
+                    <figure class="recommendation__figure">
+                        <img class="recommendation__image"
+                             alt="{{ recommendation.thumbnail.title | escape }}"
+                             height="{{ recommendation.thumbnail.height | escape }}"
+                             src="{{ recommendation.thumbnail.url }}"
+                             title="{{ recommendation.thumbnail.title | escape }}"
+                             width="{{ recommendation.thumbnail.width | escape }}">
+                    </figure>
+                </div>
+            </div>
+            <div class="recommendation__column recommendation__column--quote">
+                <blockquote class="recommendation__quote">{{ recommendation.quote }}</blockquote>
+            </div>
+            <div class="recommendation__column recommendation__column--description">
+                <blockquote class="recommendation__quote recommendation__quote--laptop">{{ recommendation.quote }}</blockquote>
+                <p class="recommendation__description">{{ recommendation.description }}</p>
+            </div>
         </div>
     </div>
 </section>

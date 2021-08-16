@@ -6,6 +6,7 @@ const plugins = [CSSPlugin, MorphSVGPlugin, ScrollToPlugin]
 
 import Ripple from 'mixins/ripple'
 import SliderHero from 'partials/slider/hero'
+import SliderShowcase from 'partials/slider/showcase'
 import Sandwich from 'partials/sandwich'
 
 new Ripple

@@ -109,6 +109,11 @@ trait PartialTrait
     private static function footer(): array
     {
         return [
+            'copyright'  => [
+                'Copyright Pinetime Clothing 2010-2021',
+                '<a href="https://example.com/" target="_self" title="Terms ' .
+                'and Conditions">Terms and Conditions</a>',
+            ],
             'navigation' => [
                 [
                     [
@@ -147,6 +152,32 @@ trait PartialTrait
                         'target' => '_self',
                         'title'  => 'Contact',
                         'url'    => url('contact'),
+                    ],
+                ],
+            ],
+            'sponsors'   => [
+                [
+                    'thumbnail' => [
+                        'title'  => 'Visa',
+                        'url'    => url('svg/visa.svg'),
+                    ],
+                ],
+                [
+                    'thumbnail' => [
+                        'title'  => 'American Express',
+                        'url'    => url('svg/amex.svg'),
+                    ],
+                ],
+                [
+                    'thumbnail' => [
+                        'title'  => 'MasterCard',
+                        'url'    => url('svg/mastercard.svg'),
+                    ],
+                ],
+                [
+                    'thumbnail' => [
+                        'title'  => 'PayPal',
+                        'url'    => url('svg/paypal.svg'),
                     ],
                 ],
             ],
@@ -332,14 +363,77 @@ trait PartialTrait
     private static function recommendation(): array
     {
         return [
-            'name'      => 'Fritz Boti',
-            'quote'     => 'I love the simplicity of this hoodie',
-            'thumbnail' => [
-                'height' => 640,
+            'description' => 'The men\'s Pinetime Multipath Grid Fleece is ' .
+                             'a faithful traveling partner. It\'s your ' .
+                             'hangout at camp, brave the commute, and chill ' .
+                             'on the deck layer. It has the familiar comfort ' .
+                             'of a hoodie and the technical versatility of ' .
+                             'quick-drying, breathable fleece. A small zip ' .
+                             'pocket secures a key, card or cash for ' .
+                             'whatever comes next.',
+            'quote'       => 'I love the simplicity of this hoodie',
+            'thumbnail'   => [
+                'height' => 1080,
                 'title'  => 'Fritz Boti',
-                'url'    => '//lorempixel.com/640/640?t=568351371',
-                'width'  => 640,
+                'url'    => url('png/placeholder-1.png'),
+                'width'  => 1920,
             ],
+        ];
+    }
+
+    private static function showcase(): array
+    {
+        return [
+            'features' => [
+                [
+                    'description' => 'to keep your face warm',
+                    'thumbnail'   => [
+                        'height' => 640,
+                        'title'  => '',
+                        'url'    => url('png/placeholder-1.png'),
+                        'width'  => 640,
+                    ],
+                    'title'       => 'Built in mask',
+                ],
+                [
+                    'description' => 'Inside brushed cosy fabric to keep ' .
+                                     'your face warm, with elastic tape',
+                    'thumbnail'   => [
+                        'height' => 640,
+                        'title'  => '',
+                        'url'    => url('png/placeholder-4.png'),
+                        'width'  => 640,
+                    ],
+                    'title'       => 'Armpit Ventillation System',
+                ],
+                [
+                    'description' => 'to keep your everyday stash',
+                    'thumbnail'   => [
+                        'height' => 640,
+                        'title'  => '',
+                        'url'    => url('png/placeholder-2.png'),
+                        'width'  => 640,
+                    ],
+                    'title'       => 'Huge Chest Pocket',
+                ],
+                [
+                    'description' => 'placed on the left sleeve for easy ' .
+                                     'access at the gates.',
+                    'thumbnail'   => [
+                        'height' => 640,
+                        'title'  => '',
+                        'url'    => url('png/placeholder-5.png'),
+                        'width'  => 640,
+                    ],
+                    'title'       => 'List pass pocket',
+                ],
+            ],
+            'slider'   => [
+                'image' => url('png/interactive.png'),
+            ],
+            'title'    => 'Our ultimate ninja-hoodie is part of the Pinetime ' .
+                          'collection since 2012 and we improve it year by ' .
+                          'year',
         ];
     }
 }

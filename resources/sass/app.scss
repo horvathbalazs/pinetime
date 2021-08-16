@@ -22,6 +22,14 @@ $variables: (
     'transition': 0.25s,
 );
 
+$container-phone: 5.797101449275362vw;
+$column-phone: 18.478260869565217vw;
+$gutter-phone: 4.830917874396135vw;
+
+$container-laptop: 6.944444444444444vw;
+$column-laptop: 5.648148148148148vw;
+$gutter-laptop: 1.666666666666667vw;
+
 @import
     'variables',
     'functions',

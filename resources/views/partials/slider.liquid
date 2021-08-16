@@ -2,7 +2,7 @@
     {% when 'hero' %}
     {% if slider %}
     <div class="slider slider--hero"
-         data-slider-hero>
+         data-slider="hero">
         {% for slide in slider %}
         <article class="slider__slide">
             <div class="slider__thumbnail">
@@ -17,6 +17,13 @@
             </div>
         </article>
         {% endfor %}
+    </div>
+    {% endif %}
+    {% when 'showcase' %}
+    {% if slider %}
+    <div class="slider slider--showcase"
+         data-slider="showcase"
+         data-slider-image="{{ slider.image }}">
     </div>
     {% endif %}
 {% endcase %}
