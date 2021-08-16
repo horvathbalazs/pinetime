@@ -114,6 +114,14 @@ trait PartialTrait
                 '<a href="https://example.com/" target="_self" title="Terms ' .
                 'and Conditions">Terms and Conditions</a>',
             ],
+            'investor'   => [
+                'thumbnail' => [
+                    'height' => 160,
+                    'title'  => 'Hiventures',
+                    'url'    => url('png/investor.png'),
+                    'width'  => 728,
+                ],
+            ],
             'navigation' => [
                 [
                     [
@@ -186,7 +194,71 @@ trait PartialTrait
 
     private static function header(): array
     {
-        return [];
+        return [
+            'navigation' => [
+                'primary'   => [
+                    [
+                        'active' => false,
+                        'target' => '_self',
+                        'title'  => 'Men',
+                        'url'    => url('men'),
+                    ],
+                    [
+                        'active' => true,
+                        'target' => '_self',
+                        'title'  => 'Women',
+                        'url'    => url('women'),
+                    ],
+                    [
+                        'active' => false,
+                        'target' => '_self',
+                        'title'  => 'Accessories',
+                        'url'    => url('accessories'),
+                    ],
+                ],
+                'secondary' => [
+                    [
+                        [
+                            'target' => '_self',
+                            'title'  => 'About',
+                            'url'    => url('about'),
+                        ],
+                        [
+                            'target' => '_self',
+                            'title'  => 'PineTeam',
+                            'url'    => url('pineteam'),
+                        ],
+                        [
+                            'target' => '_self',
+                            'title'  => 'Sustainability',
+                            'url'    => url('sustainability'),
+                        ],
+                    ],
+                    [
+                        [
+                            'target' => '_self',
+                            'title'  => 'Shipping & Delivery',
+                            'url'    => url('shipping-and-delivery'),
+                        ],
+                        [
+                            'target' => '_self',
+                            'title'  => 'Return Policy',
+                            'url'    => url('shipping-and-delivery'),
+                        ],
+                        [
+                            'target' => '_self',
+                            'title'  => 'Careers',
+                            'url'    => url('careers'),
+                        ],
+                        [
+                            'target' => '_self',
+                            'title'  => 'Contact',
+                            'url'    => url('contact'),
+                        ],
+                    ],
+                ],
+            ],
+        ];
     }
 
     private static function hero(): array

@@ -4,4 +4,5 @@
 - Collection
 - Cookies ✓
 - Details ✓
+- Footer
 - Recommendation ✓
