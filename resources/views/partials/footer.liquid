@@ -2,6 +2,15 @@
     <div class="footer__container">
         <div class="footer__row">
             <div class="footer__column footer__column--socials">
+                {%
+                    include 'partials.logo' with
+                    modifier: 'footer',
+                    logo: footer.logo
+                %}
+                {%
+                    include 'partials.socials' with
+                    socials: footer.socials
+                %}
             </div>
             <div class="footer__column footer__column--navigation">
                 {%
@@ -17,6 +26,14 @@
                 %}
             </div>
             <div class="footer__column footer__column--investor">
+                <figure class="footer__investor">
+                    <img class="footer__image"
+                         alt="{{ footer.investor.thumbnail.title | escape }}"
+                         height="{{ footer.investor.thumbnail.height | escape }}"
+                         src="{{ footer.investor.thumbnail.url }}"
+                         title="{{ footer.investor.thumbnail.title | escape }}"
+                         width="{{ footer.investor.thumbnail.width | escape }}">
+                </figure>
             </div>
             <div class="footer__column footer__column--sponsors">
                 {%

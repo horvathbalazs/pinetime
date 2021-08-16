@@ -1,6 +1,18 @@
 .footer {
     background-color: color('gainsboro');
+    overflow: hidden;
     padding: 3.125rem 0;
+
+    &:before {
+        background-color: color('gorse');
+        content: '';
+        display: block;
+        height: 4.6875rem;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: #{ ($container-phone) + (3 * $column-phone) + (2 * $gutter-phone) };
+    }
 
     .footer__container {
         padding: 0 #{ ($container-phone) };
@@ -17,14 +29,30 @@
 
     .footer__column {
         margin: 1.5625rem #{ (0.5 * $gutter-phone) };
-        min-width: calc(#{ (4 * $column-phone) + (3 * $gutter-phone) });
-        width: calc(#{ (4 * $column-phone) + (3 * $gutter-phone) });
+        min-width: #{ (4 * $column-phone) + (3 * $gutter-phone) };
+        width: #{ (4 * $column-phone) + (3 * $gutter-phone) };
+
+        &.footer__column--socials {
+            margin-right: #{ ($container-phone) + ($column-phone) + (1.5 * $gutter-phone) };
+            min-width: #{ (-1 * $container-phone) + (3 * $column-phone) + (2 * $gutter-phone) };
+            width: #{ (-1 * $container-phone) + (3 * $column-phone) + (2 * $gutter-phone) };
+        }
+
+        &.footer__column--investor {
+            margin-right: #{ (2 * $column-phone) + (2.5 * $gutter-phone) };
+            min-width: #{ (2 * $column-phone) + ($gutter-phone) };
+            width: #{ (2 * $column-phone) + ($gutter-phone) };
+        }
     }
 }
 
 @include breakpoint('laptop') {
     .footer {
         padding: 3.125rem 0 3.75rem;
+
+        &:before {
+            width: #{ ($container-laptop) + (6 * $column-laptop) + (5 * $gutter-laptop) };
+        }
 
         .footer__container {
             padding: 0 #{ ($container-laptop) };
@@ -37,10 +65,16 @@
         .footer__column {
             margin: 0.75rem #{ (0.5 * $gutter-laptop) };
 
+            &.footer__column--socials {
+                margin-right: #{ (7 * $column-laptop) + (7.5 * $gutter-laptop) };
+                min-width: #{ (5 * $column-laptop) + (4 * $gutter-laptop) };
+                width: #{ (5 * $column-laptop) + (4 * $gutter-laptop) };
+            }
+
             &.footer__column--navigation {
                 margin: 0.75rem #{ ($column-laptop) + (1.5 * $gutter-laptop) };
-                min-width: calc(#{ (4 * $column-laptop) + (3 * $gutter-laptop) });
-                width: calc(#{ (4 * $column-laptop) + (3 * $gutter-laptop) });
+                min-width: #{ (4 * $column-laptop) + (3 * $gutter-laptop) };
+                width: #{ (4 * $column-laptop) + (3 * $gutter-laptop) };
             }
 
             &.footer__column--copyright {
@@ -54,9 +88,15 @@
                 width: auto;
             }
 
+            &.footer__column--investor {
+                margin-right: #{ ($column-laptop) + ($gutter-laptop) };
+                min-width: #{ (2 * $column-laptop) + ($gutter-laptop) };
+                width: #{ (2 * $column-laptop) + ($gutter-laptop) };
+            }
+
             &.footer__column--sponsors {
-                min-width: calc(#{ (3 * $column-laptop) + (2 * $gutter-laptop) });
-                width: calc(#{ (3 * $column-laptop) + (2 * $gutter-laptop) });
+                min-width: #{ (3 * $column-laptop) + (2 * $gutter-laptop) };
+                width: #{ (3 * $column-laptop) + (2 * $gutter-laptop) };
             }
         }
     }

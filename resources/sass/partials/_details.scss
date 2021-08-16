@@ -28,9 +28,9 @@
     .details__card {
         background-color: color('gainsboro');
         margin: 0.5rem #{ (0.5 * $gutter-phone) };
-        min-width: calc(#{ (4 * $column-phone) + (3 * $gutter-phone) });
+        min-width: #{ (4 * $column-phone) + (3 * $gutter-phone) };
         padding: 3.75rem 8.454106280193237vw 3.125rem;
-        width: calc(#{ (4 * $column-phone) + (3 * $gutter-phone) });
+        width: #{ (4 * $column-phone) + (3 * $gutter-phone) };
     }
 
     .details__title {
@@ -167,9 +167,9 @@
 
         .details__card {
             margin: 0.75rem #{ (0.5 * $gutter-laptop) };
-            min-width: calc(#{ (4 * $column-laptop) + (3 * $gutter-laptop) });
+            min-width: #{ (4 * $column-laptop) + (3 * $gutter-laptop) };
             padding: 3.75rem 3.541666666666667vw 3.125rem;
-            width: calc(#{ (4 * $column-laptop) + (3 * $gutter-laptop) });
+            width: #{ (4 * $column-laptop) + (3 * $gutter-laptop) };
         }
 
         .details__description {

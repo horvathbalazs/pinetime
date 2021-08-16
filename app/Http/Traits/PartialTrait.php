@@ -122,6 +122,11 @@ trait PartialTrait
                     'width'  => 728,
                 ],
             ],
+            'logo'       => [
+                'target' => '_self',
+                'title'  => 'Pinetime Clothing',
+                'url'    => url(''),
+            ],
             'navigation' => [
                 [
                     [
@@ -163,6 +168,20 @@ trait PartialTrait
                     ],
                 ],
             ],
+            'socials'    => [
+                [
+                    'symbol' => 'instagram',
+                    'target' => '_blank',
+                    'title'  => 'Follow Us on Instagram',
+                    'url'    => 'https://instagram.com/pinetimeclothing',
+                ],
+                [
+                    'symbol' => 'facebook',
+                    'target' => '_blank',
+                    'title'  => 'Follow Us on Facebook',
+                    'url'    => 'https://facebook.com/PinetimeClothing',
+                ],
+            ],
             'sponsors'   => [
                 [
                     'thumbnail' => [
@@ -195,6 +214,11 @@ trait PartialTrait
     private static function header(): array
     {
         return [
+            'logo'       => [
+                'target' => '_self',
+                'title'  => 'Pinetime Clothing',
+                'url'    => url(''),
+            ],
             'navigation' => [
                 'primary'   => [
                     [

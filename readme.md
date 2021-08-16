@@ -5,4 +5,5 @@
 - Cookies ✓
 - Details ✓
 - Footer
+- Header
 - Recommendation ✓
