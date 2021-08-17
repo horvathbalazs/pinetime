@@ -123,6 +123,7 @@ trait PartialTrait
                 ],
             ],
             'logo'       => [
+                'symbol' => 'pinetime',
                 'target' => '_self',
                 'title'  => 'Pinetime Clothing',
                 'url'    => url(''),
@@ -214,70 +215,79 @@ trait PartialTrait
     private static function header(): array
     {
         return [
-            'logo'       => [
+            'logo'   => [
+                'symbol' => 'pinetime-text',
                 'target' => '_self',
                 'title'  => 'Pinetime Clothing',
                 'url'    => url(''),
             ],
-            'navigation' => [
-                'primary'   => [
-                    [
-                        'active' => false,
-                        'target' => '_self',
-                        'title'  => 'Men',
-                        'url'    => url('men'),
-                    ],
-                    [
-                        'active' => true,
-                        'target' => '_self',
-                        'title'  => 'Women',
-                        'url'    => url('women'),
-                    ],
-                    [
-                        'active' => false,
-                        'target' => '_self',
-                        'title'  => 'Accessories',
-                        'url'    => url('accessories'),
-                    ],
+            'drawer' => [
+                'logo'   => [
+                    'symbol' => 'pinetime',
+                    'target' => '_self',
+                    'title'  => 'Pinetime Clothing',
+                    'url'    => url(''),
                 ],
-                'secondary' => [
-                    [
+                'navigation' => [
+                    'primary'   => [
                         [
+                            'active' => false,
                             'target' => '_self',
-                            'title'  => 'About',
-                            'url'    => url('about'),
+                            'title'  => 'Men',
+                            'url'    => url('men'),
                         ],
                         [
+                            'active' => true,
                             'target' => '_self',
-                            'title'  => 'PineTeam',
-                            'url'    => url('pineteam'),
+                            'title'  => 'Women',
+                            'url'    => url('women'),
                         ],
                         [
+                            'active' => false,
                             'target' => '_self',
-                            'title'  => 'Sustainability',
-                            'url'    => url('sustainability'),
+                            'title'  => 'Accessories',
+                            'url'    => url('accessories'),
                         ],
                     ],
-                    [
+                    'secondary' => [
                         [
-                            'target' => '_self',
-                            'title'  => 'Shipping & Delivery',
-                            'url'    => url('shipping-and-delivery'),
+                            [
+                                'target' => '_self',
+                                'title'  => 'About',
+                                'url'    => url('about'),
+                            ],
+                            [
+                                'target' => '_self',
+                                'title'  => 'PineTeam',
+                                'url'    => url('pineteam'),
+                            ],
+                            [
+                                'target' => '_self',
+                                'title'  => 'Sustainability',
+                                'url'    => url('sustainability'),
+                            ],
                         ],
                         [
-                            'target' => '_self',
-                            'title'  => 'Return Policy',
-                            'url'    => url('shipping-and-delivery'),
-                        ],
-                        [
-                            'target' => '_self',
-                            'title'  => 'Careers',
-                            'url'    => url('careers'),
-                        ],
-                        [
-                            'target' => '_self',
-                            'title'  => 'Contact',
-                            'url'    => url('contact'),
+                            [
+                                'target' => '_self',
+                                'title'  => 'Shipping & Delivery',
+                                'url'    => url('shipping-and-delivery'),
+                            ],
+                            [
+                                'target' => '_self',
+                                'title'  => 'Return Policy',
+                                'url'    => url('shipping-and-delivery'),
+                            ],
+                            [
+                                'target' => '_self',
+                                'title'  => 'Careers',
+                                'url'    => url('careers'),
+                            ],
+                            [
+                                'target' => '_self',
+                                'title'  => 'Contact',
+                                'url'    => url('contact'),
+                            ],
                         ],
                     ],
                 ],

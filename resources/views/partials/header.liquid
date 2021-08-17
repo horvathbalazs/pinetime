@@ -7,6 +7,10 @@
                 sandwich: header.sandwich
             %}
             {%
+                include 'partials.drawer' with
+                drawer: header.drawer
+            %}
+            {%
                 include 'partials.logo' with
                 modifier: 'header',
                 logo: header.logo

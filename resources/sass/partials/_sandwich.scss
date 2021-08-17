@@ -1,6 +1,10 @@
 .sandwich {
+    z-index: 2;
+
     .sandwich__icon {
         height: 3.75rem;
+        min-height: 3.75rem;
+        min-width: 3.75rem;
         width: 3.75rem;
     }
 
