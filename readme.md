@@ -5,7 +5,9 @@
 - Cookies ✓
 - Copyright ✓
 - Details ✓
-- Footer
+- Drawer
+- Footer ✓
 - Header
+- Logo
 - Recommendation ✓
 - Sandwich ✓

@@ -1,6 +1,16 @@
-<nav>
-    <ul>
-        <li>
+<nav class="socials">
+    <ul class="socials__list">
+        {% for link in socials %}
+        <li class="socials__item">
+            <a class="socials__link"
+               href="{{ link.url }}"
+               target="{{ link.target | escape }}"
+               title="{{ link.title | escape }}">
+                <svg class="socials__icon">
+                    <use href="#symbol-{{ link.symbol }}"/>
+                </svg>
+            </a>
         </li>
+        {% endfor %}
     </ul>
 </nav>

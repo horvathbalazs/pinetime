@@ -1,5 +1,11 @@
 .logo {
     &.logo--footer {
+        margin-left: -1.25rem;
+
+        .logo__link {
+            display: block;
+        }
+
         .logo__icon {
             color: color('nero');
             height: 2.5rem;
@@ -9,7 +15,17 @@
         }
     }
 
-    .logo__link {
-        display: block;
+    &.logo--header {
+        .logo__link {
+            display: block;
+        }
+
+        .logo__icon {
+            color: color('nero');
+            height: 1.1875rem;
+            min-height: 1.1875rem;
+            min-width: 5.8125rem;
+            width: 5.8125rem;
+        }
     }
 }

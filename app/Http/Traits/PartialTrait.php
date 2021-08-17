@@ -231,22 +231,24 @@ trait PartialTrait
                 'navigation' => [
                     'primary'   => [
                         [
-                            'active' => false,
-                            'target' => '_self',
-                            'title'  => 'Men',
-                            'url'    => url('men'),
-                        ],
-                        [
-                            'active' => true,
-                            'target' => '_self',
-                            'title'  => 'Women',
-                            'url'    => url('women'),
-                        ],
-                        [
-                            'active' => false,
-                            'target' => '_self',
-                            'title'  => 'Accessories',
-                            'url'    => url('accessories'),
+                            [
+                                'active' => false,
+                                'target' => '_self',
+                                'title'  => 'Men',
+                                'url'    => url('men'),
+                            ],
+                            [
+                                'active' => true,
+                                'target' => '_self',
+                                'title'  => 'Women',
+                                'url'    => url('women'),
+                            ],
+                            [
+                                'active' => false,
+                                'target' => '_self',
+                                'title'  => 'Accessories',
+                                'url'    => url('accessories'),
+                            ],
                         ],
                     ],
                     'secondary' => [

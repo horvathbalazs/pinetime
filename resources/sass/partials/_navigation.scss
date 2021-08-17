@@ -1,4 +1,85 @@
 .navigation {
+    &.navigation--drawer-primary {
+        background: color('gorse');
+        margin: -5.625rem #{ (-1 * $container-phone) + (-0.5 * $column-phone) } 0;
+        padding: 5.625rem #{ ($container-phone) + (0.5 * $column-phone) } 1.25rem;
+
+        .navigation__item {
+            &.navigation__item--active {
+                &::before {
+                    transform: translateX(0%);
+                }
+
+                .navigation__link .navigation__text {
+                    font-weight: 500;
+                }
+            }
+
+            &::before {
+                background-color: color('nero');
+                bottom: 1.25rem;
+                content: '';
+                display: block;
+                left: #{ (-1 * $container-phone) + (-0.5 * $column-phone) };
+                position: absolute;
+                top: 1.25rem;
+                transform: translateX(-100%);
+                transition: transform variable('transition');
+                width: 0.125rem;
+            }
+        }
+
+        .navigation__link {
+            color: color('nero');
+            display: block;
+
+            .navigation__text {
+                @include headline;
+
+                align-items: center;
+                color: color('nero');
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                font-size: 2.875rem;
+                font-weight: 300;
+                height: 5rem;
+                justify-content: flex-start;
+                line-height: 1.7em;
+                white-space: nowrap;
+            }
+        }
+    }
+
+    &.navigation--drawer-secondary {
+        .navigation__list:not(:last-child) {
+            margin-bottom: 2.5rem;
+        }
+
+        .navigation__link {
+            box-shadow: inset 0 -0.0625rem color('nero');
+            color: color('nero');
+            display: block;
+            padding: 0.0625rem 0;
+
+            .navigation__text {
+                @include headline;
+
+                align-items: center;
+                color: color('nero');
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                font-size: 1.5rem;
+                font-weight: 300;
+                height: 3.125rem;
+                justify-content: flex-start;
+                line-height: 1.5em;
+                white-space: nowrap;
+            }
+        }
+    }
+
     &.navigation--footer {
         .navigation__list:not(:last-child) {
             margin-bottom: 3.75rem;
@@ -23,6 +104,7 @@
                 height: 3.125rem;
                 justify-content: flex-start;
                 letter-spacing: 0.05em;
+                line-height: 1.5em;
                 white-space: nowrap;
             }
         }

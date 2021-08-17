@@ -18,3 +18,9 @@
         }
     }
 }
+
+@include breakpoint('laptop') {
+    .sandwich {
+        display: none;
+    }
+}

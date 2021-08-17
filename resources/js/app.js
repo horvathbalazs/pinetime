@@ -5,8 +5,9 @@ import MorphSVGPlugin from 'vendor/morphsvg'
 const plugins = [CSSPlugin, MorphSVGPlugin, ScrollToPlugin]
 
 import Ripple from 'mixins/ripple'
+import Header from 'partials/header'
+import Sandwich from 'partials/sandwich'
 import SliderHero from 'partials/slider/hero'
 import SliderShowcase from 'partials/slider/showcase'
-import Sandwich from 'partials/sandwich'
 
 new Ripple

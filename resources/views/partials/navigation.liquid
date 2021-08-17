@@ -1,43 +1,17 @@
-{% case modifier %}
-    {% when 'header-primary' %}
-    <div class="navigation navigation--header navigation--primary">
-        <nav>
-            <ul>
-                {% for link in navigation.primary %}
-                <li>
-                    <a></a>
-                </li>
-                {% endfor %}
-            </ul>
-        </nav>
-        <nav>
-            {% for list in navigation.secondary %}
-            <ul>
-                {% for link in list %}
-                <li>
-                    <a></a>
-                </li>
-                {% endfor %}
-            </ul>
-            {% endfor %}
-        </nav>
-    </div>
-    {% when 'footer' %}
-    <nav class="navigation navigation--footer">
-        {% for list in navigation %}
-        <ul class="navigation__list">
-            {% for link in list %}
-            <li class="navigation__item">
-                <a class="navigation__link"
-                   href="{{ link.url }}"
-                   target="{{ link.target | escape }}"
-                   title="{{ link.title | escape }}"
-                   data-ripple>
-                    <span class="navigation__text">{{ link.title }}</span>
-                </a>
-            </li>
-            {% endfor %}
-        </ul>
+<nav class="navigation navigation--{{ modifier }}">
+    {% for list in navigation %}
+    <ul class="navigation__list">
+        {% for link in list %}
+        <li class="navigation__item{% if link.active %} navigation__item--active{% endif %}">
+            <a class="navigation__link"
+               href="{{ link.url }}"
+               target="{{ link.target | escape }}"
+               title="{{ link.title | escape }}"
+               data-ripple>
+                <span class="navigation__text">{{ link.title }}</span>
+            </a>
+        </li>
         {% endfor %}
-    </nav>
-{% endcase %}
+    </ul>
+    {% endfor %}
+</nav>

@@ -9,8 +9,9 @@ class Sandwich {
         this.state      = ['default']
         this.variables  = {}
 
+        this.references.drawer   = document.querySelector('[data-drawer]')
         this.references.sandwich = document.querySelector('[data-sandwich]')
-        this.references = Array.from(document.querySelectorAll('[data-sandwich-path]'))
+        this.references          = Array.from(document.querySelectorAll('[data-sandwich-path]'))
             .reduce((accumulator, element) => {
                 accumulator[element.dataset.sandwichPath] = element
                 return accumulator
@@ -57,6 +58,8 @@ class Sandwich {
             ease: Sine.easeInOut,
             morphSVG: { shape: this.references[morph].getAttribute('d') }
         })
+        document.body.style.overflowY = this.state.includes('active') ? 'hidden' : 'visible'
+        this.references.drawer.classList[this.state.includes('active') ? 'add' : 'remove']('drawer--active')
     }
 }
 

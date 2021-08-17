@@ -13,4 +13,14 @@
     &.drawer--active {
         transform: translateX(0%);
     }
+
+    .drawer__container {
+        padding: 0 #{ ($container-phone) + (0.5 * $column-phone) };
+    }
+}
+
+@include breakpoint('laptop') {
+    .drawer {
+        display: none;
+    }
 }
