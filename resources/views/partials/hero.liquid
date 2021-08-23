@@ -1,10 +1,38 @@
 <section class="hero">
     <div class="hero__container">
         <div class="hero__row">
-            <div class="hero__column">
+            <div class="hero__column hero__column--slider">
+                {%
+                    include 'partials.slider' with
+                    modifier: 'hero',
+                    slider: hero.slider
+                %}
             </div>
-            <div class="hero__column">
+            <div class="hero__column hero__column--product">
                 <h1 class="hero__title">{{ hero.title }}</h1>
+                <span class="hero__price">{{ hero.price.currency }} <strong>{{ hero.price.amount }}</strong></span>
+                <button class="hero__cart"
+                        title="{{ hero.cart }}"
+                        type="button"
+                        data-ripple>
+                    <span class="hero__text">{{ hero.cart }}</span>
+                    <svg class="hero__icon">
+                        <use href="#symbol-plus"/>
+                    </svg>
+                </button>
+                {% if hero.sustainable.active %}
+                <div class="hero__sustainable">
+                    <svg class="hero__icon">
+                        <use href="#symbol-sustainable"/>
+                    </svg>
+                    <strong class="hero__text">{{ hero.sustainable.title }}</strong>
+                </div>
+                {% endif %}
+                <p class="hero__details">
+                    {% for detail in hero.details %}
+                    <span class="hero__text">{{ detail | raw }}</span>
+                    {% endfor %}
+                </p>
             </div>
         </div>
     </div>

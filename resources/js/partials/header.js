@@ -5,8 +5,10 @@ class Header {
 
         this.references.header = document.querySelector('[data-header="primary"]')
 
-        document.addEventListener('scroll', () => this.scroll())
-        this.scroll()
+        if (this.references.header) {
+            document.addEventListener('scroll', () => this.scroll())
+            this.scroll()
+        }
     }
 
     scroll() {

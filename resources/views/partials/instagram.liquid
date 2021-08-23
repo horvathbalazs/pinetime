@@ -1,26 +1,10 @@
 <section class="instagram">
     <div class="instagram__container">
         <h2 class="instagram__title">{{ instagram.title | raw }}</h2>
-        <div class="instagram__cards">
-            {% for card in instagram.cards %}
-            <article class="instagram__card">
-                <div class="instagram__thumbnail">
-                    <figure class="instagram__figure">
-                        <img class="instagram__image"
-                             alt="{{ card.thumbnail.title | escape }}"
-                             height="{{ card.thumbnail.height | escape }}"
-                             src="{{ card.thumbnail.url }}"
-                             title="{{ card.thumbnail.title | escape }}"
-                             width="{{ card.thumbnail.width | escape }}">
-                    </figure>
-                </div>
-                <h3 class="instagram__subtitle">
-                    <a href="{{ '//instagram.com/:card.username' | replace: ':card.username', card.username }}"
-                       target="_blank"
-                       title="{{ card.username | escape }}">{{ '@:card.username' | replace: ':card.username', card.username }}</a>
-                </h3>
-            </article>
-            {% endfor %}
-        </div>
+        {%
+            include 'partials.slider' with
+            modifier: 'instagram',
+            slider: instagram.slider
+        %}
     </div>
 </section>

@@ -22,6 +22,11 @@ class HomeController extends Controller
                     ],
                     [
                         'target' => '_self',
+                        'title'  => 'Partials/Accordion',
+                        'url'    => url('partials/accordion'),
+                    ],
+                    [
+                        'target' => '_self',
                         'title'  => 'Partials/Collection',
                         'url'    => url('partials/collection'),
                     ],

@@ -4,6 +4,29 @@ namespace App\Http\Traits;
 
 trait PartialTrait
 {
+    private static function accordion(): array
+    {
+        return [
+            'cards' => [
+                [
+                    'header' => [
+                        'title' => 'Technical Details',
+                    ],
+                ],
+                [
+                    'header' => [
+                        'title' => 'Sustainability',
+                    ],
+                ],
+                [
+                    'header' => [
+                        'title' => 'Product Care',
+                    ],
+                ],
+            ],
+        ];
+    }
+
     private static function collection(): array
     {
         return [
@@ -315,9 +338,11 @@ trait PartialTrait
                     'name'   => 'White',
                 ],
             ],
-            'details'     => '️Free shipping above 130 EUR<br>' .
-                             'Free returns for 15 days<br>' .
-                             'Delivery in 3-5 business days',
+            'details'     => [
+                '️Free shipping above 130 EUR',
+                'Free returns for 15 days',
+                'Delivery in 3-5 business days',
+            ],
             'price'       => [
                 'amount'   => 139,
                 'currency' => '€',
@@ -407,44 +432,184 @@ trait PartialTrait
     private static function instagram(): array
     {
         return [
-            'cards' => [
+            'slider' => [
                 [
                     'product'   => [],
                     'thumbnail' => [
-                        'height' => 640,
+                        'height' => 1080,
                         'title'  => '',
-                        'url'    => '//lorempixel.com/640/640?t=355214985',
-                        'width'  => 640,
+                        'url'    => url('png/placeholder-1.png'),
+                        'width'  => 1920,
                     ],
                     'username'  => 'viktorszigeti',
                 ],
                 [
                     'product'   => [],
                     'thumbnail' => [
-                        'height' => 640,
+                        'height' => 1080,
                         'title'  => '',
-                        'url'    => '//lorempixel.com/640/640?t=677518963',
-                        'width'  => 640,
+                        'url'    => url('png/placeholder-4.png'),
+                        'width'  => 1920,
                     ],
                     'username'  => 'leftiz',
                 ],
                 [
                     'product'   => [],
                     'thumbnail' => [
-                        'height' => 640,
+                        'height' => 1080,
                         'title'  => '',
-                        'url'    => '//lorempixel.com/640/640?t=544489323',
-                        'width'  => 640,
+                        'url'    => url('png/placeholder-2.png'),
+                        'width'  => 1080,
                     ],
                     'username'  => 'leftiz',
                 ],
                 [
                     'product'   => [],
                     'thumbnail' => [
-                        'height' => 640,
+                        'height' => 1080,
                         'title'  => '',
-                        'url'    => '//lorempixel.com/640/640?t=710410408',
-                        'width'  => 640,
+                        'url'    => url('png/placeholder-5.png'),
+                        'width'  => 1080,
+                    ],
+                    'username'  => 'leftiz',
+                ],
+                [
+                    'product'   => [],
+                    'thumbnail' => [
+                        'height' => 1920,
+                        'title'  => '',
+                        'url'    => url('png/placeholder-3.png'),
+                        'width'  => 1080,
+                    ],
+                    'username'  => 'leftiz',
+                ],
+                [
+                    'product'   => [],
+                    'thumbnail' => [
+                        'height' => 1920,
+                        'title'  => '',
+                        'url'    => url('png/placeholder-6.png'),
+                        'width'  => 1080,
+                    ],
+                    'username'  => 'leftiz',
+                ],
+                [
+                    'product'   => [],
+                    'thumbnail' => [
+                        'height' => 1080,
+                        'title'  => '',
+                        'url'    => url('png/placeholder-1.png'),
+                        'width'  => 1920,
+                    ],
+                    'username'  => 'viktorszigeti',
+                ],
+                [
+                    'product'   => [],
+                    'thumbnail' => [
+                        'height' => 1080,
+                        'title'  => '',
+                        'url'    => url('png/placeholder-4.png'),
+                        'width'  => 1920,
+                    ],
+                    'username'  => 'leftiz',
+                ],
+                [
+                    'product'   => [],
+                    'thumbnail' => [
+                        'height' => 1080,
+                        'title'  => '',
+                        'url'    => url('png/placeholder-2.png'),
+                        'width'  => 1080,
+                    ],
+                    'username'  => 'leftiz',
+                ],
+                [
+                    'product'   => [],
+                    'thumbnail' => [
+                        'height' => 1080,
+                        'title'  => '',
+                        'url'    => url('png/placeholder-5.png'),
+                        'width'  => 1080,
+                    ],
+                    'username'  => 'leftiz',
+                ],
+                [
+                    'product'   => [],
+                    'thumbnail' => [
+                        'height' => 1920,
+                        'title'  => '',
+                        'url'    => url('png/placeholder-3.png'),
+                        'width'  => 1080,
+                    ],
+                    'username'  => 'leftiz',
+                ],
+                [
+                    'product'   => [],
+                    'thumbnail' => [
+                        'height' => 1920,
+                        'title'  => '',
+                        'url'    => url('png/placeholder-6.png'),
+                        'width'  => 1080,
+                    ],
+                    'username'  => 'leftiz',
+                ],
+                [
+                    'product'   => [],
+                    'thumbnail' => [
+                        'height' => 1080,
+                        'title'  => '',
+                        'url'    => url('png/placeholder-1.png'),
+                        'width'  => 1920,
+                    ],
+                    'username'  => 'viktorszigeti',
+                ],
+                [
+                    'product'   => [],
+                    'thumbnail' => [
+                        'height' => 1080,
+                        'title'  => '',
+                        'url'    => url('png/placeholder-4.png'),
+                        'width'  => 1920,
+                    ],
+                    'username'  => 'leftiz',
+                ],
+                [
+                    'product'   => [],
+                    'thumbnail' => [
+                        'height' => 1080,
+                        'title'  => '',
+                        'url'    => url('png/placeholder-2.png'),
+                        'width'  => 1080,
+                    ],
+                    'username'  => 'leftiz',
+                ],
+                [
+                    'product'   => [],
+                    'thumbnail' => [
+                        'height' => 1080,
+                        'title'  => '',
+                        'url'    => url('png/placeholder-5.png'),
+                        'width'  => 1080,
+                    ],
+                    'username'  => 'leftiz',
+                ],
+                [
+                    'product'   => [],
+                    'thumbnail' => [
+                        'height' => 1920,
+                        'title'  => '',
+                        'url'    => url('png/placeholder-3.png'),
+                        'width'  => 1080,
+                    ],
+                    'username'  => 'leftiz',
+                ],
+                [
+                    'product'   => [],
+                    'thumbnail' => [
+                        'height' => 1920,
+                        'title'  => '',
+                        'url'    => url('png/placeholder-6.png'),
+                        'width'  => 1080,
                     ],
                     'username'  => 'leftiz',
                 ],

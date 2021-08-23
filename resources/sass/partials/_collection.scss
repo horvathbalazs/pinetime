@@ -1,44 +1,5 @@
 .collection {
     .collection__container {
-    }
-
-    .collection__thumbnail {
-        padding-bottom: 66.666666666666667%;
-    }
-
-    .collection__figure {
-        bottom: 0;
-        left: 0;
-        position: absolute;
-        right: 0;
-        top: 0;
-    }
-
-    .collection__image {
-        height: 100%;
-        object-fit: cover;
-        object-position: 50% 50%;
-        width: 100%;
-    }
-
-    .collection__column {
-        background-color: color('gorse');
-    }
-
-    .collection__card {
-        background-color: color('nero');
-        margin: 0 0 0 0;
-    }
-}
-
-@include breakpoint('laptop') {
-    .collection {
-    }
-}
-
-/*
-.collection {
-    .collection__container {
         align-items: stretch;
         display: flex;
         flex-direction: column;
@@ -47,9 +8,7 @@
     }
 
     .collection__thumbnail {
-        overflow: hidden;
-        padding-bottom: 66.666666666666667%;
-        transform: translate(0, 0);
+        padding-bottom: 65.942028985507246%;
         z-index: 1;
     }
 
@@ -69,8 +28,8 @@
     }
 
     .collection__column {
-        background-color: color('gorse');
         align-items: stretch;
+        background-color: color('gorse');
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
@@ -79,8 +38,8 @@
 
     .collection__card {
         background-color: color('nero');
-        margin: -1.25rem 0 5.625rem 5.797101449275362vw;
-        padding: 1.875rem 5.797101449275362vw 2.5rem;
+        margin: -1.25rem 0 5.625rem #{ ($container-phone) };
+        padding: 2rem #{ ($container-phone) } 2.625rem;
         z-index: 2;
     }
 
@@ -88,9 +47,10 @@
         @include headline;
 
         color: color('white');
-        display: block;
         font-size: 0.625rem;
         font-weight: 400;
+        line-height: 0.625rem;
+        margin-bottom: 0.125rem;
         text-transform: uppercase;
         white-space: nowrap;
     }
@@ -101,6 +61,8 @@
         color: color('white');
         font-size: 2.5rem;
         font-weight: 700;
+        line-height: 3.25rem;
+        margin-bottom: 0.125rem;
     }
 
     .collection__description {
@@ -109,7 +71,8 @@
         color: color('white');
         font-size: 1.125rem;
         font-weight: 400;
-        margin-bottom: 1.25rem;
+        line-height: 1.3em;
+        margin-bottom: 1.1875rem;
     }
 
     .collection__link {
@@ -128,12 +91,12 @@
             flex-wrap: nowrap;
             font-size: 0.75rem;
             font-weight: 400;
-            height: 2.625rem;
             justify-content: center;
             letter-spacing: 0.05em;
+            line-height: 0.75rem;
+            min-height: 2.5rem;
             text-align: center;
             text-transform: uppercase;
-            white-space: nowrap;
         }
     }
 }
@@ -141,26 +104,28 @@
 @include breakpoint('laptop') {
     .collection {
         .collection__container {
+            align-items: stretch;
+            display: flex;
             flex-direction: row;
+            flex-wrap: nowrap;
             justify-content: space-between;
         }
 
         .collection__thumbnail {
-            margin:  1.25rem -20.138888888888889vw 0 0;
-            min-width: 86.805555555555556vw;
-            padding-bottom: 56.25%;
-            width: 86.805555555555556vw;
+            margin: 1.8125rem #{ (-3 * $column-laptop) + (-2 * $gutter-laptop) } 0 0;
+            min-width: #{ ($container-laptop) + (11 * $column-laptop) + (10.5 * $gutter-laptop) };
+            padding-bottom: 56.08974358974359%;
+            width: #{ ($container-laptop) + (11 * $column-laptop) + (10.5 * $gutter-laptop) };
         }
 
         .collection__column {
-            min-width: 33.333333333333333vw;
-            padding-right: 3.472222222222222vw;
-            width: 33.333333333333333vw;
+            min-width: #{ ($container-laptop) + (4 * $column-laptop) + (2.5 * $gutter-laptop) };
+            width: #{ ($container-laptop) + (4 * $column-laptop) + (2.5 * $gutter-laptop) };
         }
 
         .collection__card {
-            margin: 0;
-            padding: 2.5rem 2.777777777777778vw;
+            margin: 0 #{ (0.5 * $container-laptop) } 0 0;
+            padding: 2.5rem #{ (2 * $gutter-laptop) };
         }
 
         .collection__label {
@@ -169,6 +134,8 @@
 
         .collection__title {
             font-size: 2.8125rem;
+            font-weight: 600;
+            line-height: 1.05em;
             margin-bottom: 0.5rem;
         }
 
@@ -177,4 +144,3 @@
         }
     }
 }
-*/

@@ -20,11 +20,13 @@ class Sandwich {
 
         this.variables.sandwich = variables.sandwich
 
-        this.references.sandwich.addEventListener('click', () => this.click())
-        this.references.sandwich.addEventListener('mouseover', () => this.hover())
-        this.references.sandwich.addEventListener('mouseleave', () => this.leave())
+        if (this.references.header) {
+            this.references.sandwich.addEventListener('click', () => this.click())
+            this.references.sandwich.addEventListener('mouseenter', () => this.hover())
+            this.references.sandwich.addEventListener('mouseleave', () => this.leave())
 
-        watch(this, 'state', () => this.morph())
+            watch(this, 'state', () => this.morph())
+        }
     }
 
     click() {

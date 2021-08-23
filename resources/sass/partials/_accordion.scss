@@ -1,13 +1,61 @@
 .accordion {
     .accordion__container {
-        padding-right: 1.25rem;
+        padding-right: #{ ($container-phone) };
+    }
+
+    .accordion__header {
+        align-items: center;
+        box-shadow: inset 0 0.0625rem color('nero');
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        padding: 1rem 0 0.9375rem #{ ($container-phone) };
+
+        .accordion__icon {
+            height: 2.5625rem;
+            min-height: 2.5625rem;
+            min-width: 2.5625rem;
+            width: 2.5625rem;
+        }
+
+        .accordion__path {
+            fill: none;
+            stroke: color('nero');
+            stroke-width: 1;
+
+            &.accordion__path--hidden {
+                visibility: hidden;
+            }
+        }
+    }
+
+    .accordion__title {
+        @include headline;
+
+        color: color('nero');
+        font-size: 1.5625rem;
+        font-weight: 400;
+        letter-spacing: 0.02em;
+        line-height: 2em;
+        text-transform: uppercase;
+        white-space: nowrap;
     }
 }
 
 @include breakpoint('laptop') {
     .accordion {
         .accordion__container {
-            padding-right: 6.25rem;
+            padding-right: #{ ($container-laptop) };
+        }
+
+        .accordion__header {
+            padding: 1rem #{ (0.5 * $column-laptop) } 0.9375rem #{ ($container-laptop) };
+        }
+
+        .accordion__title {
+            font-weight: 700;
         }
     }
 }
