@@ -3,13 +3,13 @@
 ###### Partials:
 - Accordion
 - Collection ✓
-- Collection ✓
 - Cookies ✓
 - Copyright ✓
 - Details ✓
 - Drawer
 - Footer ✓
 - Header
+- Hero
 - Instagram
 - Logo
 - Newsletter ✓

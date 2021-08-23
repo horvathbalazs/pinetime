@@ -326,16 +326,19 @@ trait PartialTrait
             'cart'        => 'Add to Cart',
             'colors'      => [
                 [
-                    'active' => false,
-                    'name'   => 'Yellow',
+                    'active'   => false,
+                    'disabled' => true,
+                    'name'     => 'Yellow',
                 ],
                 [
-                    'active' => true,
-                    'name'   => 'Black',
+                    'active'   => true,
+                    'disabled' => false,
+                    'name'     => 'Black',
                 ],
                 [
-                    'active' => true,
-                    'name'   => 'White',
+                    'active'   => false,
+                    'disabled' => false,
+                    'name'     => 'White',
                 ],
             ],
             'details'     => [
@@ -351,33 +354,45 @@ trait PartialTrait
                 [
                     'abbreviation' => 'XS',
                     'active'       => false,
+                    'disabled'     => true,
                     'name'         => 'Extra small',
                 ],
                 [
                     'abbreviation' => 'S',
                     'active'       => false,
+                    'disabled'     => true,
                     'name'         => 'Small',
                 ],
                 [
                     'abbreviation' => 'M',
-                    'active'       => true,
+                    'active'       => false,
+                    'disabled'     => false,
                     'name'         => 'Medium',
                 ],
                 [
                     'abbreviation' => 'L',
-                    'active'       => true,
+                    'active'       => false,
+                    'disabled'     => false,
                     'name'         => 'Large',
                 ],
                 [
                     'abbreviation' => 'XL',
                     'active'       => true,
+                    'disabled'     => false,
                     'name'         => 'Extra large',
                 ],
                 [
                     'abbreviation' => 'XXL',
-                    'active'       => true,
+                    'active'       => false,
+                    'disabled'     => false,
                     'name'         => 'Extra extra large',
                 ],
+            ],
+            'sizing'      => [
+                'active' => true,
+                'target' => '_self',
+                'title'  => 'Sizing Guide',
+                'url'    => 'https://example.com/',
             ],
             'slider'      => [
                 [

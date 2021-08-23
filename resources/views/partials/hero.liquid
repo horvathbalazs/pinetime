@@ -10,7 +10,53 @@
             </div>
             <div class="hero__column hero__column--product">
                 <h1 class="hero__title">{{ hero.title }}</h1>
-                <span class="hero__price">{{ hero.price.currency }} <strong>{{ hero.price.amount }}</strong></span>
+                <div class="hero__overview">
+                    <span class="hero__price">{{ hero.price.currency }} <strong>{{ hero.price.amount }}</strong></span>
+                    {% if hero.sizing.active %}
+                    <a class="hero__sizing"
+                       href="{{ hero.sizing.url | escape }}"
+                       target="{{ hero.sizing.target | escape }}"
+                       title="{{ hero.sizing.title | escape }}">{{ hero.sizing.title }}</a>
+                    {% endif %}
+                </div>
+                {% if hero.sizes %}
+                <div class="hero__sizes">
+                    <ul class="hero__list">
+                        {% for size in hero.sizes %}
+                        <li class="hero__item">
+                            <button class="hero__size"
+                                    title="{{ size.name | escape }}"
+                                    type="button">{{ size.abbreviation }}</button>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    {% for size in hero.sizes %}
+                    {% if size.active %}
+                    <span class="hero__label">{{ size.name }}</span>
+                    {% break %}
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                {% endif %}
+                {% if hero.colors %}
+                <div class="hero__colors">
+                    <ul class="hero__list">
+                        {% for color in hero.colors %}
+                        <li class="hero__item">
+                            <button class="hero__color"
+                                    title="{{ color.name | escape }}"
+                                    type="button">{{ color.name }}</button>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    {% for color in hero.colors %}
+                    {% if color.active %}
+                    <span class="hero__label">{{ color.name }}</span>
+                    {% break %}
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                {% endif %}
                 <button class="hero__cart"
                         title="{{ hero.cart }}"
                         type="button"
