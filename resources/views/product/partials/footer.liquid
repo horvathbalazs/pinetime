@@ -3,25 +3,25 @@
         <div class="footer__row">
             <div class="footer__column footer__column--socials">
                 {%
-                    include 'partials.logo' with
+                    include 'product.partials.logo' with
                     modifier: 'footer',
                     logo: footer.logo
                 %}
                 {%
-                    include 'partials.socials' with
+                    include 'product.partials.socials' with
                     socials: footer.socials
                 %}
             </div>
             <div class="footer__column footer__column--navigation">
                 {%
-                    include 'partials.navigation' with
+                    include 'product.partials.navigation' with
                     modifier: 'footer',
                     navigation: footer.navigation
                 %}
             </div>
             <div class="footer__column footer__column--copyright">
                 {%
-                    include 'partials.copyright' with
+                    include 'product.partials.copyright' with
                     copyright: footer.copyright
                 %}
             </div>
@@ -37,7 +37,7 @@
             </div>
             <div class="footer__column footer__column--sponsors">
                 {%
-                    include 'partials.sponsors' with
+                    include 'product.partials.sponsors' with
                     sponsors: footer.sponsors
                 %}
             </div>

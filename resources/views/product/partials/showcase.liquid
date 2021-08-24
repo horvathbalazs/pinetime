@@ -4,14 +4,14 @@
             <div class="showcase__column">
                 <h2 class="showcase__title">{{ showcase.title }}</h2>
                 {%
-                    include 'partials.slider' with
+                    include 'product.partials.slider' with
                     modifier: 'showcase',
                     slider: showcase.slider
                 %}
             </div>
             <div class="showcase__column">
                 {%
-                    include 'partials.features' with
+                    include 'product.partials.features' with
                     modifier: 'showcase',
                     features: showcase.features
                 %}

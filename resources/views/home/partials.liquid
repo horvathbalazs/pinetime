@@ -1,0 +1,8 @@
+{% extends 'layouts.app' %}
+
+{% block main %}
+{% case partial %}
+    {% when 'section' %}
+    {% include 'home.partials.section' %}
+{% endcase %}
+{% endblock %}

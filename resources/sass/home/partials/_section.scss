@@ -1,0 +1,31 @@
+.section {
+    .section__container {
+        padding: 0 1.25rem;
+    }
+
+    .section__title {
+        @include nikolai;
+
+        font-size: 2.5rem;
+        font-weight: 700;
+    }
+
+    .section__description {
+        @include headline;
+
+        font-size: 1rem;
+        font-weight: 400;
+    }
+}
+
+@include breakpoint('laptop') {
+    .section {
+        .section__container {
+            padding: 0 2.5rem;
+        }
+
+        .section__title {
+            font-size: 3.75rem;
+        }
+    }
+}

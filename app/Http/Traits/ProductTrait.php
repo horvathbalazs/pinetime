@@ -2,7 +2,7 @@
 
 namespace App\Http\Traits;
 
-trait PartialTrait
+trait ProductTrait
 {
     private static function accordion(): array
     {

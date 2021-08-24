@@ -2,7 +2,7 @@
     <div class="instagram__container">
         <h2 class="instagram__title">{{ instagram.title | raw }}</h2>
         {%
-            include 'partials.slider' with
+            include 'product.partials.slider' with
             modifier: 'instagram',
             slider: instagram.slider
         %}

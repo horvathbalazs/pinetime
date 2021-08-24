@@ -2,11 +2,31 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', 'HomeController@index')
-    ->name('home');
+Route::get('/', 'WelcomeController@index')
+    ->name('welcome');
 
-Route::get('demo', 'DemoController@index')
-    ->name('demo');
+Route::group([
+    'as'     => 'home.',
+    'prefix' => 'home',
+], function (): void {
+    $controller = 'HomeController';
 
-Route::get('partials/{template}', 'PartialController')
-    ->name('partials');
+    Route::get('demo', $controller . '@demo')
+        ->name('demo');
+
+    Route::get('partials/{partial}', $controller)
+        ->name('partials');
+});
+
+Route::group([
+    'as'     => 'product.',
+    'prefix' => 'product',
+], function (): void {
+    $controller = 'ProductController';
+
+    Route::get('demo', $controller . '@demo')
+        ->name('demo');
+
+    Route::get('partials/{partial}', $controller)
+        ->name('partials');
+});

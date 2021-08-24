@@ -1,5 +1,6 @@
 <!doctype html>
-<html lang="en">
+<html class="theme theme--{{ theme }}"
+      lang="en">
     <head>
         <meta charset="utf-8">
         <meta content="initial-scale=1,width=device-width" name="viewport">
@@ -9,7 +10,7 @@
         <link href="{{ global.app.url }}/css/app.css" rel="stylesheet">
     </head>
     <body class="body">
-        {% include 'partials.symbols' %}
+        {% include 'layouts.partials.symbols' %}
         {% block header %}
         {% endblock %}
         <main class="main">

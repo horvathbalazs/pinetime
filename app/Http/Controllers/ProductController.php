@@ -4,15 +4,29 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Traits\GlobalTrait;
-use App\Http\Traits\PartialTrait;
+use App\Http\Traits\ProductTrait;
 
-class DemoController extends Controller
+class ProductController extends Controller
 {
-    use GlobalTrait, PartialTrait;
+    use GlobalTrait, ProductTrait;
 
-    public function index()
+    public function __invoke($partial)
     {
-        return view('demo', [
+        if (method_exists($this, $partial)) {
+            return view('product/partials', [
+                'global'  => static::global(),
+                'partial' => $partial,
+                'theme'   => 'product',
+                $partial  => static::$partial(),
+            ]);
+        }
+
+        abort(404);
+    }
+
+    public function demo()
+    {
+        return view('product/demo', [
             'collection'     => static::collection(),
             'cookies'        => static::cookies(),
             'details'        => static::details(),
@@ -24,6 +38,7 @@ class DemoController extends Controller
             'newsletter'     => static::newsletter(),
             'recommendation' => static::recommendation(),
             'showcase'       => static::showcase(),
+            'theme'          => 'product',
         ]);
     }
 }

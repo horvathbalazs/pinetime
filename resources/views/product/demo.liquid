@@ -1,0 +1,24 @@
+{% extends 'layouts.app' %}
+
+{% block header %}
+{% include 'product.partials.cookies' with cookies %}
+{%
+    include 'product.partials.header' with
+    modifier: 'primary',
+    header
+%}
+{% endblock %}
+
+{% block main %}
+{% include 'product.partials.hero' with hero %}
+{% include 'product.partials.showcase' with showcase %}
+{% include 'product.partials.details' with details %}
+{% include 'product.partials.collection' with collection %}
+{% include 'product.partials.recommendation' with recommendation %}
+{% include 'product.partials.instagram' with instagram %}
+{% endblock %}
+
+{% block footer %}
+{% include 'product.partials.newsletter' with newsletter %}
+{% include 'product.partials.footer' with footer %}
+{% endblock %}

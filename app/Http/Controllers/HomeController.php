@@ -4,64 +4,32 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Traits\GlobalTrait;
+use App\Http\Traits\HomeTrait;
 
 class HomeController extends Controller
 {
-    use GlobalTrait;
+    use GlobalTrait, HomeTrait;
 
-    public function index()
+    public function __invoke($partial)
     {
-        return view('home', [
-            'global' => static::global(),
-            'home'   => [
-                'navigation' => [
-                    [
-                        'target' => '_self',
-                        'title'  => 'Demo',
-                        'url'    => url('demo'),
-                    ],
-                    [
-                        'target' => '_self',
-                        'title'  => 'Partials/Accordion',
-                        'url'    => url('partials/accordion'),
-                    ],
-                    [
-                        'target' => '_self',
-                        'title'  => 'Partials/Collection',
-                        'url'    => url('partials/collection'),
-                    ],
-                    [
-                        'target' => '_self',
-                        'title'  => 'Partials/Cookies',
-                        'url'    => url('partials/cookies'),
-                    ],
-                    [
-                        'target' => '_self',
-                        'title'  => 'Partials/Details',
-                        'url'    => url('partials/details'),
-                    ],
-                    [
-                        'target' => '_self',
-                        'title'  => 'Partials/Footer',
-                        'url'    => url('partials/footer'),
-                    ],
-                    [
-                        'target' => '_self',
-                        'title'  => 'Partials/Instagram',
-                        'url'    => url('partials/instagram'),
-                    ],
-                    [
-                        'target' => '_self',
-                        'title'  => 'Partials/Recommendation',
-                        'url'    => url('partials/recommendation'),
-                    ],
-                    [
-                        'target' => '_self',
-                        'title'  => 'Partials/Showcase',
-                        'url'    => url('partials/showcase'),
-                    ],
-                ],
-            ],
+        if (method_exists($this, $partial)) {
+            return view('home/partials', [
+                'global'  => static::global(),
+                'partial' => $partial,
+                'theme'   => 'home',
+                $partial  => static::$partial(),
+            ]);
+        }
+
+        abort(404);
+    }
+
+    public function demo()
+    {
+        return view('home/demo', [
+            'global'  => static::global(),
+            'section' => static::section(),
+            'theme'   => 'home',
         ]);
     }
 }

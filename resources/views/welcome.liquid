@@ -1,0 +1,21 @@
+{% extends 'layouts.app' %}
+
+{% block main %}
+<section>
+    <h1>{{ global.app.name }}</h1>
+    <nav>
+        <ul>
+            {% for link in navigation %}
+            <li>
+                <a href="{{ link.url }}"
+                   target="{{ link.target | escape }}"
+                   title="{{ link.url | escape }}">
+                    <strong>{{ link.title }}:</strong><br>
+                    <em>{{ link.url }}</em>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </nav>
+</section>
+{% endblock %}

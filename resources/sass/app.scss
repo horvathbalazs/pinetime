@@ -73,6 +73,17 @@ img::selection {
 
 @include main;
 
-@import
-    'mixins/*',
-    'partials/*';
+@import 'mixins/*.scss';
+
+.theme {
+    @import 'layouts/**/*.scss';
+}
+
+.theme.theme--home {
+    @import 'home/**/*.scss';
+}
+
+
+.theme.theme--product {
+    @import 'product/**/*.scss';
+}

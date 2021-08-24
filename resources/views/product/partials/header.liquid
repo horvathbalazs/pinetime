@@ -4,15 +4,15 @@
             data-header="primary">
         <div class="header__container">
             {%
-                include 'partials.sandwich' with
+                include 'product.partials.sandwich' with
                 sandwich: header.sandwich
             %}
             {%
-                include 'partials.drawer' with
+                include 'product.partials.drawer' with
                 drawer: header.drawer
             %}
             {%
-                include 'partials.logo' with
+                include 'product.partials.logo' with
                 modifier: 'header',
                 logo: header.logo
             %}
