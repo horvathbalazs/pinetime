@@ -1,4 +1,21 @@
+@import 'functions';
+
 $breakpoints: ();
+$grid: (
+    'phone':  (
+        'gutter': 1rem,
+        'margin': 1.5rem,
+    ),
+    'tablet': (
+        'gutter': 1.5rem,
+        'margin': 2rem,
+    ),
+    'laptop': (
+        'gutter': 2rem,
+        'margin': 2.5rem,
+    ),
+);
+$width: 120rem;
 
 @import 'breakpoints';
 
@@ -33,7 +50,6 @@ $gutter-laptop: 1.666666666666667vw;
 
 @import
     'variables',
-    'functions',
     'fonts',
     'reset';
 

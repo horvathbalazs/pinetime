@@ -13,7 +13,9 @@
     }
 
     .details__container {
-        padding: 0 #{ ($container-phone) };
+        margin: 0 auto;
+        max-width: #{ ($width) };
+        padding: 0 #{ ($margin) };
     }
 
     .details__cards {
@@ -22,15 +24,15 @@
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-        margin: -0.5rem #{ (-0.5 * $gutter-phone) };
+        margin: -0.5rem #{ (-0.5 * $gutter) };
     }
 
     .details__card {
         background-color: color('gainsboro');
-        margin: 0.5rem #{ (0.5 * $gutter-phone) };
-        min-width: #{ (4 * $column-phone) + (3 * $gutter-phone) };
-        padding: 3.75rem 8.454106280193237vw 3.125rem;
-        width: #{ (4 * $column-phone) + (3 * $gutter-phone) };
+        margin: 0.5rem #{ (0.5 * $gutter) };
+        min-width: calc(100% - #{ ($gutter) });
+        padding: 3.75rem 2.25rem 3.125rem;
+        width: calc(100% - #{ ($gutter) });
     }
 
     .details__title {
@@ -52,7 +54,7 @@
         flex-wrap: nowrap;
         justify-content: space-between;
         margin: 0 auto;
-        max-width: 62.801932367149758vw;
+        max-width: 16.25rem;
     }
 
     .details__ruler {
@@ -149,6 +151,24 @@
     }
 }
 
+@include breakpoint('tablet') {
+    .details {
+        .details__container {
+            padding: 0 #{ ($margin) };
+        }
+
+        .details__cards {
+            margin: -0.5rem #{ (-0.5 * $gutter) };
+        }
+
+        .details__card {
+            margin: 0.5rem #{ (0.5 * $gutter) };
+            min-width: calc(100% - #{ ($gutter) });
+            width: calc(100% - #{ ($gutter) });
+        }
+    }
+}
+
 @include breakpoint('laptop') {
     .details {
         padding: 4.375rem 0 4.0625rem;
@@ -158,27 +178,22 @@
         }
 
         .details__container {
-            padding: 0 #{ ($container-laptop) };
+            padding: 0 #{ ($margin) };
         }
 
         .details__cards {
-            margin: -0.75rem #{ (-0.5 * $gutter-laptop) };
+            margin: -0.75rem #{ (-0.5 * $gutter) };
         }
 
         .details__card {
-            margin: 0.75rem #{ (0.5 * $gutter-laptop) };
-            min-width: #{ (4 * $column-laptop) + (3 * $gutter-laptop) };
-            padding: 3.75rem 3.541666666666667vw 3.125rem;
-            width: #{ (4 * $column-laptop) + (3 * $gutter-laptop) };
+            margin: 0.75rem #{ (0.5 * $gutter) };
+            min-width: calc(33.333333333333333% - #{ ($gutter)});
+            padding: 3.75rem 3.1875rem 3.125rem;
+            width: calc(33.333333333333333% - #{ ($gutter)});
         }
 
         .details__description {
             font-weight: 400;
-        }
-
-        .details__ruler,
-        .details__labels {
-            max-width: 18.055555555555556vw;
         }
     }
 }

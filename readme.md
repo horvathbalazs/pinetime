@@ -2,16 +2,16 @@
 
 ###### Partials:
 - Accordion
-- Collection ✓
-- Cookies ✓
-- Copyright ✓
+- Collection
+- Cookies
+- Copyright
 - Details ✓
 - Drawer
-- Footer ✓
+- Footer
 - Header
 - Hero
 - Instagram
 - Logo
 - Newsletter ✓
-- Recommendation ✓
-- Sandwich ✓
+- Recommendation
+- Sandwich

@@ -4,10 +4,19 @@ $breakpoints: map-merge((
     'tablet':  40em,
 ), $breakpoints);
 
+$gutter: map-deep-get($grid, 'phone', 'gutter');
+$margin: map-deep-get($grid, 'phone', 'margin');
+
 @mixin breakpoint($device) {
     @if map-has-key($breakpoints, $device) {
         @media (min-width: map-get($breakpoints, $device)) {
+            $gutter: map-deep-get($grid, $device, 'gutter') !global;
+            $margin: map-deep-get($grid, $device, 'margin') !global;
+
             @content;
+
+            $gutter: map-deep-get($grid, 'phone', 'gutter') !global;
+            $margin: map-deep-get($grid, 'phone', 'margin') !global;
         }
     } @else {
         @content;

@@ -3,7 +3,9 @@
     padding: 3.125rem 0;
 
     .newsletter__container {
-        padding: 0 #{ ($container-phone) };
+        margin: 0 auto;
+        max-width: #{ ($width) };
+        padding: 0 #{ ($margin) };
     }
 
     .newsletter__row {
@@ -12,11 +14,13 @@
         flex-direction: column;
         flex-wrap: nowrap;
         justify-content: center;
-        margin: -1.875rem #{ (-0.5 * $gutter-phone) };
+        margin: -1.875rem #{ (-0.5 * $gutter) };
     }
 
     .newsletter__column {
-        margin: 1.875rem #{ (0.5 * $gutter-phone) };
+        margin: 1.875rem #{ (0.5 * $gutter) };
+        min-width: calc(100% - #{ ($gutter) });
+        width: calc(100% - #{ ($gutter) });
     }
 
     .newsletter__title {
@@ -106,12 +110,30 @@
     }
 }
 
+@include breakpoint('tablet') {
+    .newsletter {
+        .newsletter__container {
+            padding: 0 #{ ($margin) };
+        }
+
+        .newsletter__row {
+            margin: -0.75rem #{ (-0.5 * $gutter) };
+        }
+
+        .newsletter__column {
+            margin: 0.75rem #{ (0.5 * $gutter) };
+            min-width: calc(100% - #{ ($gutter) });
+            width: calc(100% - #{ ($gutter) });
+        }
+    }
+}
+
 @include breakpoint('laptop') {
     .newsletter {
         padding: 5.3125rem 0 2.5rem;
 
         .newsletter__container {
-            padding: 0 #{ ($container-laptop) };
+            padding: 0 #{ ($margin) };
         }
 
         .newsletter__row {
@@ -120,20 +142,20 @@
             flex-direction: row;
             flex-wrap: nowrap;
             justify-content: space-between;
-            margin: -0.75rem #{ (-0.5 * $gutter-laptop) };
+            margin: -0.75rem #{ (-0.5 * $gutter) };
         }
 
         .newsletter__column {
-            margin: 0.75rem #{ (0.5 * $gutter-laptop) };
+            margin: 0.75rem #{ (0.5 * $gutter) };
 
             &.newsletter__column--description {
-                min-width: #{ (5 * $column-laptop) + (4 * $gutter-laptop) };
-                width: #{ (5 * $column-laptop) + (4 * $gutter-laptop) };
+                min-width: calc(41.666666666666667% - #{ ($gutter) });
+                width: calc(41.666666666666667% - #{ ($gutter) });
             }
 
             &.newsletter__column--form {
-                min-width: #{ (4 * $column-laptop) + (3 * $gutter-laptop) };
-                width: #{ (4 * $column-laptop) + (3 * $gutter-laptop) };
+                min-width: calc(33.333333333333333% - #{ ($gutter) });
+                width: calc(33.333333333333333% - #{ ($gutter) });
             }
         }
 
