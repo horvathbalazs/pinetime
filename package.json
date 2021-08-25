@@ -23,6 +23,8 @@
     "license": "UNLICENSED",
     "private": true,
     "scripts": {
+        "build:js": "webpack --config config/js.config.js",
+        "build:sass": "webpack --config config/sass.config.js",
         "watch:js": "webpack --config config/js.config.js --watch",
         "watch:sass": "webpack --config config/sass.config.js --watch"
     }
