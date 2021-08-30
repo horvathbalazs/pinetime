@@ -12,7 +12,7 @@ class WelcomeController extends Controller
 
     public function index()
     {
-        return view('welcome', [
+        return view('laravel.welcome', [
             'global'     => static::global(),
             'navigation' => static::navigation(),
             'theme'      => 'welcome',

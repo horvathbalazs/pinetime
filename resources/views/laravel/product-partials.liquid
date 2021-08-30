@@ -1,0 +1,14 @@
+{% extends 'layout.theme' %}
+
+{% block main %}
+{% case partial %}
+    {% when 'accordion' %}
+    {% include 'sections.product-accordion' %}
+    {% when 'details' %}
+    {% include 'sections.product-details' %}
+    {% when 'hero' %}
+    {% include 'sections.product-hero' %}
+    {% when 'showcase' %}
+    {% include 'sections.product-showcase' %}
+{% endcase %}
+{% endblock %}

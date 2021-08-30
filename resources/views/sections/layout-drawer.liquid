@@ -1,0 +1,20 @@
+<div class="drawer"
+     data-drawer>
+    <div class="drawer__container">
+        {%
+            include 'sections.layout-navigation' with
+            modifier: 'drawer-primary',
+            navigation: drawer.navigation.primary
+        %}
+        {%
+            include 'sections.layout-logo' with
+            modifier: 'drawer',
+            logo: drawer.logo
+        %}
+        {%
+            include 'sections.layout-navigation' with
+            modifier: 'drawer-secondary',
+            navigation: drawer.navigation.secondary
+        %}
+    </div>
+</div>

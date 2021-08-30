@@ -57,7 +57,7 @@ $gutter-laptop: 1.666666666666667vw;
 
 $elements: (
     'body' 'div' 'img' 'li' 'ul'
-    'article' 'blockquote' 'figure' 'footer' 'header' 'main' 'nav' 'section'
+    'article' 'aside' 'blockquote' 'figure' 'footer' 'header' 'main' 'nav' 'section'
     'button' 'form' 'label' 'input'
     'a' 'h1' 'h2' 'h3' 'p' 'span' 'strong'
     'g' 'path' 'svg' 'symbol' 'use'
@@ -69,11 +69,6 @@ $elements: (
     @include headline;
 
     color: color('nero');
-    /**
-     *
-     * padding-top: 62.5rem;
-     *
-     */
 }
 
 ::selection {
@@ -92,7 +87,7 @@ img::selection {
 @import 'mixins/*.scss';
 
 .theme {
-    @import 'layouts/**/*.scss';
+    @import 'layout/**/*.scss';
 }
 
 .theme.theme--home {

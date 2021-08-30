@@ -1,17 +1,20 @@
 # Pinetime Clothing Redesign
 
+###### Things to Do:
+- Fonts ✓
+
 ###### Partials:
 - Accordion
-- Collection
-- Cookies
-- Copyright
+- Collection ✓
+- Cookies ✓
+- Copyright ✓
 - Details ✓
 - Drawer
-- Footer
-- Header
+- Footer ✓
+- Header ✓
 - Hero
-- Instagram
+- Instagram ✓
 - Logo
 - Newsletter ✓
-- Recommendation
+- Recommendation ✓
 - Sandwich

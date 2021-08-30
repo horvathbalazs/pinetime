@@ -1,0 +1,8 @@
+{% extends 'layout.theme' %}
+
+{% block main %}
+{% case partial %}
+    {% when 'section' %}
+    {% include 'sections.home-section' %}
+{% endcase %}
+{% endblock %}

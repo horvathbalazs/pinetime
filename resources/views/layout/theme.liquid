@@ -1,0 +1,25 @@
+<!doctype html>
+<html class="theme theme--{{ theme }}"
+      lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta content="initial-scale=1,width=device-width" name="viewport">
+        <title>{{ global.app.name }}</title>
+        <link as="script" href="{{ global.app.url }}/js/app.js" rel="preload">
+        <link as="style" href="{{ global.app.url }}/css/app.css" rel="preload">
+        <link href="{{ global.app.url }}/css/app.css" rel="stylesheet">
+    </head>
+    <body class="body">
+        {% include 'sections.layout-symbols' %}
+        {% block header %}
+        {% endblock %}
+        <main class="main">
+            {% block main %}
+            {% endblock %}
+        </main>
+        {% block footer %}
+        {% endblock %}
+        <script src="{{ global.app.url }}/js/app.js">
+        </script>
+    </body>
+</html>

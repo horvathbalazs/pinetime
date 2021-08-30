@@ -13,7 +13,7 @@ class HomeController extends Controller
     public function __invoke($partial)
     {
         if (method_exists($this, $partial)) {
-            return view('home/partials', [
+            return view('laravel/home-partials', [
                 'global'  => static::global(),
                 'partial' => $partial,
                 'theme'   => 'home',
@@ -26,7 +26,7 @@ class HomeController extends Controller
 
     public function demo()
     {
-        return view('home/demo', [
+        return view('templates/index', [
             'global'  => static::global(),
             'section' => static::section(),
             'theme'   => 'home',

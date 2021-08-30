@@ -13,7 +13,7 @@ class ProductController extends Controller
     public function __invoke($partial)
     {
         if (method_exists($this, $partial)) {
-            return view('product/partials', [
+            return view('laravel/product-partials', [
                 'global'  => static::global(),
                 'partial' => $partial,
                 'theme'   => 'product',
@@ -26,7 +26,7 @@ class ProductController extends Controller
 
     public function demo()
     {
-        return view('product/demo', [
+        return view('templates/product', [
             'collection'     => static::collection(),
             'cookies'        => static::cookies(),
             'details'        => static::details(),

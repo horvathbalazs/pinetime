@@ -1,0 +1,46 @@
+<footer class="footer">
+    <div class="footer__container">
+        <div class="footer__row">
+            <div class="footer__column footer__column--socials">
+                {%
+                    include 'sections.layout-logo' with
+                    modifier: 'footer',
+                    logo: footer.logo
+                %}
+                {%
+                    include 'sections.layout-socials' with
+                    socials: footer.socials
+                %}
+            </div>
+            <div class="footer__column footer__column--navigation">
+                {%
+                    include 'sections.layout-navigation' with
+                    modifier: 'footer',
+                    navigation: footer.navigation
+                %}
+            </div>
+            <div class="footer__column footer__column--copyright">
+                {%
+                    include 'sections.layout-copyright' with
+                    copyright: footer.copyright
+                %}
+            </div>
+            <div class="footer__column footer__column--investor">
+                <figure class="footer__investor">
+                    <img class="footer__image"
+                         alt="{{ footer.investor.thumbnail.title | escape }}"
+                         height="{{ footer.investor.thumbnail.height | escape }}"
+                         src="{{ footer.investor.thumbnail.url }}"
+                         title="{{ footer.investor.thumbnail.title | escape }}"
+                         width="{{ footer.investor.thumbnail.width | escape }}">
+                </figure>
+            </div>
+            <div class="footer__column footer__column--sponsors">
+                {%
+                    include 'sections.layout-sponsors' with
+                    sponsors: footer.sponsors
+                %}
+            </div>
+        </div>
+    </div>
+</footer>

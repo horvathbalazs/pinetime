@@ -1,0 +1,10 @@
+<section class="instagram">
+    <div class="instagram__container">
+        <h2 class="instagram__title">{{ instagram.title | raw }}</h2>
+        {%
+            include 'sections.layout-slider' with
+            modifier: 'instagram',
+            slider: instagram.slider
+        %}
+    </div>
+</section>

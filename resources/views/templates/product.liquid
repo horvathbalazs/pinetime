@@ -1,0 +1,24 @@
+{% extends 'layout.theme' %}
+
+{% block header %}
+{% include 'sections.layout-cookies' with cookies %}
+{%
+    include 'sections.layout-header' with
+    modifier: 'primary',
+    header
+%}
+{% endblock %}
+
+{% block main %}
+{% include 'sections.product-hero' with hero %}
+{% include 'sections.product-showcase' with showcase %}
+{% include 'sections.product-details' with details %}
+{% endblock %}
+
+{% block footer %}
+{% include 'sections.layout-collection' with collection %}
+{% include 'sections.layout-recommendation' with recommendation %}
+{% include 'sections.layout-instagram' with instagram %}
+{% include 'sections.layout-newsletter' with newsletter %}
+{% include 'sections.layout-footer' with footer %}
+{% endblock %}
