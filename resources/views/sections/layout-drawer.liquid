@@ -16,5 +16,15 @@
             modifier: 'drawer-secondary',
             navigation: drawer.navigation.secondary
         %}
+        <div class="drawer__thumbnail">
+            <figure class="drawer__figure">
+                <img class="drawer__image"
+                     alt="{{ drawer.thumbnail.title | escape }}"
+                     height="{{ drawer.thumbnail.height | escape }}"
+                     src="{{ drawer.thumbnail.url }}"
+                     title="{{ drawer.thumbnail.title | escape }}"
+                     width="{{ drawer.thumbnail.width | escape }}">
+            </figure>
+        </div>
     </div>
 </div>

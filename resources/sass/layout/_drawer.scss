@@ -1,0 +1,63 @@
+.drawer {
+    background-color: color('dark-grey');
+    height: 100vh;
+    left: 0;
+    padding: 5.625rem 0 5rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: transform variable('navigation');
+    transform: translateX(-100%);
+    z-index: 1;
+
+    &.drawer--active {
+        transform: translateX(0%);
+    }
+
+    .drawer__container {
+        padding: 0 #{ ($margin) + (0.5 * $gutter) };
+    }
+
+    .drawer__thumbnail {
+        background-color: color('dark-grey');
+        min-width: 33.333333333333333%;
+        position: absolute;
+        right: 0;
+        top: 20rem;
+        width: 33.333333333333333%;
+
+        &::before {
+            content: '';
+            display: block;
+            padding-bottom: 92.307692307692308%;
+        }
+    }
+
+    .drawer__figure {
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .drawer__image {
+        height: 100%;
+        object-fit: contain;
+        object-position: 50% 50%;
+        width: 100%;
+    }
+}
+
+@include breakpoint('tablet') {
+    .drawer .drawer__container {
+        padding: 0 #{ ($margin) + (0.5 * $gutter) };
+    }
+}
+
+
+@include breakpoint('laptop') {
+    .drawer {
+        display: none;
+    }
+}

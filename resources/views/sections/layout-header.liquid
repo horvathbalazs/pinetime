@@ -16,6 +16,11 @@
                 modifier: 'header',
                 logo: header.logo
             %}
+            {%
+                include 'sections.layout-navigation' with
+                modifier: 'header-primary',
+                navigation: header.navigation
+            %}
             <button class="header__cart"
                     title=""
                     type="button"

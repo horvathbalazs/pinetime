@@ -238,12 +238,6 @@ trait ProductTrait
     private static function header(): array
     {
         return [
-            'logo'   => [
-                'symbol' => 'pinetime-text',
-                'target' => '_self',
-                'title'  => 'Pinetime Clothing',
-                'url'    => url(''),
-            ],
             'drawer' => [
                 'logo'   => [
                     'symbol' => 'pinetime',
@@ -314,6 +308,40 @@ trait ProductTrait
                                 'url'    => url('contact'),
                             ],
                         ],
+                    ],
+                ],
+                'thumbnail' => [
+                    'height' => 132,
+                    'title'  => '',
+                    'url'    => url('png/drawer.png'),
+                    'width'  => 143,
+                ],
+            ],
+            'logo'   => [
+                'symbol' => 'pinetime-text',
+                'target' => '_self',
+                'title'  => 'Pinetime Clothing',
+                'url'    => url(''),
+            ],
+            'navigation' => [
+                [
+                    [
+                        'active' => false,
+                        'target' => '_self',
+                        'title'  => 'Men',
+                        'url'    => url('men'),
+                    ],
+                    [
+                        'active' => true,
+                        'target' => '_self',
+                        'title'  => 'Women',
+                        'url'    => url('women'),
+                    ],
+                    [
+                        'active' => false,
+                        'target' => '_self',
+                        'title'  => 'Accessories',
+                        'url'    => url('accessories'),
                     ],
                 ],
             ],

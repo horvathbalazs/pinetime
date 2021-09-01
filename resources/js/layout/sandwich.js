@@ -9,6 +9,7 @@ class Sandwich {
         this.state      = ['default']
         this.variables  = {}
 
+        this.references.header   = document.querySelector('[data-header="primary"]')
         this.references.drawer   = document.querySelector('[data-drawer]')
         this.references.sandwich = document.querySelector('[data-sandwich]')
         this.references          = Array.from(document.querySelectorAll('[data-sandwich-path]'))
