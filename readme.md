@@ -10,6 +10,7 @@
 - Copyright ✓
 - Details ✓
 - Drawer
+- Features
 - Footer ✓
 - Header ✓
 - Hero
@@ -18,3 +19,4 @@
 - Newsletter ✓
 - Recommendation ✓
 - Sandwich
+- Showcase

@@ -1,0 +1,72 @@
+{% if sizing.active %}
+<aside class="sizing"
+    data-sizing="modal">
+    <div class="sizing__dialog">
+        <div class="sizing__container">
+            <h3 class="sizing__title">{{ sizing.title }}</h3>
+            <button class="sizing__button"
+                    title="{{ sizing.close | escape }}"
+                    type="button">
+                <svg class="sizing__">
+                    <use href=""/>
+                </svg>
+            </button>
+            <div class="sizing__thumbnail">
+                <figure class="sizing__figure">
+                    <img class="sizing__image">
+                    <figcaption class="sizing__caption"></figcaption>
+                </figure>
+            </div>
+            <div>
+                <div class="sizing__sizes">
+                    <ul class="sizing__list">
+                        {% for size in sizing.sizes %}
+                        <li class="sizing__item{% if size.active %} sizing__item--active{% endif %}">
+                            <button class="sizing__size"
+                                    title="{{ size.name | escape }}"
+                                    type="button"
+                                    data-size
+                                    data-key="{{ size.key | escape }}"
+                                    data-active="{% if size.active %}true{% else %}false{% endif %}"
+                                    data-chest="{{ size.chest | escape }}"
+                                    data-length="{{ size.length | escape }}"
+                                    data-sleeve="{{ size.sleeve | escape }}"
+                                    data-waist="{{ size.waist | escape }}">
+                                <span class="sizing__text">{{ size.abbreviation }}</span>
+                            </button>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <button>
+                </button>
+            </div>
+            <div class="sizing__row">
+                <div class="sizing__column">
+                    <svg class="">
+                        <g>
+                        </g>
+                    </svg>
+                </div>
+                <div class="sizing__column">
+                    <h4 class="sizing__subtitle">{{ sizing.measurement.title }}</h4>
+                    <p class="sizing__description">{{ sizing.measurement.description }}</p>
+                    <table class="sizing__table">
+                        <tbody>
+                            {% for row in sizing.measurement.table %}
+                            <tr>
+                                <th class="sizing__header">{{ row.header }}</th>
+                                <td class="sizing__cell">{{ row.cell }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    <hr class="sizing__separator">
+                    <h4 class="sizing__subtitle">{{ sizing.fit.title }}</h4>
+                    <p class="sizing__description">{{ sizing.fit.description }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>
+{% endif %}

@@ -1,4 +1,4 @@
-const path = require('path')
+const path    = require('path')
 
 const root    = path.resolve(__dirname, '..'),
       modules = path.resolve(root, 'node_modules')

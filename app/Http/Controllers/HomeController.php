@@ -5,10 +5,11 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Http\Traits\GlobalTrait;
 use App\Http\Traits\HomeTrait;
+use App\Http\Traits\LayoutTrait;
 
 class HomeController extends Controller
 {
-    use GlobalTrait, HomeTrait;
+    use GlobalTrait, HomeTrait, LayoutTrait;
 
     public function __invoke($partial)
     {
@@ -16,7 +17,7 @@ class HomeController extends Controller
             return view('laravel/home-partials', [
                 'global'  => static::global(),
                 'partial' => $partial,
-                'theme'   => 'home',
+                'themes'  => ['home', 'partial'],
                 $partial  => static::$partial(),
             ]);
         }
@@ -29,7 +30,7 @@ class HomeController extends Controller
         return view('templates/index', [
             'global'  => static::global(),
             'section' => static::section(),
-            'theme'   => 'home',
+            'themes'  => ['home'],
         ]);
     }
 }

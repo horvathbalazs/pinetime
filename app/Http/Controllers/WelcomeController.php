@@ -15,7 +15,7 @@ class WelcomeController extends Controller
         return view('laravel.welcome', [
             'global'     => static::global(),
             'navigation' => static::navigation(),
-            'theme'      => 'welcome',
+            'themes'     => ['welcome'],
         ]);
     }
 }

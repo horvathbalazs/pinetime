@@ -11,6 +11,7 @@
         "mini-css-extract-plugin": "2.1.0",
         "node-sass": "6.0.1",
         "node-sass-glob-importer": "5.3.2",
+        "pinch-zoom-js": "2.3.4",
         "postcss-loader": "6.1.1",
         "sass-loader": "12.1.0",
         "slick-carousel": "1.8.1",

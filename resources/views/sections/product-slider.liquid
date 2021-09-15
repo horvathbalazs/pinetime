@@ -1,9 +1,11 @@
-{% case modifier %}
-    {% when 'hero' %}
-    <div class="slider slider--hero"
-         data-slider="hero">
-        {% for slide in slider %}
-        <article class="slider__slide">
+{% if modifier == 'gallery' %}
+<aside class="slider slider--gallery"
+       data-gallery>
+    <div class="slider__slides"
+         data-slider="gallery">
+        {% for slide in slider.slides %}
+        <article class="slider__slide"
+                 data-slider-slide>
             <div class="slider__thumbnail">
                 <figure class="slider__figure">
                     <img class="slider__image"
@@ -17,9 +19,38 @@
         </article>
         {% endfor %}
     </div>
-    {% when 'showcase' %}
-    <div class="slider slider--showcase"
-         data-slider="showcase"
-         data-slider-image="{{ slider.image }}">
-    </div>
-{% endcase %}
+    <button class="slider__button"
+            title="{{ slider.close }}"
+            type="button"
+            data-gallery-close
+            data-ripple>
+        <svg class="slider__icon">
+            <use href="#symbol-times"/>
+        </svg>
+    </button>
+</aside>
+{% elsif modifier == 'hero' %}
+<div class="slider slider--hero"
+     data-slider="hero">
+    {% for slide in slider %}
+    <article class="slider__slide">
+        <div class="slider__thumbnail">
+            <figure class="slider__figure">
+                <img class="slider__image"
+                     alt="{{ slide.thumbnail.title | escape }}"
+                     height="{{ slide.thumbnail.height | escape }}"
+                     src="{{ slide.thumbnail.url }}"
+                     title="{{ slide.thumbnail.title | escape }}"
+                     width="{{ slide.thumbnail.width | escape }}"
+                     data-gallery-open="{{ forloop.index0 }}">
+            </figure>
+        </div>
+    </article>
+    {% endfor %}
+</div>
+{% elsif modifier == 'showcase' %}
+<div class="slider slider--showcase"
+     data-slider="showcase"
+     data-slider-image="{{ slider.image }}">
+</div>
+{% endif %}

@@ -5,7 +5,7 @@
                 {%
                     include 'sections.product-slider' with
                     modifier: 'hero',
-                    slider: hero.slider
+                    slider: hero.slider.slides
                 %}
             </div>
             <div class="hero__column hero__column--product">
@@ -13,20 +13,23 @@
                 <div class="hero__overview">
                     <span class="hero__price">{{ hero.price.currency }} <strong>{{ hero.price.amount }}</strong></span>
                     {% if hero.sizing.active %}
-                    <a class="hero__sizing"
-                       href="{{ hero.sizing.url | escape }}"
-                       target="{{ hero.sizing.target | escape }}"
-                       title="{{ hero.sizing.title | escape }}">{{ hero.sizing.title }}</a>
+                    <button class="hero__sizing"
+                            title="{{ hero.sizing.open | escape }}"
+                            type="button"
+                            data-sizing="open"
+                            data-ripple>{{ hero.sizing.open }}</button>
                     {% endif %}
                 </div>
                 {% if hero.sizes %}
                 <div class="hero__sizes">
                     <ul class="hero__list">
                         {% for size in hero.sizes %}
-                        <li class="hero__item">
+                        <li class="hero__item{% if size.active %} hero__item--active{% endif %}{% if size.disabled %} hero__item--disabled{% endif %}">
                             <button class="hero__size"
                                     title="{{ size.name | escape }}"
-                                    type="button">{{ size.abbreviation }}</button>
+                                    type="button">
+                                <span class="hero__text">{{ size.abbreviation }}</span>
+                            </button>
                         </li>
                         {% endfor %}
                     </ul>
@@ -42,10 +45,21 @@
                 <div class="hero__colors">
                     <ul class="hero__list">
                         {% for color in hero.colors %}
-                        <li class="hero__item">
+                        <li class="hero__item{% if color.active %} hero__item--active{% endif %}{% if color.disabled %} hero__item--disabled{% endif %}">
                             <button class="hero__color"
                                     title="{{ color.name | escape }}"
-                                    type="button">{{ color.name }}</button>
+                                    type="button">
+                                <span class="hero__thumbnail">
+                                    <span class="hero__figure">
+                                        <img class="hero__image"
+                                             alt="{{ color.thumbnail.title | escape }}"
+                                             height="{{ color.thumbnail.height | escape }}"
+                                             src="{{ color.thumbnail.url }}"
+                                             title="{{ color.thumbnail.title | escape }}"
+                                             width="{{ color.thumbnail.width | escape }}">
+                                    </span>
+                                </span>
+                            </button>
                         </li>
                         {% endfor %}
                     </ul>
@@ -83,3 +97,12 @@
         </div>
     </div>
 </section>
+{%
+    include 'sections.product-slider' with
+    modifier: 'gallery',
+    slider: hero.slider
+%}
+{%
+    include 'sections.product-sizing' with
+    sizing: hero.sizing
+%}

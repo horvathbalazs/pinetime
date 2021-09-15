@@ -61,8 +61,14 @@ class Sandwich {
             ease: Sine.easeInOut,
             morphSVG: { shape: this.references[morph].getAttribute('d') }
         })
-        document.body.style.overflowY = this.state.includes('active') ? 'hidden' : 'visible'
-        this.references.drawer.classList[this.state.includes('active') ? 'add' : 'remove']('drawer--active')
+        document.body.style.overflowY = this.state.includes('active')
+            ? 'hidden'
+            : 'visible'
+        this.references.drawer.classList[
+            this.state.includes('active')
+            ? 'add'
+            : 'remove'
+        ]('drawer--active')
     }
 }
 

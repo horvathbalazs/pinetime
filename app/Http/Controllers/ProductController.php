@@ -4,19 +4,20 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Traits\GlobalTrait;
+use App\Http\Traits\LayoutTrait;
 use App\Http\Traits\ProductTrait;
 
 class ProductController extends Controller
 {
-    use GlobalTrait, ProductTrait;
+    use GlobalTrait, LayoutTrait, ProductTrait;
 
     public function __invoke($partial)
     {
         if (method_exists($this, $partial)) {
             return view('laravel/product-partials', [
-                'global'  => static::global(),
+                'global'  => static::global (),
                 'partial' => $partial,
-                'theme'   => 'product',
+                'themes'  => ['product', 'partial'],
                 $partial  => static::$partial(),
             ]);
         }
@@ -38,7 +39,7 @@ class ProductController extends Controller
             'newsletter'     => static::newsletter(),
             'recommendation' => static::recommendation(),
             'showcase'       => static::showcase(),
-            'theme'          => 'product',
+            'themes'         => ['product'],
         ]);
     }
 }

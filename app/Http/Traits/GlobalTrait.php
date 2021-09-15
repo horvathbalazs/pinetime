@@ -7,7 +7,7 @@ trait GlobalTrait
     private static function global(): array
     {
         return [
-            'app' => [
+            'app'     => [
                 'name' => config('app.name'),
                 'url'  => url(''),
             ],

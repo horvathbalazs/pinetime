@@ -31,6 +31,7 @@ return [
         'layout'    => 'Liquid\Tag\TagLayout',
         'paginate'  => 'Liquid\Tag\TagPaginate',
         'raw'       => 'Liquid\Tag\TagRaw',
+        'render'    => 'Liquid\Tag\TagInclude',
         'tablerow'  => 'Liquid\Tag\TagTablerow',
         'unless'    => 'Liquid\Tag\TagUnless',
     ],
