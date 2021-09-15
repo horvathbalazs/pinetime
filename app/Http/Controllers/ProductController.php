@@ -28,6 +28,7 @@ class ProductController extends Controller
     public function demo()
     {
         return view('templates/product', [
+            'accordion'      => static::accordion(),
             'collection'     => static::collection(),
             'cookies'        => static::cookies(),
             'details'        => static::details(),

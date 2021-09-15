@@ -9,19 +9,52 @@ trait ProductTrait
         return [
             'cards' => [
                 [
-                    'header' => [
+                    'body'     => [],
+                    'header'   => [
                         'title' => 'Technical Details',
                     ],
+                    'modifier' => 'details',
                 ],
                 [
-                    'header' => [
+                    'body'     => [],
+                    'header'   => [
                         'title' => 'Sustainability',
                     ],
+                    'modifier' => 'sustainability',
                 ],
                 [
-                    'header' => [
+                    'body'     => [
+                        'list'  => [
+                            [
+                                'description' => 'Machine wash max. ' .
+                                                 '30°C/86°F delicate cycle',
+                                'icon'        => 'machine-wash',
+                            ],
+                            [
+                                'description' => 'Do not use bleach/whitener',
+                                'icon'        => 'do-not-bleach',
+                            ],
+                            [
+                                'description' => 'Iron maximum 110°C/230°F',
+                                'icon'        => 'iron-low-temperature',
+                            ],
+                            [
+                                'description' => 'Do not dry clean',
+                                'icon'        => 'do-not-dry-clean',
+                            ],
+                            [
+                                'description' => 'Low temperature dryer may ' .
+                                                 'be used',
+                                'icon'        => 'dryer-low-temperature',
+                            ],
+                        ],
+                        'title' => 'Caring for your hoodie is caring for the ' .
+                                   'planet',
+                    ],
+                    'header'   => [
                         'title' => 'Product Care',
                     ],
+                    'modifier' => 'care',
                 ],
             ],
         ];

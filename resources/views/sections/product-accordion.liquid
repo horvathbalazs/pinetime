@@ -1,27 +1,48 @@
 <section class="accordion"
          data-accordion>
-    <div class="accordion__container">
-        {% for card in accordion.cards %}
-        <article class="accordion__card"
-                 data-accordion-card>
-            <header class="accordion__header"
-                    data-accordion-card-header
-                    data-ripple>
-                <h3 class="accordion__title">{{ card.header.title }}</h3>
-                <svg class="accordion__icon">
-                    <path class="accordion__path"
-                          d="m10,22.5h25m-12.5,-12.5v25"
-                          data-accordion-card-path="main"/>
-                    <path class="accordion__path accordion__path--hidden"
-                          d="m10,22.5h25m-12.5,-12.5v25"
-                          data-accordion-card-path="default"/>
-                    <path class="accordion__path accordion__path--hidden"
-                          d="m13.66117,13.66117l17.67767,17.67767m0,-17.67767l-17.67767,17.67767"
-                          data-accordion-card-path="active"/>
-                </svg>
-            </header>
-            <div class="accordion__body"></div>
-        </article>
-        {% endfor %}
-    </div>
+    {% for card in accordion.cards %}
+    <article class="accordion__card accordion__card--{{ card.modifier }}">
+        <header class="accordion__header"
+                data-ripple>
+            <h3 class="accordion__title">{{ card.header.title }}</h3>
+            <svg class="accordion__icon">
+                <path class="accordion__path"
+                      d="m10,22.5h25m-12.5,-12.5v25"
+                      data-accordion-card-path="main"/>
+                <path class="accordion__path accordion__path--hidden"
+                      d="m10,22.5h25m-12.5,-12.5v25"
+                      data-accordion-card-path="default"/>
+                <path class="accordion__path accordion__path--hidden"
+                      d="m13.66117,13.66117l17.67767,17.67767m0,-17.67767l-17.67767,17.67767"
+                      data-accordion-card-path="active"/>
+            </svg>
+        </header>
+        <div class="accordion__body">
+            <div class="accordion__container">
+                {% if card.modifier == 'care' %}
+                <div class="accordion__row">
+                    <div class="accordion__column">
+                        <svg class="accordion__icon">
+                            <use href=""/>
+                        </svg>
+                        <h4 class="accordion__title">{{ card.body.title }}</h4>
+                    </div>
+                    <div class="accordion__column">
+                        <ul class="accordion__list">
+                            {% for item in card.body.list %}
+                            <li class="accordion__item">
+                                <svg class="accordion__icon">
+                                    <use href=""/>
+                                </svg>
+                                <span class="accordion__text">{{ item.description }}</span>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </article>
+    {% endfor %}
 </section>
