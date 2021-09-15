@@ -1,3 +1,3 @@
 try {
-    const bride = require('bridge')
+    const bridge = require('bridge')
 } catch (error) {}
