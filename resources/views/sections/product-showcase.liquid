@@ -3,6 +3,11 @@
         <div class="showcase__row">
             <div class="showcase__column showcase__column--slider">
                 <h2 class="showcase__title">{{ showcase.title }}</h2>
+                {%
+                    include 'sections.product-slider' with
+                    modifier: 'showcase',
+                    slider: showcase.slider
+                %}
             </div>
             <div class="showcase__column showcase__column--features">
                 {%
