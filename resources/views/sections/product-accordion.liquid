@@ -1,7 +1,7 @@
 <section class="accordion"
          data-accordion>
     {% for card in accordion.cards %}
-    <article class="accordion__card accordion__card--{{ card.modifier }}">
+    <article class="accordion__card">
         <header class="accordion__header"
                 data-ripple>
             <h3 class="accordion__title">{{ card.header.title }}</h3>
@@ -17,7 +17,7 @@
                       data-accordion-card-path="active"/>
             </svg>
         </header>
-        <div class="accordion__body">
+        <div class="accordion__body accordion__body--{{ card.modifier }}">
             <div class="accordion__container">
                 {% if card.modifier == 'care' %}
                 <div class="accordion__row">
@@ -32,12 +32,38 @@
                             {% for item in card.body.list %}
                             <li class="accordion__item">
                                 <svg class="accordion__icon">
-                                    <use href=""/>
+                                    <use href="#symbol-{{ item.icon }}"/>
                                 </svg>
                                 <span class="accordion__text">{{ item.description }}</span>
                             </li>
                             {% endfor %}
                         </ul>
+                    </div>
+                </div>
+                {% elsif card.modifier == 'sustainability' %}
+                <div class="accordion__row">
+                    <div class="accordion__column">
+                        <div class="accordion__thumbnail">
+                            <figure class="accordion__figure">
+                                <img class="accordion__image"
+                                     alt="{{ card.body.thumbnail.title | escape }}"
+                                     height="{{ card.body.thumbnail.height | escape }}"
+                                     src="{{ card.body.thumbnail.url }}"
+                                     title="{{ card.body.thumbnail.title | escape }}"
+                                     width="{{ card.body.thumbnail.width | escape }}">
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="accordion__column">
+                        <h4 class="accordion__title">{{ card.body.title }}</h4>
+                        <p class="accordion__description">{{ card.body.description }}</p>
+                        <a class="accordion__link"
+                           href="{{ card.body.link.url }}"
+                           target="{{ card.body.link.target | escape }}"
+                           title="{{ card.body.link.title | escape }}"
+                           data-ripple>
+                            <span class="accordion__text">{{ card.body.link.title }}</span>
+                        </a>
                     </div>
                 </div>
                 {% endif %}

@@ -16,7 +16,33 @@ trait ProductTrait
                     'modifier' => 'details',
                 ],
                 [
-                    'body'     => [],
+                    'body'     => [
+                        'description' => 'THERMOLITE® EcoMade technology ' .
+                                         'provides lightweight warmth for ' .
+                                         'all activities. Constructed with ' .
+                                         'functional, insulating hollow ' .
+                                         'fibers that last, this technology ' .
+                                         'can be used in apparel and ' .
+                                         'non-apparel products. In addition, ' .
+                                         'eco-conscious consumers will ' .
+                                         'appreciate that this technology ' .
+                                         'can be made with either 100% ' .
+                                         'recycled PET bottles or 100% ' .
+                                         'textile waste.',
+                        'link'        => [
+                            'target' => '_self',
+                            'title'  => 'Learn more',
+                            'url'    => 'https://example.com/',
+                        ],
+                        'thumbnail'   => [
+                            'height' => 1080,
+                            'title'  => '',
+                            'url'    => url('png/placeholder-1.png'),
+                            'width'  => 1920,
+                        ],
+                        'title'       => 'Insulation made from 100% recycled ' .
+                                         'PET',
+                    ],
                     'header'   => [
                         'title' => 'Sustainability',
                     ],
