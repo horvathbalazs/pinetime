@@ -3,6 +3,8 @@
 /public/hot
 #/public/js
 /public/storage
+/resources/js/**/*.js
+!/resources/js/app.js
 /resources/sass/*/**/*.scss
 /storage/*.key
 /vendor
