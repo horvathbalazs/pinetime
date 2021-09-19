@@ -34,6 +34,7 @@ $colors: (
 @import 'colors';
 
 $variables: (
+    'elevator':   1s,
     'navigation': 0.5s,
     'ripple':     1s,
     'sandwich':   0.25s,
@@ -70,6 +71,13 @@ $elements: (
     @include headline;
 
     color: color('nero');
+    padding-top: 6.25rem;
+}
+
+@include breakpoint('laptop') {
+    .body {
+        padding-top: 2.5rem;
+    }
 }
 
 ::selection {

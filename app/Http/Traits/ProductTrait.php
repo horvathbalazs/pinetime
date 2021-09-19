@@ -396,6 +396,10 @@ trait ProductTrait
         return [
             'navigation' => [
                 [
+                    'section' => 'overview',
+                    'title'   => 'Overview',
+                ],
+                [
                     'section' => 'showcase',
                     'title'   => 'Showcase',
                 ],
