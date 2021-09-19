@@ -391,6 +391,27 @@ trait ProductTrait
         ];
     }
 
+    private static function scrollspy(): array
+    {
+        return [
+            'navigation' => [
+                [
+                    'section' => 'showcase',
+                    'title'   => 'Showcase',
+                ],
+                [
+                    'section' => 'details',
+                    'title'   => 'Details',
+                ],
+                [
+                    'section' => 'accordion',
+                    'title'   => 'Accordion',
+                ],
+            ],
+        ];
+    }
+
+
     private static function showcase(): array
     {
         return [

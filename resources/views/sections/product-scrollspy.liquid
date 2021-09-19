@@ -1,0 +1,20 @@
+<header class="scrollspy"
+        data-scrollspy>
+    <div class="scrollspy__container">
+        <nav class="scrollspy__navigation">
+            <ul class="scrollspy__list">
+                {% for item in scrollspy.navigation %}
+                <li class="scrollspy__item"
+                    data-scrollspy-item="{{ item.section }}">
+                    <button class="scrollspy__button"
+                            title="{{ item.title }}"
+                            type="button"
+                            data-ripple>
+                        <span class="scrollspy__text">{{ item.title }}</span>
+                    </button>
+                </li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </div>
+</header>

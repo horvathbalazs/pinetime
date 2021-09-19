@@ -39,6 +39,7 @@ class ProductController extends Controller
             'instagram'      => static::instagram(),
             'newsletter'     => static::newsletter(),
             'recommendation' => static::recommendation(),
+            'scrollspy'      => static::scrollspy(),
             'showcase'       => static::showcase(),
             'themes'         => ['product'],
         ]);
