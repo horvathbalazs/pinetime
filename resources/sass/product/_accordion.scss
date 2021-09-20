@@ -1,0 +1,253 @@
+.accordion {
+    margin-right: auto;
+    max-width: calc(max(#{ ($width) }, #{ ($width) } + (100% - #{ ($width) }) / 2));
+    padding-right: #{ ($margin) };
+
+    .accordion__header {
+        align-items: center;
+        box-shadow: inset 0 0.0625rem color('nero');
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        padding: 1rem 0 0.9375rem calc(max(#{ ($margin) }, 100% - #{ ($width) - (2 * $margin) }));
+
+        .accordion__title {
+            @include headline;
+
+            color: color('nero');
+            font-size: 1.5625rem;
+            font-weight: 400;
+            line-height: 2em;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .accordion__icon {
+            height: 2.5625rem;
+            min-height: 2.5625rem;
+            min-width: 2.5625rem;
+            width: 2.5625rem;
+        }
+
+        .accordion__path {
+            fill: none;
+            stroke: color('nero');
+            stroke-width: 1;
+
+            &.accordion__path--hidden {
+                visibility: hidden;
+            }
+        }
+    }
+
+    .accordion__body {
+        height: 0rem;
+        overflow: hidden;
+
+        &.accordion__body--care {
+            .accordion__row {
+                align-items: center;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                margin: -1rem #{ (-0.5 * $gutter) };
+            }
+
+            .accordion__column {
+                margin: 1rem #{ (0.5 * $gutter) };
+            }
+
+            .accordion__thumbnail {
+                bottom: 0;
+                left: 0;
+                position: absolute;
+                right: 0;
+                top: 0;
+
+                .accordion__icon {
+                    color: color('gainsboro');
+                    height: 100%;
+                    object-fit: contain;
+                    object-position: 50% 50%;
+                    width: 100%;
+                }
+            }
+
+            .accordion__title {
+                @include nikolai;
+
+                color: color('nero');
+                font-size: 2.8125rem;
+                font-weight: 600;
+                line-height: 1.05em;
+                text-align: center;
+            }
+
+            .accordion__item {
+                align-items: center;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+
+                .accordion__icon {
+                    color: color('nero');
+                    height: 2rem;
+                    margin-right: 1.125rem;
+                    min-height: 2rem;
+                    min-width: 2rem;
+                    width: 2rem;
+                }
+
+                .accordion__text {
+                    @include headline;
+
+                    display: block;
+                    font-size: 1.125rem;
+                    font-weight: 400;
+                    line-height: 1.3em;
+                }
+            }
+        }
+
+        &.accordion__body--sustainability {
+            .accordion__thumbnail::before {
+                content: '';
+                display: block;
+                padding-bottom: 66.757493188010899%;
+            }
+
+            .accordion__figure {
+                bottom: 0;
+                left: 0;
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+
+            .accordion__image {
+                height: 100%;
+                object-fit: cover;
+                object-position: 50% 50%;
+                width: 100%;
+            }
+
+            .accordion__title {
+                @include nikolai;
+
+                color: color('nero');
+                font-size: 2.8125rem;
+                font-weight: 600;
+                line-height: 1.05em;
+                margin: -1.8125rem 0 1.5625rem;
+            }
+
+            .accordion__description {
+                @include headline;
+
+                color: color('nero');
+                font-size: 1.25rem;
+                font-weight: 400;
+                line-height: 1.2em;
+                margin-bottom: 1.5rem;
+            }
+
+            .accordion__link {
+                box-shadow: inset 0 0 0 0.0625rem color('nero');
+                color: color('nero');
+                display: block;
+                padding: 0.0625rem;
+
+                .accordion__text {
+                    @include headline;
+
+                    align-items: center;
+                    color: color('nero');
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    font-size: 0.75rem;
+                    font-weight: 400;
+                    height: 2.5rem;
+                    justify-content: center;
+                    letter-spacing: 0.05em;
+                    line-height: 1em;
+                    text-align: center;
+                    text-transform: uppercase;
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
+
+    .accordion__container {
+        padding: 1.25rem 0 2.5rem calc(max(#{ ($margin) }, 100% - #{ ($width) - (2 * $margin) }));
+    }
+}
+
+@include breakpoint('tablet') {
+    .accordion {
+        padding-right: #{ ($margin) };
+
+        .accordion__header {
+            padding-left: calc(max(#{ ($margin) }, 100% - #{ ($width) - (2 * $margin) }));
+        }
+
+        .accordion__body {
+            &.accordion__body--care {
+                .accordion__row {
+                    margin: -1rem #{ (-0.5 * $gutter) };
+                }
+
+                .accordion__column {
+                    margin: 1rem #{ (0.5 * $gutter) };
+                }
+            }
+        }
+
+        .accordion__container {
+            padding-left: calc(max(#{ ($margin) }, 100% - #{ ($width) - (2 * $margin) }));
+        }
+    }
+}
+
+@include breakpoint('laptop') {
+    .accordion {
+        padding-right: #{ ($margin) };
+
+        .accordion__header {
+            padding-left: calc(max(#{ ($margin) }, 100% - #{ ($width) - (2 * $margin) }));
+
+            .accordion__title {
+                font-weight: 700;
+            }
+        }
+
+        .accordion__body {
+            &.accordion__body--care {
+                .accordion__row {
+                    margin: -1rem #{ (-0.5 * $gutter) };
+                }
+
+                .accordion__column {
+                    margin: 1rem calc(8.333333333333333% + #{ (0.5 * $gutter) });
+                    min-width: calc(33.333333333333333% - #{ ($gutter) });
+                    width: calc(33.333333333333333% - #{ ($gutter) });
+                }
+
+                .accordion__title {
+                    font-size: 3.75rem;
+                    line-height: 1.05em;
+                }
+            }
+        }
+
+        .accordion__container {
+            padding-left: calc(max(#{ ($margin) }, 100% - #{ ($width) - (2 * $margin) }));
+        }
+    }
+}

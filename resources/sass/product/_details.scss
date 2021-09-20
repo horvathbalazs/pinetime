@@ -1,0 +1,199 @@
+.details {
+    padding: 1rem 0 2.3125rem;
+
+    &::before {
+        background: color('smoke');
+        content: '';
+        display: block;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .details__container {
+        margin: 0 auto;
+        max-width: #{ ($width) };
+        padding: 0 #{ ($margin) };
+    }
+
+    .details__cards {
+        align-items: stretch;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: -0.5rem #{ (-0.5 * $gutter) };
+    }
+
+    .details__card {
+        background-color: color('gainsboro');
+        margin: 0.5rem #{ (0.5 * $gutter) };
+        min-width: calc(100% - #{ ($gutter) });
+        padding: 3.75rem 2.25rem 3.125rem;
+        width: calc(100% - #{ ($gutter) });
+    }
+
+    .details__title {
+        @include nikolai;
+
+        color: color('nero');
+        font-size: 2.8125rem;
+        font-weight: 600;
+        line-height: 1.05em;
+        margin-bottom: 2.5rem;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    .details__ruler,
+    .details__labels {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        margin: 0 auto;
+        max-width: 16.25rem;
+    }
+
+    .details__ruler {
+        align-items: stretch;
+        height: 0.5rem;
+        margin-bottom: 1rem;
+
+        &::before {
+            background-color: color('white');
+            content: '';
+            display: block;
+            height: 0.125rem;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+    .details__marker {
+        background-color: color('white');
+        min-width: 0.0625rem;
+        width: 0.0625rem;
+    }
+
+    .details__range {
+        position: absolute;
+        top: 50%;
+
+        &.details__range--0 {
+            left: 0;
+            transform: translate(0, -50%);
+        }
+
+        &.details__range--1 {
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &.details__range--2 {
+            left: 100%;
+            transform: translate(-100%, -50%);
+        }
+
+        .details__icon {
+            height: 0.625rem;
+            min-height: 0.625rem;
+            min-width: 5.625rem;
+            width: 5.625rem;
+        }
+    }
+
+    .details__labels {
+        align-items: center;
+        margin-bottom: 2.5rem;
+    }
+
+    .details__label {
+        @include headline;
+
+        color: color('grey');
+        display: block;
+        font-size: 0.75rem;
+        font-weight: 400;
+        letter-spacing: 0.02em;
+        line-height: 1em;
+        text-align: center;
+        text-transform: uppercase;
+        white-space: nowrap;
+
+        &:first-child {
+            text-align: left;
+        }
+
+        &:last-child {
+            text-align: right;
+        }
+
+        &.details__label--active {
+            color: color('nero');
+            font-weight: 500;
+        }
+    }
+
+    .details__description {
+        @include headline;
+
+        color: color('nero');
+        font-size: 1.125rem;
+        font-weight: 300;
+        line-height: 1.3em;
+        text-align: center;
+    }
+}
+
+@include breakpoint('tablet') {
+    .details {
+        .details__container {
+            padding: 0 #{ ($margin) };
+        }
+
+        .details__cards {
+            margin: -0.5rem #{ (-0.5 * $gutter) };
+        }
+
+        .details__card {
+            margin: 0.5rem #{ (0.5 * $gutter) };
+            min-width: calc(100% - #{ ($gutter) });
+            width: calc(100% - #{ ($gutter) });
+        }
+    }
+}
+
+@include breakpoint('laptop') {
+    .details {
+        padding: 4.375rem 0 4.0625rem;
+
+        &::before {
+            height: 6.5625rem;
+        }
+
+        .details__container {
+            padding: 0 #{ ($margin) };
+        }
+
+        .details__cards {
+            margin: -0.75rem #{ (-0.5 * $gutter) };
+        }
+
+        .details__card {
+            margin: 0.75rem #{ (0.5 * $gutter) };
+            min-width: calc(33.333333333333333% - #{ ($gutter)});
+            padding: 3.75rem 3.1875rem 3.125rem;
+            width: calc(33.333333333333333% - #{ ($gutter)});
+        }
+
+        .details__description {
+            font-weight: 400;
+        }
+    }
+}

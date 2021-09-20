@@ -1,0 +1,109 @@
+.features {
+    .features__cards {
+        align-items: stretch;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        margin: -3.4375rem #{ (-0.5 * $gutter) };
+    }
+
+    .features__card {
+        margin: 3.4375rem #{ (0.5 * $gutter) };
+        min-width: calc(100% - #{ ($gutter) });
+        width: calc(100% - #{ ($gutter) });
+    }
+
+    .features__thumbnail {
+        margin-bottom: 1rem;
+        z-index: 0;
+
+        &::before {
+            content: '';
+            display: block;
+            padding-bottom: 100%;
+        }
+
+        &::after {
+            background-color: color('white');
+            bottom: -4.5625rem;
+            content: '';
+            display: block;
+            left: 50%;
+            position: absolute;
+            right: #{ (-1 * $margin) };
+            top: -1.875rem;
+            z-index: -1;
+        }
+    }
+
+    .features__figure {
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .features__image {
+        height: 100%;
+        object-fit: cover;
+        object-position: 50% 50%;
+        width: 100%;
+    }
+
+    .features__title {
+        @include nikolai;
+
+        color: color('nero');
+        font-size: 2.8125rem;
+        font-weight: 600;
+        line-height: 1.05em;
+        margin-bottom: 0.5rem;
+    }
+
+    .features__description {
+        @include headline;
+
+        color: color('nero');
+        font-size: 1.125rem;
+        font-weight: 400;
+        line-height: 1.3em;
+    }
+}
+
+@include breakpoint('tablet') {
+    .features {
+        .features__cards {
+            margin: -3.4375rem #{ (-0.5 * $gutter) };
+        }
+
+        .features__card {
+            margin: 3.4375rem #{ (0.5 * $gutter) };
+            min-width: calc(100% - #{ ($gutter) });
+            width: calc(100% - #{ ($gutter) });
+        }
+
+        .features__thumbnail::after {
+            right: #{ (-1 * $margin) };
+        }
+    }
+}
+
+@include breakpoint('laptop') {
+    .features {
+        .features__cards {
+            margin: -4.6875rem #{ (-0.5 * $gutter) };
+        }
+
+        .features__card {
+            margin: 4.6875rem #{ (0.5 * $gutter) };
+            min-width: calc(100% - #{ ($gutter) });
+            width: calc(100% - #{ ($gutter) });
+        }
+
+        .features__thumbnail::after {
+            right: #{ (-1 * $margin) };
+        }
+    }
+}

@@ -1,0 +1,171 @@
+.recommendation {
+    background-color: color('smoke');
+    padding: 6.25rem 0 4.0625rem;
+
+    .recommendation__container {
+        margin: 0 auto;
+        max-width: #{ ($width) };
+        padding: 0 #{ ($margin) };
+    }
+
+    .recommendation__row {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: -0.625rem #{ (-0.5 * $gutter) };
+    }
+
+    .recommendation__column {
+        &.recommendation__column--thumbnail {
+            margin: 0.625rem #{ (-1 * $gutter) } 0.625rem #{ (0.5 * $gutter) };
+            min-width: calc(50% - #{ (2 * $gutter) });
+            width: calc(50% - #{ (2 * $gutter) });
+        }
+
+        &.recommendation__column--quote {
+            margin: 0.625rem #{ (0.5 * $gutter) } 0.625rem 0;
+            min-width: calc(50% + #{ (2 * $gutter) });
+            width: calc(50% + #{ (2 * $gutter) });
+        }
+
+        &.recommendation__column--description {
+            margin: 0.625rem #{ (0.5 * $gutter) };
+            min-width: calc(100% - #{ $gutter });
+            width: calc(100% - #{ $gutter });
+        }
+    }
+
+    .recommendation__thumbnail {
+        padding-bottom: 100%;
+    }
+
+    .recommendation__figure {
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .recommendation__image {
+        height: 100%;
+        object-fit: cover;
+        object-position: 50% 50%;
+        width: 100%;
+    }
+
+    .recommendation__quote {
+        @include nikolai;
+
+        color: color('nero');
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: 1.05em;
+
+        &.recommendation__quote--laptop {
+            display: none;
+        }
+
+        &::before {
+            content: '“';
+        }
+
+        &::after {
+            content: '”';
+        }
+
+        &::before,
+        &::after {
+            display: inline;
+        }
+    }
+
+    .recommendation__description {
+        @include headline;
+
+        color: color('nero');
+        font-size: 1.125rem;
+        font-weight: 300;
+        line-height: 1.3em;
+    }
+}
+
+@include breakpoint('tablet') {
+    .recommendation {
+        .recommendation__container {
+            padding: 0 #{ ($margin) };
+        }
+
+        .recommendation__row {
+            margin: -0.625rem #{ (-0.5 * $gutter) };
+        }
+
+        .recommendation__column {
+            &.recommendation__column--thumbnail {
+                margin: 0.625rem #{ (-1 * $gutter) } 0.625rem #{ (0.5 * $gutter) };
+                min-width: calc(50% - #{ (2 * $gutter) });
+                width: calc(50% - #{ (2 * $gutter) });
+            }
+
+            &.recommendation__column--quote {
+                margin-right: #{ (0.5 * $gutter) };
+                min-width: calc(50% + #{ (2 * $gutter) });
+                width: calc(50% + #{ (2 * $gutter) });
+            }
+
+            &.recommendation__column--description {
+                margin: 0.625rem #{ (0.5 * $gutter) };
+                min-width: calc(100% - #{ $gutter });
+                width: calc(100% - #{ $gutter });
+            }
+        }
+    }
+}
+
+@include breakpoint('laptop') {
+    .recommendation {
+        padding: 5.625rem 0 3.125rem;
+
+        .recommendation__container {
+            padding: 0 #{ ($margin) };
+        }
+
+        .recommendation__row {
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: center;
+            margin: -0.75rem #{ (-0.5 * $gutter) };
+        }
+
+        .recommendation__column {
+            &.recommendation__column--thumbnail {
+                margin: 0.75rem #{ (0.5 * $gutter) } 0.75rem calc(8.333333333333333% + #{ (1.5 * $gutter) });
+                min-width: calc(41.666666666666667% - #{ ($gutter) });
+                width: calc(41.666666666666667% - #{ ($gutter) });
+            }
+
+            &.recommendation__column--quote {
+                display: none;
+            }
+
+            &.recommendation__column--description {
+                margin: 0.75rem calc(16.666666666666667% + #{ (2.5 * $gutter) }) 0.75rem #{ (0.5 * $gutter) };
+                min-width: calc(33.333333333333333% - #{ ($gutter) });
+                width: calc(33.333333333333333% - #{ ($gutter) });
+            }
+        }
+
+        .recommendation__quote {
+            font-size: 2.8125rem;
+            margin: 0 20.202020202020202% 1.5rem -20.202020202020202%;
+
+            &.recommendation__quote--laptop {
+                display: block;
+            }
+        }
+    }
+}

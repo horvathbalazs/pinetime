@@ -1,0 +1,144 @@
+.footer {
+    background-color: color('gainsboro');
+    overflow: hidden;
+    padding: 3.125rem 0;
+
+    &::before {
+        background-color: color('gorse');
+        content: '';
+        display: block;
+        height: 4.375rem;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: calc(75% + #{ ($margin) - ($gutter) });
+    }
+
+    .footer__container {
+        margin: 0 auto;
+        max-width: #{ ($width) };
+        padding: 0 #{ ($margin) };
+    }
+
+    .footer__row {
+        align-items: flex-end;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: -1.5625rem #{ (-0.5 * $gutter) };
+    }
+
+    .footer__column {
+        margin: 1.5625rem #{ (0.5 * $gutter) };
+        min-width: calc(100% - #{ ($gutter) });
+        width: calc(100% - #{ ($gutter) });
+
+        &.footer__column--socials {
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            margin-right: calc(25% + #{ ($margin) + (0.5 * $gutter) });
+            min-width: calc(75% - #{ ($margin) + ($gutter) });
+            width: calc(75% - #{ ($margin) + ($gutter) });
+        }
+
+        &.footer__column--investor {
+            margin-right: calc(50% + #{ (0.5 * $gutter) });
+            min-width: calc(50% - #{ ($gutter) });
+            width: calc(50% - #{ ($gutter) });
+        }
+    }
+}
+
+@include breakpoint('tablet') {
+    .footer {
+        &::before {
+            width: calc(75% + #{ ($margin) - ($gutter) });
+        }
+
+        .footer__container {
+            padding: 0 #{ ($margin) };
+        }
+
+        .footer__row {
+            margin: -1.5625rem #{ (-0.5 * $gutter) };
+        }
+
+        .footer__column {
+            margin: 1.5625rem #{ (0.5 * $gutter) };
+            min-width: calc(100% - #{ ($gutter) });
+            width: calc(100% - #{ ($gutter) });
+
+            &.footer__column--socials {
+                margin-right: calc(25% + #{ ($margin) + (0.5 * $gutter) });
+                min-width: calc(75% - #{ ($margin) + ($gutter) });
+                width: calc(75% - #{ ($margin) + ($gutter) });
+            }
+
+            &.footer__column--investor {
+                margin-right: calc(50% + #{ (0.5 * $gutter) });
+                min-width: calc(50% - #{ ($gutter) });
+                width: calc(50% - #{ ($gutter) });
+            }
+        }
+    }
+}
+
+@include breakpoint('laptop') {
+    .footer {
+        padding: 3.125rem 0 3.75rem;
+
+        &::before {
+            width: calc(50% + #{ ($margin) - ($gutter) });
+        }
+
+        .footer__container {
+            padding: 0 #{ ($margin) };
+        }
+
+        .footer__row {
+            margin: -0.75rem #{ (-0.5 * $gutter) };
+        }
+
+        .footer__column {
+            margin: 0.75rem #{ (0.5 * $gutter) };
+
+            &.footer__column--socials {
+                margin-right: calc(58.333333333333333% + #{ (0.5 * $gutter) });
+                min-width: calc(41.666666666666667% - #{ ($gutter) });
+                width: calc(41.666666666666667% - #{ ($gutter) });
+            }
+
+            &.footer__column--navigation {
+                margin: 0.75rem calc(8.333333333333333% + #{ (0.5 * $gutter) });
+                min-width: calc(33.333333333333333% - #{ ($gutter) });
+                width: calc(33.333333333333333% - #{ ($gutter) });
+            }
+
+            &.footer__column--copyright {
+                bottom: 0;
+                left: #{ (0.5 * $gutter) };
+                margin: 0;
+                min-width: 0;
+                position: absolute;
+                transform: rotate(-90deg);
+                transform-origin: 0 50%;
+                width: auto;
+            }
+
+            &.footer__column--investor {
+                margin-right: calc(8.333333333333333% + #{ (0.5 * $gutter) });
+                min-width: calc(16.666666666666667% - #{ ($gutter) });
+                width: calc(16.666666666666667% - #{ ($gutter) });
+            }
+
+            &.footer__column--sponsors {
+                min-width: calc(25% - #{ ($gutter) });
+                width: calc(25% - #{ ($gutter) });
+            }
+        }
+    }
+}

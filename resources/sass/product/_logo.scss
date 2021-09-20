@@ -1,0 +1,55 @@
+.logo {
+    &.logo--drawer {
+        margin: -0.625rem 0;
+
+        .logo__link {
+            display: block;
+        }
+
+        .logo__icon {
+            color: color('nero');
+            height: 1.25rem;
+            min-height: 1.25rem;
+            min-width: 1.25rem;
+            width: 1.25rem;
+        }
+    }
+
+    &.logo--header {
+        margin-right: 6.25rem;
+
+        .logo__link {
+            display: block;
+        }
+
+        .logo__icon {
+            color: color('nero');
+            height: 1.1875rem;
+            min-height: 1.1875rem;
+            min-width: 5.8125rem;
+            width: 5.8125rem;
+        }
+    }
+
+    &.logo--footer {
+        .logo__link {
+            display: block;
+        }
+
+        .logo__icon {
+            color: color('nero');
+            height: 2.5rem;
+            min-height: 2.5rem;
+            min-width: 2.5rem;
+            width: 2.5rem;
+        }
+    }
+}
+
+@include breakpoint('laptop') {
+    .logo {
+        .logo--footer {
+            margin-left: -1.25rem;
+        }
+    }
+}

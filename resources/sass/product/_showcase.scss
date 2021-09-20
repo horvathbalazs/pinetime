@@ -1,0 +1,96 @@
+.showcase {
+    background-color: color('smoke');
+    padding: 1.875rem 0 0.875rem;
+
+    .showcase__container {
+        margin: 0 auto;
+        max-width: #{ ($width) };
+        padding: 0 #{ ($margin) };
+    }
+
+    .showcase__row {
+        align-items: stretch;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        margin: -1.5625rem #{ (-0.5 * $gutter) };
+    }
+
+    .showcase__column {
+        margin: 1.5625rem #{ (0.5 * $gutter) };
+        min-width: calc(100% - #{ ($gutter) });
+        width: calc(100% - #{ ($gutter) });
+    }
+
+    .showcase__title {
+        @include nikolai;
+
+        color: color('nero');
+        font-size: 2.5rem;
+        font-weight: 600;
+        line-height: 1.05em;
+        margin-bottom: -4.375rem;
+        text-align: center;
+    }
+}
+
+@include breakpoint('tablet') {
+    .showcase {
+        .showcase__container {
+            padding: 0 #{ ($margin) };
+        }
+
+        .showcase__row {
+            margin: -1.5625rem #{ (-0.5 * $gutter) };
+        }
+
+        .showcase__column {
+            margin: 1.5625rem #{ (0.5 * $gutter) };
+            min-width: calc(100% - #{ ($gutter) });
+            width: calc(100% - #{ ($gutter) });
+        }
+    }
+}
+
+@include breakpoint('laptop') {
+    .showcase {
+        padding: 1.875rem 0 4.375rem;
+
+        .showcase__container {
+            padding: 0 #{ ($margin) };
+        }
+
+        .showcase__row {
+            align-items: flex-start;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: center;
+            margin: 0 #{ (-0.5 * $gutter) };
+        }
+
+        .showcase__column {
+            margin: 0 #{ (0.5 * $gutter) };
+
+            &.showcase__column--slider {
+                margin: 0 #{ (0.5 * $gutter) } 0 calc(8.333333333333333% + #{ (0.5 * $gutter) });
+                min-width: calc(50% - #{ ($gutter) });
+                position: sticky;
+                top: 6.25rem;
+                width: calc(50% - #{ ($gutter) });
+            }
+
+            &.showcase__column--features {
+                margin: 0 calc(8.333333333333333% + #{ (0.5 * $gutter) }) 0 #{ (0.5 * $gutter) };
+                min-width: calc(33.333333333333333% - #{ ($gutter) });
+                width: calc(33.333333333333333% - #{ ($gutter) });
+            }
+        }
+
+        .showcase__title {
+            font-size: 3.75rem;
+            margin-bottom: -10.625rem;
+        }
+    }
+}
